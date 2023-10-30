@@ -14,15 +14,15 @@ const Navbar = () => {
 
     return (
     <nav className="fixed w-full h-24 shadow-xl bg-white">
-        <div className="flex justify-between items-center h-full w-full px-4 2xl:px-16">
+        <div className="flex justify-between items-center h-full w-full px-6 2xl:px-16">
             
             {/* Pressable Logo */}
             <Link href='/'>
                 <Image
                 src={Logo}
                 alt="logo"
-                width="75"
-                height="75"
+                width="100"
+                height="100"
                 className="cursor-pointer"
                 priority
                 />
@@ -31,17 +31,17 @@ const Navbar = () => {
             {/* Menu Bar Selection */}
             <div classname="hidden sm:flex">
                 <ul className="hidden sm:flex">
-                    <Link href="/about">
-                        <li className="ml-10 uppercase hover:border-b text-xl">Why Us</li>
+                    <Link href="/map-view">
+                        <li className="ml-10 uppercase hover:border-b text-xl">Map View</li>
                     </Link>
-                    <Link href="/contact">
-                        <li className="ml-10 uppercase hover:border-b text-xl">Contact Us</li>
+                    <Link href="/find-events">
+                        <li className="ml-10 uppercase hover:border-b text-xl">Find Events</li>
                     </Link>
-                    <Link href="/services">
-                        <li className="ml-10 uppercase hover:border-b text-xl">Blog</li>
+                    <Link href="/budget-tracker">
+                        <li className="ml-10 uppercase hover:border-b text-xl">Budget Tracker</li>
                     </Link>
-                    <Link href="/services">
-                        <li className="ml-10 uppercase hover:border-b text-xl">Our Services</li>
+                    <Link href="/account">
+                        <li className="ml-10 uppercase hover:border-b text-xl">Account</li>
                     </Link>
                 </ul>
             </div>
@@ -80,34 +80,47 @@ const Navbar = () => {
                     </Link>
 
                     {/* Link 2*/}
-                    <Link href="/about">
+                    <Link href="/map-view">
                         <li
                             onClick={() => setMenuOpen(false)}
                             className="py-4 cursor-pointer"
                         >
-                            About
+                            Map View
                         </li>
                     </Link>
 
-                    {/* Link 1*/}
-                    <Link href="/contact">
+                    {/* Link 3*/}
+                    <Link href="/find-events">
                         <li
                             onClick={() => setMenuOpen(false)}
                             className="py-4 cursor-pointer"
                         >
-                            Contact
+                            Find Events
                         </li>
                     </Link>
 
-                    {/* Link 1*/}
-                    <Link href="/services">
+                    {/* Link 4*/}
+                    <Link href="/budget-track">
                         <li
                             onClick={() => setMenuOpen(false)}
                             className="py-4 cursor-pointer"
                         >
-                            Services
+                            Budget Tracker
                         </li>
                     </Link>
+
+                    {/* Link 5*/}
+                    <Link href="/account">
+                        <li
+                            onClick={() => setMenuOpen(false)}
+                            className="py-4 cursor-pointer"
+                        >
+                            My Account
+                        </li>
+                    </Link>
+
+
+
                 </ul>
             </div>
             {/* Pressable Logo */}
