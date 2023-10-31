@@ -31,13 +31,13 @@ const Navbar = () => {
             {/* Menu Bar Selection */}
             <div classname="hidden sm:flex">
                 <ul className="hidden sm:flex">
-                    <Link href="/map-view">
+                    <Link href="/mapview">
                         <li className="ml-10 uppercase hover:border-b text-xl">Map View</li>
                     </Link>
-                    <Link href="/find-events">
+                    <Link href="/findevents">
                         <li className="ml-10 uppercase hover:border-b text-xl">Find Events</li>
                     </Link>
-                    <Link href="/budget-tracker">
+                    <Link href="/budgettracker">
                         <li className="ml-10 uppercase hover:border-b text-xl">Budget Tracker</li>
                     </Link>
                     <Link href="/account">
