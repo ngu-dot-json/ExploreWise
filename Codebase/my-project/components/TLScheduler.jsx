@@ -4,7 +4,7 @@ import 'react-calendar-timeline/lib/Timeline.css';
 import moment from 'moment';
 import * as ReactDOM from 'react-dom';
 
-const groups = [{ id: 1, title: 'group 1' }, { id: 2, title: 'group 2' }];
+const groups = [{ id: 1 }];
 
 const items = [
   {
@@ -14,13 +14,28 @@ const items = [
     start_time: moment(),
     end_time: moment().add(1, 'hour'),
   },
+
   {
     id: 2,
-    group: 2,
-    title: 'item 2',
-    start_time: moment().add(-0.5, 'hour'),
-    end_time: moment().add(0.5, 'hour'),
+    group: 1,
+    title: 'Random title',
+    start_time: moment().add(4, 'hour'),
+    end_time: moment().add(8, 'hour'),
+    canMove: true,
+    canResize: false,
+    canChangeGroup: false,
+    itemProps: {
+      // these optional attributes are passed to the root <div /> of each item as <div {...itemProps} />
+      'data-custom-attribute': 'Random content',
+      'aria-hidden': true,
+      onDoubleClick: () => { console.log('You clicked double!') },
+      className: 'weekend',
+      style: {
+        background: 'fuchsia'
+      }
+    }
   },
+
   {
     id: 3,
     group: 1,
@@ -34,10 +49,12 @@ function MyTimeline() {
   useEffect(() => {
     ReactDOM.render(
       <div>
-        Rendered by react!
+        Schedule Timeline
         <Timeline
           groups={groups}
           items={items}
+          timelineContext="timelineWidth:600" // figure out how to adjust this boi
+          lineHeight={70}                     // Height of the scheduler
           defaultTimeStart={moment().add(-12, 'hour')}
           defaultTimeEnd={moment().add(12, 'hour')}
         />

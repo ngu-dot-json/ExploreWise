@@ -5,7 +5,7 @@ import React from "react";
 import styles from '../styles/mapview.module.css'
 const inter = Inter({ subsets: ['latin'] })
 
-import Schedule from '../../components/FindEvents'
+import Schedule from '../../components/TLScheduler'
 
 function Mapview() {
   return (
@@ -14,7 +14,7 @@ function Mapview() {
       <Navbar />  
       <h1>FIND EVENTS</h1>
     
-      <div id="root"></div>
+      <div id="root" className="py-80"></div>
       <Schedule
       />
 
