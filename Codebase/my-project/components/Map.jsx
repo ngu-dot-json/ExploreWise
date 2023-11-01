@@ -3,7 +3,7 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 
 const Map = () => {
   const mapContainerStyle = {
-    width: '65%',
+    width: '60%',
     height: '500px',
     margin: '100px 50px', // Adjust the margin as needed to move the map down
   };
@@ -18,7 +18,7 @@ const Map = () => {
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         center={center}
-        zoom={10}
+        zoom={10.3}
       >
         <Marker position={center} />
         {/* You can add more markers or other map components here */}
@@ -28,3 +28,4 @@ const Map = () => {
 };
 
 export default Map;
+

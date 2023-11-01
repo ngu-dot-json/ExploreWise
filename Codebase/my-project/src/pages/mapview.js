@@ -15,8 +15,6 @@ function Mapview() {
       <Navbar />  
       <h1>MAP VIEW</h1>
       <Map
-        center={{ lat: 37.7749, lng: -122.4194 }} // Default map center
-        zoom={13} // Default zoom level
       />
     </div>
   );
