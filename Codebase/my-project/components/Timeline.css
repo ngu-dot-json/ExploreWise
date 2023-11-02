@@ -1,0 +1,16 @@
+/* Timeline container */
+.timeline-container {
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  /* Timeline item */
+  .timeline-item {
+    background-color: #0077b6;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  
+  /* Define other styles as needed */
+  
