@@ -4,9 +4,9 @@ import Navbar from '../../components/Navbar'
 import React from "react";
 import styles from '../styles/mapview.module.css'
 const inter = Inter({ subsets: ['latin'] })
-
-
 import Map from '../../components/Map';
+import Schedule from '../../components/TLScheduler'
+
 
 function Mapview() {
   return (
@@ -16,7 +16,16 @@ function Mapview() {
       <h1>MAP VIEW</h1>
       <Map
       />
+
+
+<div id="root"></div>
+      <Schedule
+      />
+
+
     </div>
+
+
   );
 }
 
