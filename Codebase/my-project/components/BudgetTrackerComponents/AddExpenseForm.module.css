@@ -1,17 +1,8 @@
-.OuterBox{
-  border: 2px solid #c33232; /* Adds a 2px solid border with color #333 */
+.outerBox{
+  border: 2px solid #000000; /* Adds a 2px solid border with color #333 */
   padding: 10px; /* Adds 10px of padding inside the element */
   margin: 20px; /* Adds 20px of margin around the element */
   border-radius: 10px; /* Rounds the corners with a 10px radius */
 }
 
-#ExpenseForm {
-    display: inline-block;
-    width: 50%; /* Adjust the width as needed */
-  }
-
-#ExpenseList{
-    display: inline-block;
-    width: 50%;
-  }
   

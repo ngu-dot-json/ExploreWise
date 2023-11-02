@@ -32,7 +32,15 @@ import { AppProvider } from '../context/AppContext';
 import ExpenseList from '../../components/BudgetTrackerComponents/ExpenseList';
 import AddExpenseForm from '../../components/BudgetTrackerComponents/AddExpenseForm';
 //import RemainingBudget from './components/Remaining';
-import styles from "./budgettracker.module.css";
+
+
+const styles = {
+  heading:{
+    marginTop: "120px", //Shifting the heading down so it is not covered by the navigation bar
+  }
+}
+
+
 
 const App = () => {
 	return (
@@ -47,22 +55,18 @@ const App = () => {
       
       
 			<div className='container'>
-				<h1 className='mt-3'>My Budget Planner</h1>
+				<h1 style={styles.heading}>My Budget Planner</h1>
 
       
-				<div className='row '>
-					<div className='col-sm'>
-						<ExpenseList />
-					</div>
-				</div>
-
-
-				
 				<div className='row mt-3'>
 					<div className='col-sm'>
-						<AddExpenseForm />
+            <AddExpenseForm />
+					</div>
+          <div className='col-sm'>
+          <ExpenseList />
 					</div>
 				</div>
+
 			</div>
 		</AppProvider>
 	);

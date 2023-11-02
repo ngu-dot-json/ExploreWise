@@ -1,7 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import ExpenseItem from './ExpenseItem';
 import { AppContext } from '../../src/context/AppContext';
-import styles from "./AddExpenseForm.module.css";
+import styles from "./ExpenseList.module.css";
 
 
 const ExpenseList = () => {
@@ -21,7 +21,7 @@ const ExpenseList = () => {
 	};
 
 	return (
-        <div className={styles.OuterBox} id={styles.ExpenseList}>
+        <div className={styles.outerBox}>
         <h3 className='mt-3'>Expenses</h3>
 		<>
 			<input
@@ -34,11 +34,20 @@ const ExpenseList = () => {
 				{filteredExpenses.map((expense) => (
 					<ExpenseItem
 						id={expense.id}
+                        date={expense.date}
 						name={expense.name}
 						cost={expense.cost}
 					/>
 				))}
 			</ul>
+
+            <div>
+				{filteredExpenses.map((expense) => (
+                    <h3>{expense.date}</h3>
+				))}
+			</div>
+
+            
 		</>
 
         </div>

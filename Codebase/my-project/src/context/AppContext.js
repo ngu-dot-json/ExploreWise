@@ -31,11 +31,11 @@ export const AppReducer = (state, action) => {
 const initialState = {
 	budget: 2000,
 	expenses: [
-		{ id: uuidv4(), name: 'Shopping', cost: 50 },
-		{ id: uuidv4(), name: 'Holiday', cost: 300 },
-		{ id: uuidv4(), name: 'Transportation', cost: 70 },
-		{ id: uuidv4(), name: 'Fuel', cost: 40 },
-		{ id: uuidv4(), name: 'Child Care', cost: 500 },
+		{ id: uuidv4(), name: 'Shopping', cost: 50, date: (new Date(2023, 10, 1)).toDateString(), description: "When shopping for pants and shoes."},
+		{ id: uuidv4(), name: 'Holiday', cost: 300, date: (new Date(2023, 10, 1)).toDateString(), description: "Went to the christmas market." },
+		{ id: uuidv4(), name: 'Transportation', cost: 70, date: (new Date(2023, 10, 1)).toDateString(), description: "Took the bus." },
+		{ id: uuidv4(), name: 'Fuel', cost: 40, date: (new Date(2023, 10, 1)).toDateString(), description: "Gas for mini van." },
+		{ id: uuidv4(), name: 'Child Care', cost: 500, date: (new Date(2023, 10, 1)).toDateString(), description: "Babysitter while on dinner date."},
 	],
 };
 

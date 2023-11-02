@@ -9,13 +9,17 @@ const AddExpenseForm = (props) => {
 
 	const [name, setName] = useState('');
 	const [cost, setCost] = useState('');
+	const [date, setDate] = useState('');
+	const [description, setDescription] = useState('');
 
 	const onSubmit = (event) => {
 		event.preventDefault();
 		const expense = {
 			id: uuidv4(),
 			name,
-			cost: parseInt(cost),
+			cost: parseFloat(cost),
+			date: date,
+			description,
 		};
 
 		dispatch({
@@ -25,27 +29,44 @@ const AddExpenseForm = (props) => {
 
 		setName('');
 		setCost('');
+		setDate('');
+		setDescription('');
 	};
 
 	return (
-		<div className={styles.OuterBox} id={styles.ExpenseForm}>
+		<div className={styles.outerBox}>
 
 		<h3 className='mt-3'>Add Expense</h3>
 
 		<form onSubmit={onSubmit} >
+
+			<div class='col-lg'>
+				<label for='name'>Name</label>
+				<input
+					required='required'
+					type='text'
+					class='form-control'
+					id='name'
+					value={name}
+					onChange={(event) => setName(event.target.value)}
+				/>
+			</div>
+
 			<div class='row'>
-				<div class='col-sm col-lg-4'>
-					<label for='name'>Name</label>
+
+				<div class='col-sm col-lg-6'>
+					<label for='date'>Date</label>
 					<input
 						required='required'
-						type='text'
+						type='date'
 						class='form-control'
-						id='name'
-						value={name}
-						onChange={(event) => setName(event.target.value)}
+						id='date'
+						value={date}
+						onChange={(event) => setDate(event.target.value)}
 					/>
 				</div>
-				<div class='col-sm col-lg-4'>
+
+				<div class='col-sm col-lg-6'>
 					<label for='cost'>Cost</label>
 					<input
 						required='required'
@@ -57,6 +78,19 @@ const AddExpenseForm = (props) => {
 					/>
 				</div>
 			</div>
+
+			<div class='col-lg'>
+				<label for='description'>Description</label>
+				<input
+					required='required'
+					type='text'
+					class='form-control'
+					id='description'
+					value={description}
+					onChange={(event) => setDescription(event.target.value)}
+				/>
+			</div>
+
 			<div class='row mt-3'>
 				<div class='col-sm'>
 					<button type='submit' class='btn btn-primary'>
@@ -64,6 +98,7 @@ const AddExpenseForm = (props) => {
 					</button>
 				</div>
 			</div>
+
 		</form>
 
 		</div>
