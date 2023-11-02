@@ -54,31 +54,6 @@ const items = [
   },
 ];
 
-onPrevClick = () => {
-  this.setState((state) => {
-    const zoom = state.visibleTimeEnd - state.visibleTimeStart;
-    return {
-      visibleTimeStart: state.visibleTimeStart - zoom,
-      visibleTimeEnd: state.visibleTimeEnd - zoom
-    };
-  });
-};
-
-onNextClick = () => {
-  this.setState((state) => {
-    const zoom = state.visibleTimeEnd - state.visibleTimeStart;
-    console.log({
-      visibleTimeStart: state.visibleTimeStart + zoom,
-      visibleTimeEnd: state.visibleTimeEnd + zoom
-    });
-    return {
-      visibleTimeStart: state.visibleTimeStart + zoom,
-      visibleTimeEnd: state.visibleTimeEnd + zoom
-    };
-  });
-};
-
-
 
 function MyTimeline() {
   useEffect(() => {
@@ -86,8 +61,7 @@ function MyTimeline() {
       <div>
         <div className="timeline-container">
           Schedule Timeline
-          <button onClick={onPrevClick}>{"< Prev"}</button>
-          <button onClick={onNextClick}>{"Next >"}</button>
+
           <Timeline
             groups={groups}
             items={items}

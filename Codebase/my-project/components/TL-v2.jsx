@@ -13,6 +13,10 @@ import Timeline, {
   DateHeader
 } from "react-calendar-timeline";
 
+import generateFakeData from "../generate-fake-data";
+
+var minTime = moment().add(-6, "months").valueOf();
+var maxTime = moment().add(6, "months").valueOf();
 
 var keys = {
   groupIdKey: "id",
@@ -85,18 +89,6 @@ export default class App extends Component {
       visibleTimeEnd
     };
   }
-
-  handleCanvasClick = (groupId, time) => {
-    console.log("Canvas clicked", groupId, moment(time).format());
-  };
-
-  handleCanvasDoubleClick = (groupId, time) => {
-    console.log("Canvas double clicked", groupId, moment(time).format());
-  };
-
-  handleCanvasContextMenu = (group, time) => {
-    console.log("Canvas context menu", group, moment(time).format());
-  };
 
   handleItemClick = (itemId, _, time) => {
     console.log("Clicked: " + itemId, moment(time).format());
@@ -180,9 +172,9 @@ export default class App extends Component {
 
     return (
       <div>
-        <button onClick={this.onPrevClick}>{"< Prev   "}</button>
-        <button onClick={this.onNextClick}>{"   Next >"}</button>
-        <Timeline className="px=50"
+        <button onClick={this.onPrevClick}>{"< Prev"}</button>
+        <button onClick={this.onNextClick}>{"Next >"}</button>
+        <Timeline
           groups={groups}
           items={items}
           keys={keys}
@@ -194,12 +186,10 @@ export default class App extends Component {
           itemsSorted
           itemTouchSendsClick={false}
           stackItems
+          timelineWidth={1}
           itemHeightRatio={0.75}
           visibleTimeStart={visibleTimeStart}
           visibleTimeEnd={visibleTimeEnd}
-          onCanvasClick={this.handleCanvasClick}
-          onCanvasDoubleClick={this.handleCanvasDoubleClick}
-          onCanvasContextMenu={this.handleCanvasContextMenu}
           onItemClick={this.handleItemClick}
           onItemSelect={this.handleItemSelect}
           onItemContextMenu={this.handleItemContextMenu}
@@ -214,10 +204,10 @@ export default class App extends Component {
               date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 2}
             />
             <CustomMarker date={moment().add(3, "day").valueOf()}>
-              {({ styles }) => {
+              {/* {({ styles }) => {
                 const newStyles = { ...styles, backgroundColor: "blue" };
                 return <div style={newStyles} />;
-              }}
+              }} */}
             </CustomMarker>
             <CursorMarker />
           </TimelineMarkers>
