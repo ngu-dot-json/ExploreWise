@@ -21,8 +21,6 @@ function Mapview() {
 <div id="root"></div>
       <Schedule
       />
-
-
     </div>
 
 
