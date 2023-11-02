@@ -1,7 +1,41 @@
 .outerBox{
-    border: 2px solid #000000; /* Adds a 2px solid border with color #333 */
-    padding: 10px; /* Adds 10px of padding inside the element */
-    margin: 20px; /* Adds 20px of margin around the element */
-    border-radius: 10px; /* Rounds the corners with a 10px radius */
+    border: 2px solid #000000; 
+    padding: 10px; 
+
+    border-radius: 10px; 
   }
-  
+
+#expenseListSection{
+    max-height: 40vh;
+    overflow-y: scroll;
+  }
+
+.expenseBox{
+    border: 2px solid #c0b6b6; 
+    padding: 10px; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    border-radius: 10px; 
+}
+
+#dateText{
+
+}
+
+.dateBox{
+    font-size: 15px;
+}
+
+.nameBox{
+
+
+}
+
+.descriptionBox{
+    font-size: 12px;
+}
+
+.priceBox{
+
+}
+

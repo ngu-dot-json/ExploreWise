@@ -22,7 +22,7 @@ const ExpenseList = () => {
 
 	return (
         <div className={styles.outerBox}>
-        <h3 className='mt-3'>Expenses</h3>
+        <h3 className='mt-3'>Expenses List</h3>
 		<>
 			<input
 				type='text'
@@ -30,7 +30,8 @@ const ExpenseList = () => {
 				placeholder='Type to search...'
 				onChange={handleChange}
 			/>
-			<ul class='list-group mt-3 mb-3'>
+
+			{/* <ul class='list-group mt-3 mb-3'>
 				{filteredExpenses.map((expense) => (
 					<ExpenseItem
 						id={expense.id}
@@ -39,13 +40,42 @@ const ExpenseList = () => {
 						cost={expense.cost}
 					/>
 				))}
-			</ul>
+			</ul> */}
 
-            <div>
+            <div id={styles.expenseListSection}>
 				{filteredExpenses.map((expense) => (
-                    <h3>{expense.date}</h3>
+
+                    <div className={styles.expenseBox}>
+                    
+                        <div class='row'>
+
+                            <div class='col-sm col-lg-2' id={styles.dateText}>
+                                <label for='date' class={styles.dateBox}>{expense.date}</label>
+                            </div>
+        
+                            <div class='col-sm col-lg-3'>
+                                <label for='name' class={styles.nameBox}>{expense.name}</label>
+                            </div>
+
+                            <div class='col-sm col-lg-5'>
+                                <label for='description' class={styles.descriptionBox}>{expense.description}</label>
+                            </div>
+
+                            <div class='col-sm col-lg-1'>
+                                <label for='cost' class={styles.costBox}>${expense.cost}</label>
+                            </div>
+
+                            <div class='col-sm col-lg-1'>
+                                <ExpenseItem id={expense.id}/>
+                            </div>
+
+                    </div>
+
+                </div>
+
 				))}
 			</div>
+
 
             
 		</>

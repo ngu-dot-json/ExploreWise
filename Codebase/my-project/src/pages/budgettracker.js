@@ -27,11 +27,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { AppProvider } from '../context/AppContext';
-// import Budget from './components/Budget';
-// import ExpenseTotal from './components/ExpenseTotal';
+import Budget from '../../components/BudgetTrackerComponents/Budget';
+import ExpenseTotal from '../../components/BudgetTrackerComponents/ExpenseTotal';
 import ExpenseList from '../../components/BudgetTrackerComponents/ExpenseList';
 import AddExpenseForm from '../../components/BudgetTrackerComponents/AddExpenseForm';
-//import RemainingBudget from './components/Remaining';
+import RemainingBudget from '../../components/BudgetTrackerComponents/Remaining';
 
 
 const styles = {
@@ -57,15 +57,33 @@ const App = () => {
 			<div className='container'>
 				<h1 style={styles.heading}>My Budget Planner</h1>
 
+
       
+      <div class='container'>
 				<div className='row mt-3'>
-					<div className='col-sm'>
-            <AddExpenseForm />
-					</div>
-          <div className='col-sm'>
+
+          <div className='col-lg'>
+            <div className='row'>
+              <div className='col-lg-6'>
+                <Budget />
+              </div>
+              <div className='col-lg-6'>
+                <RemainingBudget />
+              </div>
+            </div>
+            <div className='row'>
+              <div className='col-lg-12'>
+                <AddExpenseForm />
+              </div>
+            </div>
+          </div>
+            
+          <div className='col-lg-8'>
           <ExpenseList />
-					</div>
+          </div>
 				</div>
+
+       </div>
 
 			</div>
 		</AppProvider>

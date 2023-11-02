@@ -41,7 +41,7 @@ const AddExpenseForm = (props) => {
 		<form onSubmit={onSubmit} >
 
 			<div class='col-lg'>
-				<label for='name'>Name</label>
+				<label for='name'>Title</label>
 				<input
 					required='required'
 					type='text'
@@ -81,7 +81,7 @@ const AddExpenseForm = (props) => {
 
 			<div class='col-lg'>
 				<label for='description'>Description</label>
-				<input
+				<textarea
 					required='required'
 					type='text'
 					class='form-control'
@@ -92,9 +92,9 @@ const AddExpenseForm = (props) => {
 			</div>
 
 			<div class='row mt-3'>
-				<div class='col-sm'>
-					<button type='submit' class='btn btn-primary'>
-						Save
+				<div class='col-sm text-center'>
+					<button type='submit' class='btn btn-primary mx-auto'>
+						ADD
 					</button>
 				</div>
 			</div>
