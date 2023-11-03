@@ -1,3 +1,9 @@
+/**
+ * The following code is modified from:
+ *      Blakely, C. [Chris @ CodeCoyotes]. (2021, March 11). React Budget App Tutorial | Learn how to use the Context API [Video]. 
+ *      YouTube. https://www.youtube.com/watch?v=aeYxBd1it7I
+ */
+
 import React, { useState, useContext } from 'react';
 import ViewBudget from './ViewBudget';
 import EditBudget from './EditBudget';
@@ -20,6 +26,8 @@ const Budget = () => {
 	};
 
 	return (
+		<>
+
 		<div class='alert alert-secondary p-3 d-flex align-items-center justify-content-between'>
 			{isEditing ? (
 				<EditBudget handleSaveClick={handleSaveClick} budget={budget} />
@@ -28,6 +36,9 @@ const Budget = () => {
 				<ViewBudget handleEditClick={handleEditClick} budget={budget} />
 			)}
 		</div>
+
+
+		</>
 	);
 };
 

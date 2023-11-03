@@ -1,3 +1,11 @@
+/**
+ * The following code is modified from:
+ *      Blakely, C. [Chris @ CodeCoyotes]. (2021, March 11). React Budget App Tutorial | Learn how to use the Context API [Video]. 
+ *      YouTube. https://www.youtube.com/watch?v=aeYxBd1it7I
+ */
+
+
+
 // import Head from 'next/head'
 // import { Inter } from 'next/font/google'
 import Navbar from '../../components/Navbar'
@@ -42,7 +50,9 @@ const styles = {
 
 
 
+
 const App = () => {
+  
 	return (
     
 		<AppProvider>
@@ -58,9 +68,19 @@ const App = () => {
 				<h1 style={styles.heading}>My Budget Planner</h1>
 
 
-      
+
+
       <div class='container'>
-				<div className='row mt-3'>
+        <div className='row mt-3'>
+          <div className='col-lg-12'>
+            <div class="alert alert-info" role="alert">
+              Set your total budget for the trip, then start adding expenses!
+            </div>
+          </div>
+        </div>
+
+
+				<div className='row mt-2'>
 
           <div className='col-lg'>
             <div className='row'>
@@ -87,6 +107,7 @@ const App = () => {
 
 			</div>
 		</AppProvider>
+
 	);
 };
 

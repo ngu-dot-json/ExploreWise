@@ -1,3 +1,9 @@
+/**
+ * The following code is modified from:
+ *      Blakely, C. [Chris @ CodeCoyotes]. (2021, March 11). React Budget App Tutorial | Learn how to use the Context API [Video]. 
+ *      YouTube. https://www.youtube.com/watch?v=aeYxBd1it7I
+ */
+
 import React, { useState, useRef } from 'react';
 
 const EditBudget = (props) => {
@@ -20,7 +26,7 @@ const EditBudget = (props) => {
                         />
                     </div>
                 </div>
-                <div class='row mt-4'>
+                <div class='row mt-2'>
                     <div class='col-sm-6'>
                         <button
                             type='button'
