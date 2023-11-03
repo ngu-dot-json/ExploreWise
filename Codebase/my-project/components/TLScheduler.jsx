@@ -210,15 +210,121 @@ export default class App extends Component {
         >
           <TimelineMarkers>
             <TodayMarker />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 0}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 1}
+            />
+
             <CustomMarker
               date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 2}
             />
-            <CustomMarker date={moment().add(3, "day").valueOf()}>
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 3}
+            />
+
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 4}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 5}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 6}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 7}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 8}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 9}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 10}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 11}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 12}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 13}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 14}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 15}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 16}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 17}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 18}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 19}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 20}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 21}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 22}
+            />
+
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 23 }
+            />
+
+
+
+
+
+
+
+
+
+            {/* <CustomMarker date={moment().add(3, "day").valueOf()}>
               {({ styles }) => {
                 const newStyles = { ...styles, backgroundColor: "blue" };
                 return <div style={newStyles} />;
               }}
-            </CustomMarker>
+            </CustomMarker> */}
+
+
+
             <CursorMarker />
           </TimelineMarkers>
         </Timeline>
