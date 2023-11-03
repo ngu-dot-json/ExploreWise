@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar";
 import React, { useEffect, useState } from "react";
 import { EVENTS } from "../../constants/events";
 import { VscHeartFilled, VscHeart } from "react-icons/vsc";
+import { BiSolidDownArrow } from "react-icons/bi";
 import Schedule from "../../components/TLScheduler";
 
 function FindEvents() {
@@ -20,11 +21,11 @@ function FindEvents() {
           {/* the left column */}
           <div className="flex flex-col w-2/3 gap-4 h-full">
             <div className="flex gap-4">
-              <button className="px-2 py-1 border-2 border-black hover:bg-black hover:text-white">
-                Sorting dropdown
+              <button className="px-2 py-1 border-2 border-black hover:bg-black hover:text-white flex gap-2 items-center">
+                Sorting <BiSolidDownArrow />
               </button>
-              <button className="px-2 py-1 border-2 border-black hover:bg-black hover:text-white">
-                Genre dropdown
+              <button className="px-2 py-1 border-2 border-black hover:bg-black hover:text-white flex gap-2 items-center">
+                Genre <BiSolidDownArrow />
               </button>
               <button className="px-2 py-1 border-2 border-black hover:bg-black hover:text-white">
                 <VscHeartFilled />
