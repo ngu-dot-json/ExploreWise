@@ -88,7 +88,7 @@ const AddExpenseForm = (props) => {
 			<div class='col-lg'>
 				<label for='description'>Description</label>
 				<textarea
-					required='required'
+					//required='required'
 					type='text'
 					class='form-control'
 					id='description'
