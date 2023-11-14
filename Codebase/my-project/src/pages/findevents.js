@@ -3,7 +3,6 @@ import React, { useEffect, useState } from "react";
 import { EVENTS } from "../../constants/events";
 import { VscHeartFilled, VscHeart } from "react-icons/vsc";
 import { BiSolidDownArrow } from "react-icons/bi";
-import Schedule from "../../components/TLScheduler_old";
 
 function FindEvents() {
   const [events, setEvents] = useState([]);
