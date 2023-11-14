@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Navbar from '../../components/Navbar'
-import Schedule from '../../components/TLScheduler'
+import Schedule from '../../components/TLScheduler_old'
 
 const inter = Inter({ subsets: ['latin'] })
 

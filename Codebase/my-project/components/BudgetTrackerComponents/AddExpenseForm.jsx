@@ -6,7 +6,7 @@
 
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../../src/context/AppContext';
-import { v4 as uuidv4 } from 'uuid';
+import {v4 as uuidv4} from 'uuid';
 import styles from "./AddExpenseForm.module.css";
 
 
