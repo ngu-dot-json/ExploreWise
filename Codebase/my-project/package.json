@@ -19,7 +19,9 @@
     "react-calendar-timeline": "^0.28.0",
     "react-dom": "^18",
     "react-icons": "^4.11.0",
-    "uuid": "^9.0.1"
+    "uuid": "^9.0.1",
+    "randomcolor": "0.5.3",
+    "react-spring": "8.0.27"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.16",

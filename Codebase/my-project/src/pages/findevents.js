@@ -30,7 +30,7 @@ function FindEvents() {
                 <VscHeartFilled />
               </button>
               <button className="px-2 py-1 border-2 border-black hover:bg-black hover:text-white">
-                User rec
+                User Recommended
               </button>
             </div>
             <div className="flex flex-col border-2 p-4 border-black overflow-hidden overflow-y-scroll h-full gap-2">
