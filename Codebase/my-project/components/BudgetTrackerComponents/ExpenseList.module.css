@@ -1,0 +1,41 @@
+.outerBox{
+    border: 2px solid #000000; 
+    padding: 10px; 
+
+    border-radius: 10px; 
+  }
+
+#expenseListSection{
+    max-height: 40vh;
+    overflow-y: scroll;
+  }
+
+.expenseBox{
+    border: 2px solid #c0b6b6; 
+    padding: 10px; 
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    border-radius: 10px; 
+}
+
+#dateText{
+
+}
+
+.dateBox{
+    font-size: 15px;
+}
+
+.nameBox{
+
+
+}
+
+.descriptionBox{
+    font-size: 12px;
+}
+
+.priceBox{
+
+}
+
