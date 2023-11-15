@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Link from 'next/link'
-import Logo from "../public/logo-f.png"
+import Logo from "../public/logo-l.png"
 import {AiOutlineMenu, AiOutlineClose} from 'react-icons/ai'
 import { useState } from "react"
 
@@ -13,7 +13,7 @@ const Navbar = () => {
     }
 
     return (
-    <nav className="fixed w-full h-16 shadow-xl bg-white">
+    <nav className="fixed w-full h-15 shadow-xl bg-white">
         <div className="flex justify-between items-center h-full w-full px-4">
             
             {/* Pressable Logo */}
@@ -21,7 +21,7 @@ const Navbar = () => {
                 <Image
                 src={Logo}
                 alt="logo"
-                height="60"
+                height="50"
                 className="cursor-pointer"
                 priority
                 />
