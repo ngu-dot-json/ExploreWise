@@ -4,8 +4,8 @@ import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 const Map = () => {
   const mapContainerStyle = {
     width: '60%',
-    height: '450px',
-    margin: '90px 50px', // Adjust the margin as needed to move the map down
+    height: '400px',
+    margin: '60px 50px', // Adjust the margin as needed to move the map down
   };
 
   const center = {
