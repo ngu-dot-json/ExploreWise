@@ -19,26 +19,26 @@ export default function Home() {
     <div>
       <Navbar />  
       <h1>MAP VIEW</h1>
+      <br/>
     </div>
 
-
-    <heading className='Naver'>
-      WELCOME TO THE HOME PAGE<br/>
-      WELCOME TO THE HOME PAGE<br/>
-      WELCOME TO THE HOME PAGE<br/>
-      WELCOME TO THE HOME PAGE<br/>
-      WELCOME TO THE HOME PAGE<br/>
-      WELCOME TO THE HOME PAGE<br/>
-      WELCOME TO THE HOME PAGE<br/>
-    </heading>
-
-
+    {/* background image container */}
     <main className="flex flex-col items-center justify-between">
       <div className='relative w-full'>
         <div className='absolute -z-10 w-full'>
           <Image src={background} alt="background image" className="w-full" width={1000}/>
         </div>
-        <div></div>
+        <div>
+        <heading className='text-align: center'>
+
+        <h2 className="ewHeading">Welcome To:</h2>
+        <h1 className="ewEW">ExploreWise</h1>
+        <h3 className='ewText'>Your Modern Travel Planning Platform.</h3>
+    </heading>
+
+
+          
+        </div>
       </div>
     </main>
 
