@@ -4,33 +4,7 @@
  *      YouTube. https://www.youtube.com/watch?v=aeYxBd1it7I
  */
 
-
-
-// import Head from 'next/head'
-// import { Inter } from 'next/font/google'
 import Navbar from '../../components/Navbar'
-// import Schedule from '../../components/TLScheduler'
-
-// const inter = Inter({ subsets: ['latin'] })
-
-// export default function Home() {
-//   return (
-//     <>
-//     <Navbar />
-//     <h1>BUDGET TRACKER</h1>
-//     <h1>BUDGET TRACKER</h1>
-//     <h1>BUDGET TRACKER</h1>
-//     <h1>BUDGET TRACKER</h1>
-//     <h1>BUDGET TRACKER</h1>
-//     <h1>BUDGET TRACKER</h1>
-//     <h1>BUDGET TRACKER</h1>
-//     <h1>BUDGET TRACKER</h1>
-//     <h1>BUDGET TRACKER</h1>
-//     <h1>BUDGET TRACKER</h1>
-//     </>
-//   )
-// }
-
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -48,9 +22,6 @@ const styles = {
   }
 }
 
-
-
-
 const App = () => {
   
 	return (
@@ -66,8 +37,6 @@ const App = () => {
       
 			<div className='container'>
 				<h1 style={styles.heading}>My Budget Planner</h1>
-
-
 
 
       <div class='container'>

@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+Naver {
+    color:aliceblue;
+    background-color: blueviolet;
+}
+
+p {
+    background-color: green;
+}
+
+heading {
+    background-color: red;
+    margin-top: 40%; 
+}

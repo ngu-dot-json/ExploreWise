@@ -15,7 +15,7 @@ function Mapview() {
       <Navbar />  
       <h1>MAP VIEW</h1>
       <Map
-      />
+    />
 
 
 <div id="root"></div>
