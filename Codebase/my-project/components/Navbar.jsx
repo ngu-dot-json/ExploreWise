@@ -30,7 +30,7 @@ const Navbar = () => {
             <div classname>
             {/* <div classname="hidden sm:flex"> */}
                 <ul className="hidden sm:flex">
-                    <Link className='navElements' href="/mapview">
+                    <Link className='navElements' href="/itinerary">
                         <li className="ml-10 mr-10 hover:border-b text-l">Itinerary</li>
                     </Link>
 

@@ -204,8 +204,6 @@ export default class App extends Component {
 
     return (
       <div>
-        <button className="button" onClick={this.onPrevClick}>{"< Prev"}</button>
-        <button className="color:'white'" onClick={this.onNextClick}>{"Next >"}</button>
         <Timeline
           groups={groups}
           items={items}
@@ -250,7 +248,13 @@ export default class App extends Component {
             <CursorMarker />
           </TimelineMarkers> */}
         </Timeline>
+        <div>
+          <button className="buttonLeft" onClick={this.onPrevClick}>{"← Prev"}</button>
+          <button className="buttonRight" onClick={this.onNextClick}>{"Next →"}</button>
+        </div>
+
       </div>
+      
     );
   }
 }

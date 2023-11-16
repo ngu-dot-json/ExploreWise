@@ -71,7 +71,31 @@ heading {
     font-weight: 500;
 }
 
-.logo {
-    drop-shadow: black 1px 0 50px;
+.buttonLeft {
+    color:white;
+    text-align: center;
+    width: 100px;
+    border: 2px solid white;
+    padding: 5px;
+    margin: 5px;
+    text-shadow: black 0px 0 18px;
+    box-shadow: 0px 0px 18px black;
+    position: absolute;
+    transform: translateX(500%);
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* display: block; */
 }
 
+.buttonRight {
+    color:white;
+    text-align: center;
+    width: 100px;
+    border: 2px solid white;
+    padding: 5px;
+    margin: 5px;
+    text-shadow: black 0px 0 18px;
+    box-shadow: 0px 0px 18px black;
+    position: absolute;
+    transform: translateX(810%); /* code to attempt to align button somewhere */
+}
