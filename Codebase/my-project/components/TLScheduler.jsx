@@ -208,7 +208,7 @@ export default class App extends Component {
           groups={groups}
           items={items}
           sidebarWidth={0}
-          lineHeight={150}
+          lineHeight={140}
           style={{ background: 'white' }} // Set the background color for the cells
           canSelect
           itemsSorted

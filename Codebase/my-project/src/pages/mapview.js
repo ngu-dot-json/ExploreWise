@@ -23,7 +23,7 @@ function Mapview(){
     <main className="flex flex-col items-center justify-between">
       <div className='relative w-full'>
         <div className='absolute -z-10 mt-[-25px] w-full h-full'>
-          <Image src={backgrounder} alt="background image" className="w-full" width={1000} height={1000}/>
+        <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
         </div>
         <div>
           <Map/>
