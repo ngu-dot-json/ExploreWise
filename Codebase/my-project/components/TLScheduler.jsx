@@ -234,6 +234,8 @@ export default class App extends Component {
           onTimeChange={this.handleTimeChange}
           // moveResizeValidator={this.moveResizeValidator}
         >
+              <DateHeader unit="secondaryHeader" />
+            <DateHeader />
           {/* <TimelineMarkers>
             <TodayMarker />
             <CustomMarker
