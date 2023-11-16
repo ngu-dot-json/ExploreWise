@@ -207,10 +207,8 @@ export default class App extends Component {
         <Timeline
           groups={groups}
           items={items}
-        //   keys={keys}
           sidebarWidth={0}
           lineHeight={150}
-        //   canMove
           style={{ background: 'white' }} // Set the background color for the cells
           canSelect
           itemsSorted
@@ -232,21 +230,19 @@ export default class App extends Component {
           onTimeChange={this.handleTimeChange}
           // moveResizeValidator={this.moveResizeValidator}
         >
-              <DateHeader unit="secondaryHeader" />
-            <DateHeader />
-          {/* <TimelineMarkers>
-            <TodayMarker />
-            <CustomMarker
-              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 2}
-            />
-            <CustomMarker date={moment().add(3, "day").valueOf()}>
-              {({ styles }) => {
-                const newStyles = { ...styles, backgroundColor: "blue" };
-                return <div style={newStyles} />;
-              }}
-            </CustomMarker>
-            <CursorMarker />
-          </TimelineMarkers> */}
+          <TimelineHeaders>
+            <DateHeader unit="primaryHeader"
+              style={{ background: 'white'}} // Set the background color for the cells
+            >
+            </DateHeader>
+
+            <DateHeader className="dHead"
+              style={{ background: 'white' }} // Set the background color for the cells
+              height={30} 
+              >
+            </DateHeader>
+
+          </TimelineHeaders>
         </Timeline>
         <div>
           <button className="buttonLeft" onClick={this.onPrevClick}>{"← Prev"}</button>
@@ -258,3 +254,17 @@ export default class App extends Component {
     );
   }
 }
+
+          /* <TimelineMarkers>
+            <TodayMarker />
+            <CustomMarker
+              date={moment().startOf("day").valueOf() + 1000 * 60 * 60 * 2}
+            />
+            <CustomMarker date={moment().add(3, "day").valueOf()}>
+              {({ styles }) => {
+                const newStyles = { ...styles, backgroundColor: "blue" };
+                return <div style={newStyles} />;
+              }}
+            </CustomMarker>
+            <CursorMarker />
+          </TimelineMarkers> */

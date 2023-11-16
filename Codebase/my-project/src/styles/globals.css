@@ -87,6 +87,11 @@ heading {
     /* display: block; */
 }
 
+.dHead {
+    background-color: green;
+    color:#20455b;
+}
+
 .buttonRight {
     color:white;
     text-align: center;
