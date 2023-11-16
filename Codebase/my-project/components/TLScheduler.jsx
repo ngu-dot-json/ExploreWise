@@ -212,8 +212,6 @@ export default class App extends Component {
           lineHeight={150}
         //   canMove
           style={{ background: 'white' }} // Set the background color for the cells
-          headerLabelGroupStyle = {{ background: 'green' }}
-          headerLabelStyle = {{ background: 'green'}}
           canSelect
           itemsSorted
           itemTouchSendsClick={false}
