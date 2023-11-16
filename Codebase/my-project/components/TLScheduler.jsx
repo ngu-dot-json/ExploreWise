@@ -204,8 +204,8 @@ export default class App extends Component {
 
     return (
       <div>
-        <button onClick={this.onPrevClick}>{"< Prev"}</button>
-        <button onClick={this.onNextClick}>{"Next >"}</button>
+        <button className="button" onClick={this.onPrevClick}>{"< Prev"}</button>
+        <button className="color:'white'" onClick={this.onNextClick}>{"Next >"}</button>
         <Timeline
           groups={groups}
           items={items}
@@ -213,7 +213,9 @@ export default class App extends Component {
           sidebarWidth={0}
           lineHeight={150}
         //   canMove
-          canResize="right"
+          style={{ background: 'white' }} // Set the background color for the cells
+          headerLabelGroupStyle = {{ background: 'green' }}
+          headerLabelStyle = {{ background: 'green'}}
           canSelect
           itemsSorted
           itemTouchSendsClick={false}
