@@ -2,19 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-Naver {
-    color:aliceblue;
-    background-color: blueviolet;
-}
-
 p {
     background-color: green;
 }
 
-heading {
-    background-color: red;
-    margin-top: 40%; 
-}
 
 .ewHeading {
     text-align: center;
@@ -95,6 +86,17 @@ heading {
     transition: 0.8s;
 }
 
+.ewInfo3 {
+    text-align: center;
+    text-shadow: black 1px 0 10px;
+    color:white;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 450;
+    transition: 0.8s;
+}
+
+
 .custom-image {
     margin-top: 0;
     padding-top: 0;
@@ -146,3 +148,15 @@ heading {
     /* position: absolute; */
     /* transform: translateX(810%); code to attempt to align button somewhere */
 }
+
+
+
+/* Naver {
+    color:aliceblue;
+    background-color: blueviolet;
+} */
+
+/* heading {
+    background-color: red;
+    margin-top: 40%; 
+} */

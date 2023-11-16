@@ -38,15 +38,18 @@ export default function Home() {
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
             <h2 className='ewInfo'>ExploreWise is created by:</h2><br/>
-            <h2 className='ewInfo2'>Jeongah Lee | 30137463 | jeongah.lee@ucalgary.ca</h2>
-            <h2 className='ewInfo2'>Jason Ngu | 30145770 | jason.ngu1@ucalgary.ca</h2>
-            <h2 className='ewInfo2'>Anmol Rana | 30159019 | anmol.rana@ucalgary.ca</h2>
-            <h2 className='ewInfo2'>Mahira Zabin | 30150211 | mahira.zabin1@ucalgary.ca</h2>
+            <h2 className='ewInfo2'>Jeongah Lee (30137463) - jeongah.lee@ucalgary.ca</h2>
+            <h2 className='ewInfo2'>Jason Ngu (30145770) - jason.ngu1@ucalgary.ca</h2>
+            <h2 className='ewInfo2'>Anmol Rana (30159019) - anmol.rana@ucalgary.ca</h2>
+            <h2 className='ewInfo2'>Mahira Zabin (30150211) - mahira.zabin1@ucalgary.ca</h2>
 
             <br/><br/><br/><br/><br/><br/><br/>
 
             <h2 className='ewInfo'>Libraries and Tools Used for the Project Are:</h2><br/>
-            <h2 className='ewInfo2'>Tomatoes, Potatoes and Ham and Cheese</h2>
+            <h2 className='ewInfo3'>NextJS 14.0.0</h2>
+            <h2 className='ewInfo3'>ReactJS 18</h2>
+            <h2 className='ewInfo3'>Tailwind CSS v3.3</h2>
+            <h2 className='ewInfo3'>ReactCalendarTimeline 0.28.0</h2>
           </heading> 
         </div>
       </div>
