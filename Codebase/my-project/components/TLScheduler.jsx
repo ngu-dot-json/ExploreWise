@@ -243,6 +243,7 @@ export default class App extends Component {
             </DateHeader>
 
           </TimelineHeaders>
+
         </Timeline>
         <div>
           <button className="buttonLeft" onClick={this.onPrevClick}>{"← Prev"}</button>

@@ -6,7 +6,6 @@ p {
     background-color: green;
 }
 
-
 .ewHeading {
     text-align: center;
     text-shadow: #485157 1px 0 15px;
@@ -15,9 +14,7 @@ p {
     font-size: 50px;
     font-weight: 500;
     margin-top: 45px;
-}
-
-.ewHeading:hover {
+} .ewHeading:hover {
     -webkit-text-stroke: 2px #f87144;
     color: transparent;
     transition: 0.8s;
@@ -31,9 +28,7 @@ p {
     font-size: 100px;
     font-weight: 500;
     transition: 0.8s;
-}
-
-.ewEW:hover {
+} .ewEW:hover {
     -webkit-text-stroke: 2px #44b6f8;
     text-shadow: transparent 1px 0 0px;
     color: transparent;
@@ -48,7 +43,7 @@ p {
     font-size: 30px;
     font-weight: 500;
     transition: 0.8s;
-}
+} 
 
 .ewLM {
     text-align: center;
@@ -58,8 +53,7 @@ p {
     font-size: 14px;
     font-weight: 400;
     transition: 0.8s;
-}
-.ewLM:hover {
+} .ewLM:hover {
     -webkit-text-stroke: 2px white;
     text-shadow: transparent 1px 0 0px;
     color: transparent;
@@ -96,17 +90,22 @@ p {
     transition: 0.8s;
 }
 
-
-.custom-image {
-    margin-top: 0;
-    padding-top: 0;
-}
-
 .navElements {
     color: white;
     text-shadow: black 0px 0 18px;
     font-size:20px;
     font-weight: 500;
+}
+
+.dHead {
+    color:#20455b;
+    font-weight: 600;
+}
+
+.bImg {
+    position: fixed;
+    width: 1920px;
+    height: 1080px;
 }
 
 .buttonLeft {
@@ -125,17 +124,6 @@ p {
     /* display: block; */
 }
 
-.dHead {
-    background-color: green;
-    color:#20455b;
-}
-
-.bImg {
-    position: fixed;
-    width: 1920px;
-    height: 1080px;
-}
-
 .buttonRight {
     color:white;
     text-align: center;
@@ -149,8 +137,6 @@ p {
     /* transform: translateX(810%); code to attempt to align button somewhere */
 }
 
-
-
 /* Naver {
     color:aliceblue;
     background-color: blueviolet;
@@ -160,3 +146,12 @@ p {
     background-color: red;
     margin-top: 40%; 
 } */
+
+/* .custom-image {
+    margin-top: 0;
+    padding-top: 0;
+} */
+
+/* .react-calendar-timeline .rct-dateHeader-primary{
+    color: black;
+ } */
