@@ -9,8 +9,6 @@ import Image from 'next/image'
 import backgrounder from "/public/test.png"
 
 
-
-
 function Mapview(){
   return (
     <>

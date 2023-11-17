@@ -137,6 +137,14 @@ p {
     /* transform: translateX(810%); code to attempt to align button somewhere */
 }
 
+.center {
+    border: 5px solid;
+    position: absolute;
+    margin-top: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
 /* Naver {
     color:aliceblue;
     background-color: blueviolet;
