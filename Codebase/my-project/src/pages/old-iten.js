@@ -8,10 +8,7 @@ import Schedule from '../../components/TLScheduler'
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
 
-
-
-
-function Mapview(){
+function Itinerary(){
   return (
     <>
     <div>
@@ -73,4 +70,4 @@ function Mapview(){
 //   );
 // }
 
-export default Mapview;
+export default Itinerary;
