@@ -18,25 +18,34 @@ async function initializeGSTC(element) {
    * @type { import("gantt-schedule-timeline-calendar").Config }
    */
 
+  const colors = ['#E74C3C', '#DA3C78', '#7E349D', '#0077C0', '#07ABA0', '#0EAC51', '#F1892D'];
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
   const itemsFromDB = [
     {
       id: "1",
       label: "Item 1 <br/> Test",
+      description: "why is you not show",
+      style: { background: getRandomColor() },
       rowId: "1",
       height:300,
       time: {
         start: GSTC.api.date("2020-01-01").startOf("day").valueOf(),
-        end: GSTC.api.date("2020-01-02").endOf("day").valueOf(),
+        end: GSTC.api.date("2020-01-01").endOf("day").valueOf(),
       },
     },
     {
       id: "2",
       label: "Item 2",
       rowId: "1",
+      style: { background: getRandomColor() },
       time: {
         start: GSTC.api.date("2020-01-01").startOf("day").valueOf(),
         end: GSTC.api.date("2020-01-02").endOf("day").valueOf(),
       },
+      description: "wow this is a cool boi",
     },
   ];
   
@@ -53,7 +62,7 @@ async function initializeGSTC(element) {
       "====BEGIN LICENSE KEY====\nXOfH/lnVASM6et4Co473t9jPIvhmQ/l0X3Ewog30VudX6GVkOB0n3oDx42NtADJ8HjYrhfXKSNu5EMRb5KzCLvMt/pu7xugjbvpyI1glE7Ha6E5VZwRpb4AC8T1KBF67FKAgaI7YFeOtPFROSCKrW5la38jbE5fo+q2N6wAfEti8la2ie6/7U2V+SdJPqkm/mLY/JBHdvDHoUduwe4zgqBUYLTNUgX6aKdlhpZPuHfj2SMeB/tcTJfH48rN1mgGkNkAT9ovROwI7ReLrdlHrHmJ1UwZZnAfxAC3ftIjgTEHsd/f+JrjW6t+kL6Ef1tT1eQ2DPFLJlhluTD91AsZMUg==||U2FsdGVkX1/SWWqU9YmxtM0T6Nm5mClKwqTaoF9wgZd9rNw2xs4hnY8Ilv8DZtFyNt92xym3eB6WA605N5llLm0D68EQtU9ci1rTEDopZ1ODzcqtTVSoFEloNPFSfW6LTIC9+2LSVBeeHXoLEQiLYHWihHu10Xll3KsH9iBObDACDm1PT7IV4uWvNpNeuKJc\npY3C5SG+3sHRX1aeMnHlKLhaIsOdw2IexjvMqocVpfRpX4wnsabNA0VJ3k95zUPS3vTtSegeDhwbl6j+/FZcGk9i+gAy6LuetlKuARjPYn2LH5Be3Ah+ggSBPlxf3JW9rtWNdUoFByHTcFlhzlU9HnpnBUrgcVMhCQ7SAjN9h2NMGmCr10Rn4OE0WtelNqYVig7KmENaPvFT+k2I0cYZ4KWwxxsQNKbjEAxJxrzK4HkaczCvyQbzj4Ppxx/0q+Cns44OeyWcwYD/vSaJm4Kptwpr+L4y5BoSO/WeqhSUQQ85nvOhtE0pSH/ZXYo3pqjPdQRfNm6NFeBl2lwTmZUEuw==\n====END LICENSE KEY====",
     plugins: [TimelinePointer(), Selection(), ItemResizing(), ItemMovement()],
     list: {
-    //   columns: {},
+      columns: {},
       rows: GSTC.api.fromArray(rowsFromDB),      // rows: generateRows(),
     },
     chart: {
@@ -80,19 +89,23 @@ async function initializeGSTC(element) {
   });
 }
 
+
+
+
+
 const Gantt = () => {
   const callback = useCallback((element) => {
     if (element) initializeGSTC(element);
   }, []);
 
-  useEffect(() => {
-    return () => {
-      if (gstc) {
-        gstc.destroy();
-      }
-    };
-  });
-
+  // useEffect(() => {
+  //   return () => {
+  //     if (gstc) {
+  //       gstc.destroy();
+  //     }
+  //   };
+  // });
+  
   return (
     <div className="container">
       <hr />
@@ -105,18 +118,47 @@ const Gantt = () => {
           margin: 0;
           font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
             Droid Sans, Helvetica Neue, sans-serif;
+            color: #2c3e50;
+            font-size:11px;margin-top:2px;color:#fffffff0;line-height:1em;
         }
-
         * {
           box-sizing: border-box;
         }
       `}</style>
+      
+      
     </div>
   );
 
 };
 
 export default Gantt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // function generateRows() {
