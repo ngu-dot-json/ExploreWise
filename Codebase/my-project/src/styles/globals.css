@@ -137,7 +137,7 @@ p {
     /* transform: translateX(810%); code to attempt to align button somewhere */
 }
 
-.center {
+.gantt-center {
     border: 3px solid;
     position: absolute;
     box-sizing: border-box;

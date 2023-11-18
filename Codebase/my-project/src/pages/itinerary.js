@@ -22,7 +22,7 @@ function itinerary(){
         <div className='absolute -z-10 mt-[-25px] w-full h-full'>
         <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
         </div>
-        <div className='center'>
+        <div className='gantt-center'>
           <Gantt />
         </div>
       </div>
