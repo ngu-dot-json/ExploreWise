@@ -27,7 +27,7 @@ function getRandomColor() {
     {
       id: "1",
       label: "Item 1 <br/> Test",
-      description: "why is you not show",
+      description: 'bro can you just show for me',
       style: { background: getRandomColor() },
       rowId: "1",
       height:300,
@@ -46,6 +46,16 @@ function getRandomColor() {
         end: GSTC.api.date("2020-01-02").endOf("day").valueOf(),
       },
       description: "wow this is a cool boi",
+    },
+    {
+      id: "3",
+      label: 'John Doe',
+      rowId: "1",
+      time: {
+        start: GSTC.api.date("2020-01-01").startOf("day").valueOf(),
+        end: GSTC.api.date("2020-01-02").endOf("day").valueOf(),
+      },
+      description: 'Lorem ipsum dolor sit amet',
     },
   ];
   
