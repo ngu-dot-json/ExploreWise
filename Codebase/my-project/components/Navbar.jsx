@@ -38,11 +38,11 @@ const Navbar = () => {
                     </Link>
 
                     <Link className='navElements' href="/findevents">
-                        <li className="ml-10 mr-10 hover:border-b text-l">Find Events</li>
+                        <li className="ml-10 mr-10 hover:border-b text-l">Events</li>
                     </Link>
 
                     <Link className='navElements' href="/budgettracker">
-                        <li className="ml-10 mr-10 hover:border-b text-l">Budget Tracker</li>
+                        <li className="ml-10 mr-10 hover:border-b text-l">My Budget</li>
                     </Link>
                     
                     <Link className='navElements' href="/account">
