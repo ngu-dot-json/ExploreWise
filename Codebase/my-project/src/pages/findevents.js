@@ -27,7 +27,7 @@ function FindEvents() {
                 Genre <BiSolidDownArrow />
               </button>
               <button className="px-2 py-1 border-2 border-black hover:bg-black hover:text-white">
-                <VscHeartFilled />
+                <VscHeartFilled />Favourites
               </button>
               <button className="px-2 py-1 border-2 border-black hover:bg-black hover:text-white">
                 User Recommended
