@@ -4,8 +4,8 @@ import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 // Create a functional component
 const MyMap = () => {
   // Set up the map center and zoom
-  const center = [51.505, -0.09];
-  const zoom = 13;
+  const center = [51.0478, -114.0593];
+  const zoom = 10;
 
   return (
     // Render the map container with tile layer, marker, and popup
