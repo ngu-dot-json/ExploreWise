@@ -27,8 +27,11 @@ const App = () => {
 	return (
     
     <>
-		<AppProvider>
+    <head>
+      <title>Explorewise | Budget Tracker</title>
+    </head>
 
+		<AppProvider>
       <div>
         <Navbar />  
         <br/>
