@@ -7,7 +7,6 @@
 import Navbar from '../../components/Navbar'
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import { AppProvider } from '../context/AppContext';
 import Budget from '../../components/BudgetTrackerComponents/Budget';
 import ExpenseTotal from '../../components/BudgetTrackerComponents/ExpenseTotal';
@@ -16,7 +15,6 @@ import AddExpenseForm from '../../components/BudgetTrackerComponents/AddExpenseF
 import RemainingBudget from '../../components/BudgetTrackerComponents/Remaining';
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
-
 
 const styles = {
   heading:{
@@ -74,7 +72,7 @@ const App = () => {
                   </div>
 
                 </div>
-                <div className='col-lg-8'>
+                <div className='col-lg-8 bg-white'>
                   <ExpenseList />
                 </div>
 
