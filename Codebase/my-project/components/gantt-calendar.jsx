@@ -32,8 +32,8 @@ function getRandomColor() {
       rowId: "1",
       height:300,
       time: {
-        start: GSTC.api.date("2020-01-01").startOf("day").valueOf(),
-        end: GSTC.api.date("2020-01-01").endOf("day").valueOf(),
+        start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
+        end: GSTC.api.date("2023-01-01").endOf("day").valueOf(),
       },
     },
     {
@@ -42,8 +42,8 @@ function getRandomColor() {
       rowId: "1",
       style: { background: getRandomColor() },
       time: {
-        start: GSTC.api.date("2020-01-01").startOf("day").valueOf(),
-        end: GSTC.api.date("2020-01-02").endOf("day").valueOf(),
+        start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
+        end: GSTC.api.date("2023-01-02").endOf("day").valueOf(),
       },
       description: "wow this is a cool boi",
     },
@@ -52,8 +52,8 @@ function getRandomColor() {
       label: 'John Doe',
       rowId: "1",
       time: {
-        start: GSTC.api.date("2020-01-01").startOf("day").valueOf(),
-        end: GSTC.api.date("2020-01-02").endOf("day").valueOf(),
+        start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
+        end: GSTC.api.date("2023-01-02").endOf("day").valueOf(),
       },
       description: 'Lorem ipsum dolor sit amet',
     },
@@ -135,11 +135,20 @@ const Gantt = () => {
           box-sizing: border-box;
         }
       `}</style>
-      
-      
     </div>
   );
 
+  return (content) =>
+  html`<div
+      class="item-image"
+      style="background:url(${imageSrc}),transparent;flex-shrink:0;border-radius:100%;width:34px;height:34px;vertical-align: middle;background-size: 100%;margin: 4px 11px 0px 0px;"
+    ></div>
+    <div class="item-text">
+      <div class="item-label">${content}</div>
+      <div class="item-description" style="font-size:11px;margin-top:2px;color:#fffffff0;line-height:1em;">
+        ${description}
+      </div>
+    </div>`;
 };
 
 export default Gantt;
