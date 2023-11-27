@@ -37,11 +37,11 @@ const Navbar = () => {
                         <li className="ml-10 mr-10 hover:border-b text-l">Map View</li>
                     </Link>
 
-                    <Link className='navElements' href="/findevents">
+                    <Link className='navElements' href="/events">
                         <li className="ml-10 mr-10 hover:border-b text-l">Events</li>
                     </Link>
 
-                    <Link className='navElements' href="/budgettracker">
+                    <Link className='navElements' href="/budget">
                         <li className="ml-10 mr-10 hover:border-b text-l">My Budget</li>
                     </Link>
                     

@@ -2,9 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-p {
+/* p {
     background-color: green;
-}
+} */
 
 .ewHeading {
     text-align: center;
@@ -140,10 +140,8 @@ p {
 .gantt-center {
     border: 3px solid;
     position: absolute;
-    box-sizing: border-box;
     width: max-content;
-    height:max-content;
-    font-size: 38px;
+    /* height:max-content; */
     margin-top: 350px;
     left: 50%;
     transform: translate(-50%, -50%);

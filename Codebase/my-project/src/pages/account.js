@@ -1,30 +1,23 @@
 import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import Navbar from '../../components/Navbar'
-import Schedule from '../../components/TLScheduler'
+import Image from 'next/image'
 
-const inter = Inter({ subsets: ['latin'] })
-
-const styles = {
-  heading:{
-    marginTop: "120px", //Shifting the heading down so it is not covered by the navigation bar
-  }
-}
+import Map from '../../components/leafletMap'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <>
-    <Navbar />
-    <h1>MY ACCOUNT</h1>
-    <h1>MY ACCOUNT</h1>
-    <h1>MY ACCOUNT</h1>
-    <h1>MY ACCOUNT</h1>
-    <h1>MY ACCOUNT</h1>
-    <h1>MY ACCOUNT</h1>
-    <h1>MY ACCOUNT</h1>
-    <h1>MY ACCOUNT</h1>
-    <h1>MY ACCOUNT</h1>
-    <h1>MY ACCOUNT</h1>
-    </>
+    <div className={styles.container}>
+      <Head>
+        <title>Create Next App</title>
+      </Head>
+
+
+      < Map />
+
+
+      {/* <main className={styles.main}>
+        <Map />
+      </main> */}
+    </div>
   )
 }

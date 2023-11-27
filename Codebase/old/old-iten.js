@@ -1,10 +1,10 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import Navbar from '../../components/Navbar'
+import Navbar from '../my-project/components/Navbar'
 import React from "react";
 const inter = Inter({ subsets: ['latin'] })
-import Map from '../../components/Map';
-import Schedule from '../../components/TLScheduler'
+import Map from '../my-project/components/Map';
+import Schedule from '../my-project/components/TLScheduler'
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
 
