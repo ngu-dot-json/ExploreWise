@@ -17,21 +17,21 @@ import { useSelector } from "react-redux";
 import { useCallback } from "react";
 import { useMemo } from "react";
 
-function LocationMarker({ lat, lng }) {
-  const [position, setPosition] = useState(null);
-  const [bbox, setBbox] = useState([]);
-  const map = useMap();
+// function LocationMarker({ lat, lng }) {
+//   const [position, setPosition] = useState(null);
+//   const [bbox, setBbox] = useState([]);
+//   const map = useMap();
 
-  useEffect(() => {
-    map.flyTo([lat, lng], map.getZoom());
-  }, [lat]);
+//   useEffect(() => {
+//     map.flyTo([lat, lng], map.getZoom());
+//   }, [lat]);
 
-  return position === null ? null : (
-    <Marker position={position}>
-      <Popup>You are here</Popup>
-    </Marker>
-  );
-}
+//   return position === null ? null : (
+//     <Marker position={position}>
+//       <Popup>You are here</Popup>
+//     </Marker>
+//   );
+// }
 
 
 function Map() {
@@ -49,7 +49,19 @@ function Map() {
                 attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 url="http://127.0.0.1:8000/tiles/{z}/{x}/{y}.png"
             />
-            <LocationMarker lat={51.0447} lng={-114.0719} />
+
+            <Marker position={[51.0447, -114.0719]}>
+              <Popup>
+                Wow Words!
+              </Popup>
+            </Marker>
+
+
+
+            {/* <LocationMarker lat={51.0447} lng={-114.0719} /> */}
+            {/* <Popup>
+              A pretty CSS3 popup. <br /> Easily customizable.
+            </Popup> */}
         </MapContainer>
       </div>
       </>

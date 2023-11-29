@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "leaflet-defaulticon-compatibility": "^0.1.2",
     "react-icons": "^4.11.0"
   }
 }
