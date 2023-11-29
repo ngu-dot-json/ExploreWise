@@ -129,6 +129,14 @@
   }
   
   .map {
-    width: 100%;
-    height: 40rem;
+    margin-left: 20px;
+    margin-top: 65px;
+    width: 60%;
+    height: 30rem;
   }
+
+.leaflet {
+  width: max-content;
+  height: max-content;
+}
+
