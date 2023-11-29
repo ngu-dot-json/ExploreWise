@@ -50,6 +50,7 @@ export default function Home() {
             <h2 className='ewInfo3'>ReactJS 18</h2>
             <h2 className='ewInfo3'>Tailwind CSS v3.3</h2>
             <h2 className='ewInfo3'>ReactCalendarTimeline 0.28.0</h2>
+            <h2 className='ewInfo3'>gantt-schedule-timeline-calendar by NEURONET</h2>
           </heading> 
         </div>
       </div>
