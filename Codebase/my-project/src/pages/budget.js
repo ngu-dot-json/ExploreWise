@@ -29,12 +29,12 @@ const App = () => {
     <>
     <title>Explorewise | Budget Tracker</title>
 
-		<AppProvider>
       <div>
         <Navbar />  
         <br/>
       </div>
       
+      <AppProvider>
       {/* background image container */}
       <main className="flex flex-col items-center justify-between">
         <div className='relative w-full'>
@@ -76,7 +76,6 @@ const App = () => {
                 <div className='col-lg-8 bg-white'>
                   <ExpenseList />
                 </div>
-
               </div>
             </div>
           </div>
