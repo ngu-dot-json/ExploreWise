@@ -1,11 +1,11 @@
 .outerBox{
-  border: 2px solid #000000; 
+  /* border: 2px solid #000000;  */
   padding: 10px; 
   border-radius: 10px; 
 }
 
 #expenseListSection{
-  max-height: 40vh;
+  max-height: 48vh;
   overflow-y: scroll;
 }
 
