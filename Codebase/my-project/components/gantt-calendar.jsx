@@ -30,7 +30,7 @@ function getRandomColor() {
       description: 'bro can you just show for me',
       style: { background: getRandomColor() },
       rowId: "1",
-      height:300,
+      // height:300,
       time: {
         start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
         end: GSTC.api.date("2023-01-01").endOf("day").valueOf(),

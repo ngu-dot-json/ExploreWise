@@ -11,9 +11,7 @@ export default function Home() {
         <title>Create Next App</title>
       </Head>
 
-
       < Map />
-
 
       {/* <main className={styles.main}>
         <Map />

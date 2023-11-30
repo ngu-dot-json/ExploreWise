@@ -8,6 +8,7 @@ import Map from '../../components/leafletMap'
 import Schedule from '../../components/TLScheduler'
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
+import Gantt from '../../components/gantt-calendar'
 
 
 function Mapview(){
@@ -26,8 +27,10 @@ function Mapview(){
         </div>
         <div>
           <Map/>
-          <br/><br/>
-          <Schedule/>
+            <div className='gantt-center-2'>
+              <Gantt />
+            </div>
+          {/* <Schedule/> */}
         </div>
       </div>
     </main>

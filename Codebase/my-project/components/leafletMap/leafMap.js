@@ -56,6 +56,12 @@ function Map() {
               </Popup>
             </Marker>
 
+            <Marker position={[51.1457, -114.0719]}>
+              <Popup>
+                Wow Words!
+              </Popup>
+            </Marker>
+
 
 
             {/* <LocationMarker lat={51.0447} lng={-114.0719} /> */}
