@@ -42,6 +42,12 @@ const initialState = {
 		{ id: uuidv4(), name: 'Transportation', cost: 70, date: "2023-10-12", description: "Took the bus." },
 		{ id: uuidv4(), name: 'Fuel', cost: 40, date: "2023-10-13", description: "Gas for mini van." },
 		{ id: uuidv4(), name: 'Child Care', cost: 500, date: "2023-10-14", description: "Babysitter while on dinner date."},
+		{ id: uuidv4(), name: 'Child Care', cost: 500, date: "2023-10-14", description: "Babysitter while on dinner date."},
+		{ id: uuidv4(), name: 'Shopping', cost: 50, date: "2023-10-09", description: "When shopping for pants and shoes."},
+		{ id: uuidv4(), name: 'Holiday', cost: 300, date: "2023-10-11", description: "Went to the christmas market." },
+		{ id: uuidv4(), name: 'Transportation', cost: 70, date: "2023-10-12", description: "Took the bus." },
+		{ id: uuidv4(), name: 'Fuel', cost: 40, date: "2023-10-13", description: "Gas for mini van." },
+		{ id: uuidv4(), name: 'Child Care', cost: 500, date: "2023-10-14", description: "Babysitter while on dinner date."},
 		{ id: uuidv4(), name: 'Child Care', cost: 500, date: "2023-10-14", description: "Babysitter while on dinner date."}
 	],
 };
