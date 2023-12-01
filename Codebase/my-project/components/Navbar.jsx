@@ -6,10 +6,6 @@ import { useState } from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const handleNav = () => {
-    setMenuOpen(!menuOpen);
-  };
 
     const [menuOpen, setMenuOpen] = useState(false)
     const handleNav = () => {
@@ -55,10 +51,9 @@ const Navbar = () => {
                     </Link>
                 </ul>
             </div>
-          </div>
-      </div>
+        </div>
     </nav>
-  );
-};
+    )
+}
 
-export default Navbar;
+export default Navbar
