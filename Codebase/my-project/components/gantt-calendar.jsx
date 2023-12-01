@@ -40,7 +40,48 @@ async function initializeGSTC(element, items) {
   /**
    * @type { import("gantt-schedule-timeline-calendar").Config }
    */
+  
+  const colors = ['#E74C3C', '#DA3C78', '#7E349D', '#0077C0', '#07ABA0', '#0EAC51', '#F1892D'];
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
 
+  const itemsFromDB = [
+    {
+      id: "1",
+      label: "Item 1 <br/> Test",
+      description: 'bro can you just show for me',
+      style: { background: getRandomColor() },
+      rowId: "1",
+      // height:300,
+      time: {
+        start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
+        end: GSTC.api.date("2023-01-01").endOf("day").valueOf(),
+      },
+    },
+    {
+      id: "2",
+      label: "Item 2",
+      rowId: "1",
+      style: { background: getRandomColor() },
+      time: {
+        start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
+        end: GSTC.api.date("2023-01-02").endOf("day").valueOf(),
+      },
+      description: "wow this is a cool boi",
+    },
+    {
+      id: "3",
+      label: 'John Doe',
+      rowId: "1",
+      time: {
+        start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
+        end: GSTC.api.date("2023-01-02").endOf("day").valueOf(),
+      },
+      description: 'Lorem ipsum dolor sit amet',
+    },
+  ];
+  
   const rowsFromDB = [
     {
       id: "1",

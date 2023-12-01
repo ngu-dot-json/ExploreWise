@@ -6,7 +6,8 @@
 
 import Navbar from '../../components/Navbar'
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import { AppProvider } from '../context/AppContext';
 import Budget from '../../components/BudgetTrackerComponents/Budget';
 import ExpenseTotal from '../../components/BudgetTrackerComponents/ExpenseTotal';
@@ -15,35 +16,42 @@ import AddExpenseForm from '../../components/BudgetTrackerComponents/AddExpenseF
 import RemainingBudget from '../../components/BudgetTrackerComponents/Remaining';
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import "/src/styles/budget.module.css";
 
 const styles = {
   heading:{
     marginTop: "60px", //Shifting the heading down so it is not covered by the navigation bar
+    color: "white",
+    textShadow: "black 0px 0 18px",
   }
 }
 
-const App = () => {
+function budget (){
   
 	return (
-    
+  
     <>
-    <head>
-      <title>Explorewise | Budget Tracker</title>
-    </head>
+    {/* <title>Explorewise | Budget Tracker</title> */}
 
-		<AppProvider>
       <div>
         <Navbar />  
         <br/>
       </div>
+
       
+      <AppProvider>
       {/* background image container */}
+
+
+
       <main className="flex flex-col items-center justify-between">
         <div className='relative w-full'>
           <div className='absolute -z-10 mt-[-25px] w-full h-full'>
             <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
           </div>
-          
+
+
           <div className='container'>
             <h1 style={styles.heading}>My Budget Planner</h1>
             
@@ -52,41 +60,50 @@ const App = () => {
                 <div className='col-lg-12'>
                   <div class="alert alert-info" role="alert">
                     Set your total budget for the trip, then start adding expenses!
-                  </div>
+                  </div> 
                 </div>
               </div>
+
+              <div className="bg-white rounded-md border p-2">
               
-              <div className='row mt-2'>
-                <div className='col-lg'>
-                  <div className='row'>
-                    <div className='col-lg-6'>
-                      <Budget />
+                <div className='row mt-2'>
+                  <div className='col-lg'>
+                    <div className='row'>
+                      <div className='col-lg-6'>
+                        <Budget />
+                      </div>
+                      
+                      <div className='col-lg-6'>
+                        <RemainingBudget />
+                      </div>
                     </div>
-                    
-                    <div className='col-lg-6'>
-                      <RemainingBudget />
-                    </div>
-                  </div>
 
-                  <div className='row'>
-                    <div className='col-lg-12'>
-                      <AddExpenseForm />
+                    <div className='row'>
+                      <div className='col-lg-12'>
+                        <AddExpenseForm />
+                      </div>
                     </div>
-                  </div>
 
-                </div>
-                <div className='col-lg-8 bg-white'>
-                  <ExpenseList />
+                  </div>
+                  <div className='col-lg-8'>
+                    <ExpenseList />
+                  </div>
                 </div>
 
               </div>
+
+
+
+
             </div>
           </div>
+
+
         </div>
       </main>    
 		</AppProvider>
     </>
 	);
-};
+}
 
-export default App;
+export default budget;

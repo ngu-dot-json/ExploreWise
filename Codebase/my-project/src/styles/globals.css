@@ -155,7 +155,26 @@
 .custom-button {
   background-color: theme("colors.ewOrange");
   background-color: theme("colors.ewBlue");
-}
+  /* border: 3px solid; */
+    position: absolute;
+    /* width: max-content; */
+    width: max-content;
+    height:max-content;
+    margin-top: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.gantt-center-2 {
+    /* border: 3px solid; */
+    position: absolute;
+    /* width: max-content; */
+    width: max-content;
+    height:max-content;
+    margin-top: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 
 /* Naver {
     color:aliceblue;
