@@ -23,6 +23,7 @@ const styles = {
   heading:{
     marginTop: "60px", //Shifting the heading down so it is not covered by the navigation bar
     color: "white",
+    textShadow: "black 0px 0 18px",
   }
 }
 
