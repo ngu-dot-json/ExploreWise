@@ -62,12 +62,6 @@ function Map() {
               </Popup>
             </Marker>
 
-
-
-            {/* <LocationMarker lat={51.0447} lng={-114.0719} /> */}
-            {/* <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
-            </Popup> */}
         </MapContainer>
       </div>
       </>
