@@ -33,6 +33,14 @@ import { useMemo } from "react";
 //   );
 // }
 
+// BLUE: 0077C0
+// RED: E74C3C
+// PINK: DA3C78
+// PURPLE: 7E349D
+// TEAL: 07ABA0
+// GREEN: 0EAC51
+// ORANGE: F1892D
+
 
 function Map() {
 
@@ -47,7 +55,7 @@ function Map() {
     }),
     greenIcon = new LeafIcon({
       iconUrl:
-        "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|2ecc71&chf=a,s,ee00FFFF"
+        "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|0077C0&chf=a,s,ee00FFFF"
     });
 
     //  Use the state hook:
@@ -85,13 +93,12 @@ function Map() {
 
             <Marker position={[51.0447, -114.0719]} icon={greenIcon}>
               <Popup>
-                <h1>Salt lake City</h1>
+                <h3>WOW BIG WORDS</h3>
                 <button onClick={() => changeIconColor(icon)}>
                   Change Marker Color
                 </button>
               </Popup>
             </Marker>
-  
 
 
             <Marker position={[51.1457, -114.0719]}>
