@@ -35,9 +35,36 @@ import { useMemo } from "react";
 
 
 function Map() {
+
+    //  Create the Icon
+    const LeafIcon = L.Icon.extend({
+      options: {}
+    });
+
+  const blueIcon = new LeafIcon({
+    iconUrl:
+        "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|abcdef&chf=a,s,ee00FFFF"
+    }),
+    greenIcon = new LeafIcon({
+      iconUrl:
+        "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|2ecc71&chf=a,s,ee00FFFF"
+    });
+
+    //  Use the state hook:
+  const [icon, setIcon] = useState(blueIcon);
+
+    // This function will change the state's icon:
+
+  const changeIconColor = (icon) => {
+    if (icon.options.iconUrl === greenIcon.options.iconUrl) {
+      setIcon((current) => (current = blueIcon));
+    } else {
+      setIcon((current) => (current = greenIcon));
+    }
+  };
+
     return (
       <>
-
 
       <div className="leaflet">
         <MapContainer className={style.map} center={[51.0447, -114.0719]} zoom={10.4} scrollWheelZoom={true}>
@@ -50,11 +77,22 @@ function Map() {
                 url="http://127.0.0.1:8000/tiles/{z}/{x}/{y}.png"
             />
 
-            <Marker position={[51.0447, -114.0719]}>
+            {/* <Marker position={[51.0447, -114.0719]}>
               <Popup>
                 Wow Words!
               </Popup>
+            </Marker> */}
+
+            <Marker position={[51.0447, -114.0719]} icon={greenIcon}>
+              <Popup>
+                <h1>Salt lake City</h1>
+                <button onClick={() => changeIconColor(icon)}>
+                  Change Marker Color
+                </button>
+              </Popup>
             </Marker>
+  
+
 
             <Marker position={[51.1457, -114.0719]}>
               <Popup>

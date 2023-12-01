@@ -185,34 +185,12 @@
   .container {
     width: 100px;
   }
-  
 
 .gantt-center-2 {
-    /* border: 3px solid; */
     position: absolute;
-    /* width: max-content; */
     width: max-content;
-    height:max-content;
     margin-top: 100px;
+    /* border: 3px solid white; */
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
-/* Naver {
-    color:aliceblue;
-    background-color: blueviolet;
-} */
-
-/* heading {
-    background-color: red;
-    margin-top: 40%; 
-} */
-
-/* .custom-image {
-    margin-top: 0;
-    padding-top: 0;
-} */
-
-/* .react-calendar-timeline .rct-dateHeader-primary{
-    color: black;
- } */
