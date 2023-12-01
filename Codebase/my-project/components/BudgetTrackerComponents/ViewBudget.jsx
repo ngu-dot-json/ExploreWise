@@ -12,7 +12,7 @@ const ViewBudget = (props) => {
             <div class="container">
                 <div class='row'>
                     <div class='col-lg-12'>
-			            <h5 class='my-0'>Total Budget: ${props.budget}</h5>
+                    <h5 class='my-0'>Total Budget: ${(Number(props.budget).toFixed(2))}</h5>
                     </div>
                 </div>
                 <div class='row'>

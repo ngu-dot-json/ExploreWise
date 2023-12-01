@@ -15,6 +15,25 @@ export const AppReducer = (state, action) => {
 				...state,
 				expenses: [...state.expenses, action.payload],
 			};
+			
+		case 'EDIT_EXPENSE':
+			return {
+				...state,
+				expenses: state.expenses.map((expense) => {
+				if (expense.id === action.payload.id) {
+
+					return {
+					//...expense,
+					name: action.payload.name,
+					date: action.payload.date,
+					description: action.payload.description,
+					cost: action.payload.cost,
+					};
+				}
+				return expense; // Return unchanged expense if id doesn't match
+				}),
+			};
+			
 		case 'DELETE_EXPENSE':
 			return {
 				...state,
@@ -37,18 +56,12 @@ export const AppReducer = (state, action) => {
 const initialState = {
 	budget: 2000,
 	expenses: [
+		{ id: uuidv4(), name: 'Book', cost: 19.89, date: "2023-10-09", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."},
 		{ id: uuidv4(), name: 'Shopping', cost: 50, date: "2023-10-09", description: "When shopping for pants and shoes."},
 		{ id: uuidv4(), name: 'Holiday', cost: 300, date: "2023-10-11", description: "Went to the christmas market." },
 		{ id: uuidv4(), name: 'Transportation', cost: 70, date: "2023-10-12", description: "Took the bus." },
 		{ id: uuidv4(), name: 'Fuel', cost: 40, date: "2023-10-13", description: "Gas for mini van." },
 		{ id: uuidv4(), name: 'Child Care', cost: 500, date: "2023-10-14", description: "Babysitter while on dinner date."},
-		{ id: uuidv4(), name: 'Child Care', cost: 500, date: "2023-10-14", description: "Babysitter while on dinner date."},
-		{ id: uuidv4(), name: 'Shopping', cost: 50, date: "2023-10-09", description: "When shopping for pants and shoes."},
-		{ id: uuidv4(), name: 'Holiday', cost: 300, date: "2023-10-11", description: "Went to the christmas market." },
-		{ id: uuidv4(), name: 'Transportation', cost: 70, date: "2023-10-12", description: "Took the bus." },
-		{ id: uuidv4(), name: 'Fuel', cost: 40, date: "2023-10-13", description: "Gas for mini van." },
-		{ id: uuidv4(), name: 'Child Care', cost: 500, date: "2023-10-14", description: "Babysitter while on dinner date."},
-		{ id: uuidv4(), name: 'Child Care', cost: 500, date: "2023-10-14", description: "Babysitter while on dinner date."}
 	],
 };
 

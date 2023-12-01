@@ -19,7 +19,7 @@ const RemainingBudget = () => {
 	return (
 		<div class={`alert p-4 ${alertType}`}>
             <h4 class='my-0'>Remaining:</h4>
-			<h3 class='my-0'>${(budget - totalExpenses.toFixed(2))}</h3>
+			<h3 class='my-0'>${((budget - totalExpenses).toFixed(2))}</h3>
 		</div>
 	);
 };
