@@ -26,6 +26,16 @@ export default function Home() {
             <h2 className="ewHeading">Welcome To:</h2>
             <h1 className="ewEW">ExploreWise</h1>
             <h3 className='ewText'>Your Modern Travel Planning Platform.</h3>
+
+            {/* Add button here to take us to sign in page*/}
+            <button className="justify-center">
+              <a className="buttonRight" href="account">  Sign in  </a>
+            </button>
+
+
+
+
+
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             
             <h3 className='ewLM'>scroll down to learn more</h3>

@@ -25,26 +25,27 @@ async function initializeGSTC(element) {
 }
 
   const itemsFromDB = [
-    {
-      id: "1",
-      label: "Item 1 <br/> Test",
-      description: 'bro can you just show for me',
-      style: { background: getRandomColor() },
-      rowId: "1",
-      // height:300,
-      time: {
-        start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
-        end: GSTC.api.date("2023-01-01").endOf("day").valueOf(),
-      },
-    },
+    // {
+    //   id: "1",
+    //   label: "Item 1 <br/> Test",
+    //   description: 'bro can you just show for me',
+    //   style: { background: getRandomColor() },
+    //   rowId: "1",
+    //   // height:300,
+    //   time: {
+    //     start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
+    //     end: GSTC.api.date("2023-01-01").endOf("day").valueOf(),
+    //   },
+    // },
     {
       id: "2",
       label: "Item 2",
       rowId: "1",
+      height: 130,
       style: { background: getRandomColor() },
       time: {
         start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
-        end: GSTC.api.date("2023-01-02").endOf("day").valueOf(),
+        end: GSTC.api.date("2023-01-01").startOf("day").add(8, "hours").valueOf(),
       },
       description: "wow this is a cool boi",
     },
@@ -52,9 +53,10 @@ async function initializeGSTC(element) {
       id: "3",
       label: 'John Doe',
       rowId: "1",
+      height: 130,
       time: {
-        start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
-        end: GSTC.api.date("2023-01-02").endOf("day").valueOf(),
+        start: GSTC.api.date("2023-01-01").startOf("day").add(9, "hours").valueOf(),
+        end: GSTC.api.date("2023-01-01").endOf("day").valueOf(),
       },
       description: 'Lorem ipsum dolor sit amet',
     },
@@ -72,6 +74,8 @@ async function initializeGSTC(element) {
     licenseKey:
       "====BEGIN LICENSE KEY====\nXOfH/lnVASM6et4Co473t9jPIvhmQ/l0X3Ewog30VudX6GVkOB0n3oDx42NtADJ8HjYrhfXKSNu5EMRb5KzCLvMt/pu7xugjbvpyI1glE7Ha6E5VZwRpb4AC8T1KBF67FKAgaI7YFeOtPFROSCKrW5la38jbE5fo+q2N6wAfEti8la2ie6/7U2V+SdJPqkm/mLY/JBHdvDHoUduwe4zgqBUYLTNUgX6aKdlhpZPuHfj2SMeB/tcTJfH48rN1mgGkNkAT9ovROwI7ReLrdlHrHmJ1UwZZnAfxAC3ftIjgTEHsd/f+JrjW6t+kL6Ef1tT1eQ2DPFLJlhluTD91AsZMUg==||U2FsdGVkX1/SWWqU9YmxtM0T6Nm5mClKwqTaoF9wgZd9rNw2xs4hnY8Ilv8DZtFyNt92xym3eB6WA605N5llLm0D68EQtU9ci1rTEDopZ1ODzcqtTVSoFEloNPFSfW6LTIC9+2LSVBeeHXoLEQiLYHWihHu10Xll3KsH9iBObDACDm1PT7IV4uWvNpNeuKJc\npY3C5SG+3sHRX1aeMnHlKLhaIsOdw2IexjvMqocVpfRpX4wnsabNA0VJ3k95zUPS3vTtSegeDhwbl6j+/FZcGk9i+gAy6LuetlKuARjPYn2LH5Be3Ah+ggSBPlxf3JW9rtWNdUoFByHTcFlhzlU9HnpnBUrgcVMhCQ7SAjN9h2NMGmCr10Rn4OE0WtelNqYVig7KmENaPvFT+k2I0cYZ4KWwxxsQNKbjEAxJxrzK4HkaczCvyQbzj4Ppxx/0q+Cns44OeyWcwYD/vSaJm4Kptwpr+L4y5BoSO/WeqhSUQQ85nvOhtE0pSH/ZXYo3pqjPdQRfNm6NFeBl2lwTmZUEuw==\n====END LICENSE KEY====",
     innerHeight: 150,
+    width: 500,
+    height: 150,
     headerHeight: 50,
     width: 50,
     plugins: [TimelinePointer(), Selection(), ItemResizing(), ItemMovement()],
@@ -81,8 +85,6 @@ async function initializeGSTC(element) {
     },
     chart: {
       time: {
-        // from: date("2020-01-01").valueOf(), // from 2020-01-01
-        // to: date("2020-01-01").endOf("day").valueOf(), // to 2020-01-31
         zoom: 16.05,
         onLevelDates: [({ dates }) => dates],
         onCurrentViewLevelDates: [({ dates }) => dates],
@@ -100,8 +102,6 @@ async function initializeGSTC(element) {
   });
 }
 
-
-
 const Gantt = () => {
   const callback = useCallback((element) => {
     if (element) initializeGSTC(element);
@@ -111,39 +111,23 @@ const Gantt = () => {
     <div className="container">
       <hr />
       <div id="gstc" ref={callback}></div>
-
-      {/* <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
-            Droid Sans, Helvetica Neue, sans-serif;
-            color: #2c3e50;
-        }
-        * {
-          box-sizing: {1920x1080};
-        }
-      `}</style> */}
     </div>
   );
-
-  return (content) =>
-  html`<div
-      class="item-image"
-      style="background:url(${imageSrc}),transparent;flex-shrink:0;border-radius:100%;width:34px;height:34px;vertical-align: middle;background-size: 100%;margin: 4px 11px 0px 0px;"
-    ></div>
-    <div class="item-text">
-      <div class="item-label">${content}</div>
-      <div class="item-description" style="font-size:11px;margin-top:2px;color:#fffffff0;line-height:1em;">
-        ${description}
-      </div>
-    </div>`;
 };
 
 export default Gantt;
 
-
+// return (content) =>
+// html`<div
+//     class="item-image"
+//     style="background:url(${imageSrc}),transparent;flex-shrink:0;border-radius:100%;width:34px;height:34px;vertical-align: middle;background-size: 100%;margin: 4px 11px 0px 0px;"
+//   ></div>
+//   <div class="item-text">
+//     <div class="item-label">${content}</div>
+//     <div class="item-description" style="font-size:11px;margin-top:2px;color:#fffffff0;line-height:1em;">
+//       ${description}
+//     </div>
+//   </div>`;
 
 
 
