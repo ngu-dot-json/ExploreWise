@@ -140,16 +140,6 @@
   /* transform: translateX(810%); code to attempt to align button somewhere */
 }
 
-.gantt-center {
-  border: 3px solid;
-  position: absolute;
-  width: max-content;
-  /* height:max-content; */
-  margin-top: 350px;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 /* global.css */
 
 .custom-button {
@@ -158,12 +148,27 @@
   /* border: 3px solid; */
     position: absolute;
     /* width: max-content; */
-    width: max-content;
+    width: 10%;
     height:max-content;
     margin-top: 350px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .gantt-center {
+    /* border: 3px solid; */
+    position: absolute;
+    width: 160rem;
+    /* height: 70rem; */
+    margin-top: 350px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .container {
+    width: 100px;
+  }
+  
 
 .gantt-center-2 {
     /* border: 3px solid; */
@@ -171,7 +176,7 @@
     /* width: max-content; */
     width: max-content;
     height:max-content;
-    margin-top: 350px;
+    margin-top: 100px;
     left: 50%;
     transform: translate(-50%, -50%);
   }
