@@ -14,9 +14,13 @@ const ExpenseList = () => {
 	const { expenses } = useContext(AppContext);
 
 	const [filteredExpenses, setfilteredExpenses] = useState(expenses || []);
+	const toDate = (dateString) => new Date(dateString); //Ordering expenses when page is first loaded by latest to earliest
+	const orderedExpensesByDate = expenses.sort((a, b) => toDate(b.date) - toDate(a.date)); //Ordering expenses when page is first loaded by latest to earliest
 
 	useEffect(() => {
-		setfilteredExpenses(expenses);
+		const toDate = (dateString) => new Date(dateString); //Ordering expenses by latest to earliest
+		const orderedExpensesByDate = expenses.sort((a, b) => toDate(b.date) - toDate(a.date)); //Ordering expenses by latest to earliest
+		setfilteredExpenses(orderedExpensesByDate);
 	}, [expenses]);
 
 	const handleChange = (event) => {
