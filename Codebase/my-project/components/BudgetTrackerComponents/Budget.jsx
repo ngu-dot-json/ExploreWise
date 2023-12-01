@@ -30,7 +30,7 @@ const Budget = () => {
 			setShowConfirmation(true);
 			const timeout = setTimeout(() => {
 				setShowConfirmation(false);
-			  }, 5000);
+			  }, 3000);
 	
 			  return () => clearTimeout(timeout);
 		} 
