@@ -51,6 +51,9 @@
     cursor: pointer;
 }
 
+.sign-out-btn h1 {
+    color: white;
+}
 
 .sign-out-btn h2{
     box-shadow: 0px 0px 18px black;
@@ -74,6 +77,8 @@
 .wlcm-msg{
     margin-left: 20px;
     font-size: 25px;
+    color:white;
+    text-shadow: black 1px 0 15px;
 }
 
 
