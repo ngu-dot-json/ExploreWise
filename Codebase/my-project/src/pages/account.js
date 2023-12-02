@@ -71,7 +71,7 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
 
               <div className={additionalStyles["right-column"]}>
                 <div className={additionalStyles["wlcm-msg"]}>
-                  <h2><u>Welcome to your profile page!</u></h2>
+                  <h1><u>Welcome to your profile page!</u></h1>
                 </div>
                 <div className={additionalStyles.row}>
                   <div className={additionalStyles['change-email']}>
@@ -122,14 +122,7 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
               </div>
             </div>
           </div>
-   
         </div>
     </>
-
-      < Map />
-      {/* <main className={styles.main}>
-        <Map />
-      </main> */}
-    </div>
   )
 }
