@@ -82,6 +82,12 @@
     margin-left: 20px;
     flex-basis: 30%;
 }
+
+.change-email h2{
+    color: white;
+    text-shadow: black 1px 0 15px;
+}
+
 .current{
     margin-top: 30px;
     position: relative;
@@ -166,9 +172,19 @@
     flex-basis: 50%;
 }
 
+.change-username h2{
+    color: white;
+    text-shadow: black 1px 0 15px;
+}
+
 .change-password{
     margin-top: 50px;
     margin-left: 20px;
+}
+
+.change-password h2{
+    color: white;
+    text-shadow: black 1px 0 15px;
 }
 
 .button{
