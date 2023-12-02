@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Navbar from '../../components/Navbar'
-import Schedule from '../../components/TLScheduler'
+import Schedule from '../../components/old/TLScheduler'
 import Image from 'next/image'
 import background from "/public/test.png"
 
@@ -28,15 +28,11 @@ export default function Home() {
             <h3 className='ewText'>Your Modern Travel Planning Platform.</h3>
 
             {/* Add button here to take us to sign in page*/}
-            <button className="justify-center">
+            <button className="daButton">
               <a className="buttonRight" href="account">  Sign in  </a>
             </button>
 
-
-
-
-
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             
             <h3 className='ewLM'>scroll down to learn more</h3>
 

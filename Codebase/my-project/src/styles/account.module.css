@@ -174,12 +174,12 @@
 .button{
     margin-top: 30px;
     padding: 0px;
-    background: rgb(209, 209, 209);
+    background: #4ba55b;
     width: 200px;
     height: 50px;
     border-radius: 5px;
     cursor: pointer;
-    color: black;
+    color: white;
     justify-content: center;
     align-items: center;
     display: flex;

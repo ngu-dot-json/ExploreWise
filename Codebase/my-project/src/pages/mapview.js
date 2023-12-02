@@ -5,7 +5,7 @@ import React from "react";
 const inter = Inter({ subsets: ['latin'] })
 // import Map from '../../components/Map';
 import Map from '../../components/leafletMap'
-import Schedule from '../../components/TLScheduler'
+import Schedule from '../../components/old/TLScheduler'
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
 import Gantt from '../../components/gantt-calendar'
@@ -30,50 +30,11 @@ function Mapview(){
             <div className='gantt-center-2'>
               <Gantt />
             </div>
-          {/* <Schedule/> */}
         </div>
       </div>
     </main>
     </>
   );
 }
-
-
-
-// function Mapview() {
-//   return (
-//     <>
-
-//       <div>
-//         <Navbar />  
-//       </div>
-//       <div id="root">
-//         <Map/>
-//         <Schedule/>
-//       </div>
-    
-//     </>
-//   );
-// }
-
-
-
-
-
-// function Mapview() {
-//   return (
-
-//     <div>
-//       <Navbar />  
-//       <h1>MAP VIEW</h1>
-//       <Map
-//     />
-
-//   <div id="root"></div>
-//       <Schedule
-// />
-//     </div>
-//   );
-// }
 
 export default Mapview;
