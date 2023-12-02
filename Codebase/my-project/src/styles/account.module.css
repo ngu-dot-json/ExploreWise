@@ -1,0 +1,179 @@
+.body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.left-column{
+    flex-basis: 30%;
+    margin-top: 50px;
+}
+
+.right-column{
+    flex-basis: 65%; /* Adjusted the flex-basis value */
+    margin-top: 50px;
+}
+
+.profile-pic{
+    padding:3vh 5vw;
+}
+
+.profile-pic img{
+    height: 300px; 
+    width: 300px;
+    border-radius: 50%;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border: 3px solid rgba(0, 0, 0, 1);
+}
+
+.profile-pic label{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    background: red;
+    color:#fff;
+    padding: 12px;
+    margin: 5px auto;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+.sign-out-btn h2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    background: white;
+    width: 150px;
+    border-radius: 5px;
+    margin: 50px auto;
+    cursor: pointer;
+}
+
+.profile-pic input{
+    display: none;
+}
+
+.wlcm-msg{
+    margin-left: 20px;
+    font-size: 25px;
+}
+
+
+.change-email{
+    margin-top: 50px;
+    margin-left: 20px;
+    flex-basis: 30%;
+}
+.current{
+    margin-top: 30px;
+    position: relative;
+    width: 250px;
+}
+
+.current input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+    color:black;
+    font-size: 1em;    
+    background: rgb(224, 222, 222);
+}
+
+.current span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgb(123, 121, 121);
+    transition: 0.5s;
+}
+
+.current input:valid ~ span,
+.current input:focus ~ span 
+{
+    color: black;
+    transform: translateX(0) translateY(-17px);
+    font-size: 0.7em;
+    padding: 0 5px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    background: white;
+}
+
+.new{
+    margin-top: 20px;
+    position: relative;
+    width: 250px;
+}
+
+.new input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+    color:black;
+    font-size: 1em;    
+    background: rgb(224, 222, 222);
+}
+
+.new span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgb(123, 121, 121);
+    transition: 0.5s;
+}
+
+.new input:valid ~ span,
+.new input:focus ~ span 
+{
+    color: black;
+    transform: translateX(0) translateY(-17px);
+    font-size: 0.7em;
+    padding: 0 5px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+    background: white;
+}
+
+
+.change-username{
+    margin-top: 50px;
+    flex-basis: 50%;
+}
+
+.change-password{
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.button{
+    margin-top: 30px;
+    padding: 12px;
+    background: black;
+    width: 200px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
