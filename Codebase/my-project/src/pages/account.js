@@ -122,15 +122,14 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
               </div>
             </div>
           </div>
-          
+   
         </div>
-
-      
-
-
-
-      
     </>
-    
+
+      < Map />
+      {/* <main className={styles.main}>
+        <Map />
+      </main> */}
+    </div>
   )
 }

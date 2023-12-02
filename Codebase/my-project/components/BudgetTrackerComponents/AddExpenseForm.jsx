@@ -18,6 +18,9 @@ const AddExpenseForm = (props) => {
 	const [date, setDate] = useState('');
 	const [description, setDescription] = useState('');
 
+	const [showConfirmation, setShowConfirmation] = useState(false);
+
+
 	const onSubmit = (event) => {
 		event.preventDefault();
 		const expense = {
@@ -37,10 +40,23 @@ const AddExpenseForm = (props) => {
 		setCost('');
 		setDate('');
 		setDescription('');
+
+		setShowConfirmation(true);
+		const timeout = setTimeout(() => {
+			setShowConfirmation(false);
+		  }, 3000);
+
+	  	return () => clearTimeout(timeout);
 	};
 
 	return (
 		<div className={styles.outerBox}>
+
+		{showConfirmation && (
+			<div className="fixed top-10 right-0 m-4 p-4 bg-green-500 text-white rounded shadow">
+				Expense added succssfully!
+			</div>
+      	)}
 
 		<h3 className='mt-3'>Add Expense</h3>
 
@@ -77,6 +93,9 @@ const AddExpenseForm = (props) => {
 					<input
 						required='required'
 						type='number'
+						step='0.01'
+						min='0'
+						pattern='^\d+(\.\d{1,2})?$'
 						class='form-control'
 						id='cost'
 						value={cost}

@@ -26,6 +26,16 @@ export default function Home() {
             <h2 className="ewHeading">Welcome To:</h2>
             <h1 className="ewEW">ExploreWise</h1>
             <h3 className='ewText'>Your Modern Travel Planning Platform.</h3>
+
+            {/* Add button here to take us to sign in page*/}
+            <button className="justify-center">
+              <a className="buttonRight" href="account">  Sign in  </a>
+            </button>
+
+
+
+
+
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
             
             <h3 className='ewLM'>scroll down to learn more</h3>
@@ -48,8 +58,10 @@ export default function Home() {
             <h2 className='ewInfo'>Libraries and Tools Used for the Project Are:</h2><br/>
             <h2 className='ewInfo3'>NextJS 14.0.0</h2>
             <h2 className='ewInfo3'>ReactJS 18</h2>
+            <h2 className='ewInfo3'>Leaflet 1.9.4</h2>
             <h2 className='ewInfo3'>Tailwind CSS v3.3</h2>
             <h2 className='ewInfo3'>ReactCalendarTimeline 0.28.0</h2>
+            <h2 className='ewInfo3'>gantt-schedule-timeline-calendar by NEURONET</h2>
           </heading> 
         </div>
       </div>
