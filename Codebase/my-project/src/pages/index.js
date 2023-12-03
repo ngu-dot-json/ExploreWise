@@ -29,7 +29,7 @@ export default function Home() {
 
             {/* Add button here to take us to sign in page*/}
             <button className="daButton">
-              <a className="buttonRight" href="account">  Sign in  </a>
+              <a className="buttonRight" href="signin">  Sign in  </a>
             </button>
 
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
