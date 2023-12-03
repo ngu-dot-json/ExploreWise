@@ -77,6 +77,9 @@ const AddExpenseForm = (props) => {
 					<input
 						required='required'
 						type='number'
+						step='0.01'
+						min='0'
+						pattern='^\d+(\.\d{1,2})?$'
 						class='form-control'
 						id='cost'
 						value={cost}

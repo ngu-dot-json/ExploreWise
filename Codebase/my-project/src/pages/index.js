@@ -48,8 +48,10 @@ export default function Home() {
             <h2 className='ewInfo'>Libraries and Tools Used for the Project Are:</h2><br/>
             <h2 className='ewInfo3'>NextJS 14.0.0</h2>
             <h2 className='ewInfo3'>ReactJS 18</h2>
+            <h2 className='ewInfo3'>Leaflet 1.9.4</h2>
             <h2 className='ewInfo3'>Tailwind CSS v3.3</h2>
             <h2 className='ewInfo3'>ReactCalendarTimeline 0.28.0</h2>
+            <h2 className='ewInfo3'>gantt-schedule-timeline-calendar by NEURONET</h2>
           </heading> 
         </div>
       </div>
