@@ -7,6 +7,7 @@ export const EVENTS = [
     date: "11/04/2023",
     timeStart: "21:00",
     timeEnd: "23:00",
+    genre: "music",
     price: 19.99,
     favorite: false,
     imgURL:
@@ -20,6 +21,7 @@ export const EVENTS = [
     date: "11/04/2023",
     timeStart: "16:00",
     timeEnd: "20:00",
+    genre: "outdoorsy",
     price: 0.0,
     favorite: false,
     imgURL:
@@ -33,7 +35,50 @@ export const EVENTS = [
     date: "11/04/2023",
     timeStart: "15:00",
     timeEnd: "18:00",
+    genre: "outdoorsy",
     price: 18.99,
+    favorite: false,
+    imgURL:
+      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
+  },
+  {
+    id: 3,
+    name: "Wine Tasting Fest",
+    description:
+      "Savor a refined experience at our wine tasting event, exploring exquisite flavors and aromas in an elegant setting guided by expert sommeliers.",
+    date: "11/04/2023",
+    timeStart: "15:00",
+    timeEnd: "18:00",
+    price: 21.99,
+    favorite: false,
+    genre: "food",
+    imgURL:
+      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
+  },
+  {
+    id: 4,
+    name: "Beer Fest",
+    description:
+      "Savor a refined experience at our wine tasting event, exploring exquisite flavors and aromas in an elegant setting guided by expert sommeliers.",
+    date: "11/03/2023",
+    timeStart: "15:00",
+    timeEnd: "18:00",
+    price: 18.99,
+    genre: "food",
+    favorite: false,
+    imgURL:
+      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
+  },
+  {
+    id: 5,
+    name: "Build Your Snowman!",
+    description:
+      "Craft your coolest snow buddy at our winter special event – come create and play in a snowy escape!",
+    date: "11/08/2023",
+    timeStart: "15:00",
+    timeEnd: "18:00",
+    price: 10.55,
+    genre: "art & creativity",
     favorite: false,
     imgURL:
       "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",

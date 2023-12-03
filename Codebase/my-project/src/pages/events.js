@@ -1,7 +1,6 @@
 import Navbar from "../../components/Navbar";
 import React, { useEffect, useState } from "react";
 import { EVENTS } from "../../constants/events";
-// import { VscHeartFilled, VscHeart } from "react-icons/vsc";
 import { BiSolidDownArrow } from "react-icons/bi";
 import Gantt from "../../components/gantt-calendar";
 
@@ -9,15 +8,63 @@ function FindEvents() {
   const [events, setEvents] = useState([]);
   const [savedEvents, setSavedEvents] = useState([]);
   const [activeEvent, setActiveEvent] = useState(-1);
+  const [sortingOption, setSortingOption] = useState("default"); // default sorting option
+  const [genreOption, setGenreOption] = useState("default");
+
   useEffect(() => {
     const savedEvents =
       JSON.parse(localStorage.getItem("data") ?? "{}").events ?? [];
     setSavedEvents(savedEvents);
-    setEvents(
-      EVENTS.filter((event) => !savedEvents.find((e) => e.id === event.id))
+
+    let sortedEvents = EVENTS.filter(
+      (event) => !savedEvents.find((e) => e.id === event.id)
     );
+    let filteredEvents = EVENTS.filter(
+      (event) => !savedEvents.find((e) => e.id === event.id)
+    );
+
+    // Sorting logic based on the selected option
+    if (sortingOption === "date") {
+      sortedEvents = sortedEvents.sort(
+        (a, b) => new Date(a.date) - new Date(b.date)
+      );
+    } else if (sortingOption === "lowprice") {
+      sortedEvents = sortedEvents.sort((a, b) => a.price - b.price);
+    } else if (sortingOption === "highprice") {
+      sortedEvents = sortedEvents.sort((a, b) => b.price - a.price);
+    }
+
+    // Genre filtering logic
+    if (genreOption !== "default") {
+      // Hard-coded logic for specific events based on the selected genre
+      if (genreOption === "music") {
+        // Only display events related to music
+        filteredEvents = filteredEvents.filter(
+          (event) => event.genre.toLowerCase() === "music"
+        );
+      } else if (genreOption === "food") {
+        // Only display events related to food
+        filteredEvents = filteredEvents.filter(
+          (event) => event.genre.toLowerCase() === "food"
+        );
+      } else if (genreOption === "outdoorsy") {
+        // Only display events related to outdoorsy activities
+        filteredEvents = filteredEvents.filter(
+          (event) => event.genre.toLowerCase() === "outdoorsy"
+        );
+      } else if (genreOption === "art & creativity") {
+        // Only display events related to outdoorsy activities
+        filteredEvents = filteredEvents.filter(
+          (event) => event.genre.toLowerCase() === "art & creativity"
+        );
+        // Add more conditions for other genres as needed
+      }
+    }
+
+    setEvents(sortedEvents);
+    setEvents(filteredEvents);
     setActiveEvent(0);
-  }, []);
+  }, [sortingOption, genreOption]);
 
   const addEvent = (event) => {
     localStorage.setItem(
@@ -27,6 +74,18 @@ function FindEvents() {
     setSavedEvents([...savedEvents, event]);
     setEvents(events.filter((e) => e.id !== event.id));
     setActiveEvent(0);
+  };
+
+  const handleSortingChange = (e) => {
+    setSortingOption(e.target.value);
+    // Add logic to sort events based on the selected option
+    // You might need to update the EVENTS array or use a sorting function
+  };
+
+  const handleGenreChange = (e) => {
+    setGenreOption(e.target.value);
+    // Add logic to sort events based on the selected option
+    // You might need to update the EVENTS array or use a sorting function
   };
 
   return (
@@ -42,15 +101,29 @@ function FindEvents() {
           <div className="flex flex-col w-2/3 gap-4 h-full ">
             <div className="flex gap-4">
               {/* Make into DropDown menu */}
-              <button className="flex items-center bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded">
-                Sort By <BiSolidDownArrow className="ml-2" />
-              </button>
+              <select
+                value={sortingOption}
+                onChange={handleSortingChange}
+                className="flex items-center bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded"
+              >
+                <option value="default">Sort By</option>
+                <option value="lowprice">Price Low to High</option>
+                <option value="highprice">Price High to Low</option>
+                <option value="date">Date</option>
+              </select>
 
               {/* Make into DropDown menu */}
-              <button className="flex items-center bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded">
-                Genre
-                <BiSolidDownArrow className="ml-2" />
-              </button>
+              <select
+                value={genreOption}
+                onChange={handleGenreChange}
+                className="flex items-center bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded"
+              >
+                <option value="default">Genre</option>
+                <option value="music">Music</option>
+                <option value="food">Food</option>
+                <option value="outdoorsy">Outdoorsy</option>
+                <option value="art & creativity">Art & Creativity</option>
+              </select>
 
               <button className="bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded">
                 Favourites ♥
