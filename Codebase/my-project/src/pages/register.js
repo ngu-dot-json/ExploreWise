@@ -45,7 +45,7 @@ export default function Home() {
               </div>
 
               <div className={sstyle.Btn}>
-                <a href="#">Sign Up</a>
+                <a href="account">Sign Up</a>
               </div>
               <div className={sstyle.Register}>
                 <p>Already have an account? <a href="signin">Login</a></p>
