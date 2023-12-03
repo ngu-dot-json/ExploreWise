@@ -49,7 +49,7 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
                   <input type="file" accept="image/jpg, image/jpeg, image/png" id="input-file" onChange={handleFileChange}/>
 
                   <div className={sstyles["sign-out-btn"]}>
-                    <h2>Sign Out</h2>
+                    <a href="/">Sign Out</a>
                   </div>
                 </div>
               </div>
