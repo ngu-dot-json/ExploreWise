@@ -29,24 +29,20 @@ export default function Home() {
           <div className={sstyle.container}>
             <div className={sstyle.box}>
               <div className={sstyle.title}>
-                <h1>Login</h1>
+                <h1>Account Recovery</h1>
+              </div>
+              <div className={sstyle.text}>
+                <p>Enter the username associated with your account. If there is an account with that username, you will receieve an email to recover your account</p>
               </div>
               <div className={sstyle.textbox}>
                 <input type="text" required="required" />
                 <span>Username</span>
               </div>
-              <div className={sstyle.textbox}>
-                <input type="text" required="required" />
-                <span>Password</span>
-              </div>
-              <div className={sstyle.forgotP}>
-                <a href="forgotPW">Forgot Password?</a>
-              </div>
               <div className={sstyle.Btn}>
-                <a href="account">Login</a>
+                <a href="#">Send Recovery Email</a>
               </div>
-              <div className={sstyle.Register}>
-              <p>Don't have an account? <a href="register">Register</a></p>
+              <div className={sstyle.rembLogin}>
+                <p>Remember your password? <a href="signin">Login</a></p>
               </div>
             </div>
           </div>

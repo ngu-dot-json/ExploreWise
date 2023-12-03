@@ -28,25 +28,27 @@ export default function Home() {
         <div className={sstyle.body}>
           <div className={sstyle.container}>
             <div className={sstyle.box}>
-              <div className={sstyle.title}>
-                <h1>Login</h1>
+              <div className={sstyle.login}>
+                <h1>Register</h1>
               </div>
-              <div className={sstyle.textbox}>
+              <div className={sstyle.RTB}>
                 <input type="text" required="required" />
                 <span>Username</span>
               </div>
-              <div className={sstyle.textbox}>
+              <div className={sstyle.RTB}>
+                <input type="text" required="required" />
+                <span>Email</span>
+              </div>
+              <div className={sstyle.RTB}>
                 <input type="text" required="required" />
                 <span>Password</span>
               </div>
-              <div className={sstyle.forgotP}>
-                <a href="forgotPW">Forgot Password?</a>
-              </div>
+
               <div className={sstyle.Btn}>
-                <a href="account">Login</a>
+                <a href="#">Sign Up</a>
               </div>
               <div className={sstyle.Register}>
-              <p>Don't have an account? <a href="register">Register</a></p>
+                <p>Already have an account? <a href="signin">Login</a></p>
               </div>
             </div>
           </div>
