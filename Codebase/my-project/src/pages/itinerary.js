@@ -4,7 +4,7 @@ import React from "react";
 const inter = Inter({ subsets: ['latin'] })
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
-import Gantt from '../../components/gantt-calendar'
+import Gantt from '../../components/gantt-maxsize'
 
 function itinerary(){
   return (
