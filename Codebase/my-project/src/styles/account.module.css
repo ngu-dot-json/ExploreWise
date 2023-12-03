@@ -18,7 +18,7 @@
 }
 
 .right-column{
-    flex-basis: 65%; /* Adjusted the flex-basis value */
+    flex-basis: 65%;
     margin-top: 50px;
 }
 
@@ -197,11 +197,18 @@
     padding: 0px;
     background: #4ba55b;
     width: 200px;
-    height: 50px;
     border-radius: 5px;
     cursor: pointer;
     color: white;
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.button p{
+    margin-top: 10px;
+}
+
+.rightBtn{
+    flex-basis: 51%;
 }
