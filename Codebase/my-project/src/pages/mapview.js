@@ -9,6 +9,7 @@ import Schedule from '../../components/old/TLScheduler'
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
 import Gantt from '../../components/gantt-calendar'
+import TwoButtons from "../../components/TwoButtons"
 
 
 function Mapview(){
@@ -29,6 +30,8 @@ function Mapview(){
           <Map/>
             <div className='gantt-center-2'>
               <Gantt />
+              <br/>
+              <TwoButtons />
             </div>
         </div>
       </div>

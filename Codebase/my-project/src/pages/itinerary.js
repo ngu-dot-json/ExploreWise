@@ -5,6 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
 import Gantt from '../../components/gantt-maxsize'
+import TwoButtons from "../../components/TwoButtons"
 
 function itinerary(){
   return (
@@ -23,6 +24,8 @@ function itinerary(){
         <div className='gantt-center'>
           <Gantt />
         </div>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <TwoButtons />
       </div>
     </main>
     </>
