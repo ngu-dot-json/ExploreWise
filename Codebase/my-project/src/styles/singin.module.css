@@ -1,0 +1,154 @@
+.body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'sand sarif';
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.box{
+    width: 400px;
+    background-color: rgb(208, 169, 244);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    color: black;
+}
+
+.textbox{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.textbox input{
+    width: 75%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+    color:black;
+    font-size: 1em;    
+    background: rgb(224, 222, 222);
+}
+
+.textbox span{
+    position: absolute;
+    left: 13%;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgb(123, 121, 121);
+    transition: 0.5s;
+}
+
+.textbox input:valid ~ span,
+.textbox input:focus ~ span 
+{
+    color: black;
+    transform: translateX(0) translateY(-30px);
+    font-size: 0.7em;
+    padding: 0 5px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+
+.forgotP{
+    display:flex;
+    justify-content: right;
+    margin-top: 10px;
+}
+
+.forgotP a{
+    color: black;
+}
+
+.Btn{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+    margin-top: 15px;
+    margin-left: 70px;
+    padding: 12px;
+    background: rgb(255, 254, 254);
+    width: 55%;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff;
+    
+    text-decoration: none;
+    text-align: center;
+}
+
+.Btn a{
+    text-decoration: none;
+    color: black;
+}
+
+.Register{
+    margin-top: 15px;
+}
+
+.Register a{
+    color: black;
+}
+
+.rembLogin{
+    margin-top: 15px;
+}
+
+.rembLogin a{
+    color: black;
+}
+
+
+
+.RTB{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.RTB input{
+    width: 75%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+    color:black;
+    font-size: 1em;    
+    background: rgb(224, 222, 222);
+}
+
+.RTB span{
+    position: absolute;
+    left: 13%;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgb(123, 121, 121);
+    transition: 0.5s;
+}
+
+.RTB input:valid ~ span,
+.RTB input:focus ~ span 
+{
+    color: black;
+    transform: translateX(0) translateY(-30px);
+    font-size: 0.7em;
+    padding: 0 5px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
