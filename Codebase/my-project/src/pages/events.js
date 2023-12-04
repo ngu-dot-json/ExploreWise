@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import { EVENTS } from "../../constants/events";
 import { BiSolidDownArrow } from "react-icons/bi";
 import Gantt from "../../components/gantt-calendar";
+import Image from 'next/image'
+import backgrounder from "/public/test.png"
 
 function FindEvents() {
   const [events, setEvents] = useState([]);
@@ -95,8 +97,15 @@ function FindEvents() {
         <br />
       </div>
 
-      <div id="root" className="flex flex-col w-full pt-14 px-8 h-full gap-4">
-        <div className="flex gap-4 w-full h-full">
+
+      <main className="flex flex-col items-center justify-between">
+        <div className='relative w-full'>
+          <div className='absolute -z-10 mt-[-25px] w-full h-full'>
+            <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
+          </div>
+
+          <div id="root" className="flex flex-col w-full pt-14 px-8 h-full gap-4">
+`        <div className="flex gap-4 w-full h-full">
           {/* the left column */}
           <div className="flex flex-col w-2/3 gap-4 h-full ">
             <div className="flex gap-4">
@@ -132,7 +141,7 @@ function FindEvents() {
                 User Recommended
               </button>
             </div>
-            <div className="flex flex-col border-2 p-4 border-black overflow-hidden overflow-y-auto max-h-screen gap-2" style={{ maxHeight: '55vh', overflowY: 'scroll' }}>
+            <div className="flex flex-col border-2 p-4 border-black bg-white overflow-hidden overflow-y-auto max-h-screen gap-2" style={{ maxHeight: '55vh', overflowY: 'scroll' }}>
               {events.map((event, index) => (
                 <div
                   key={index}
@@ -190,7 +199,9 @@ function FindEvents() {
             {events.length === 0 && <p>No events available.</p>}
           </div>
         </div>
-      </div>
+      </div>`
+        </div>
+      </main>
     </>
   );
 }
