@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar";
 import React, { useEffect, useState } from "react";
 import { EVENTS } from "../../constants/events";
 import { BiSolidDownArrow } from "react-icons/bi";
-import Gantt from "../../components/gantt-calendar";
+import Gantt from "../../components/gantt-small";
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
 
@@ -182,9 +182,6 @@ function FindEvents() {
               ))}
               {events.length === 0 && <p>No events available.</p>}
             </div>
-            <div className="">
-              <Gantt />
-            </div>
           </div>
           {/* the right column */}
           <div className="flex flex-col w-1/3 h-96 pt-16">
@@ -199,6 +196,9 @@ function FindEvents() {
         </div>
       </div>`
         </div>
+        <div className="">
+              <Gantt />
+            </div>
       </main>
     </>
   );
