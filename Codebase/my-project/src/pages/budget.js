@@ -43,8 +43,6 @@ function budget (){
       <AppProvider>
       {/* background image container */}
 
-
-
       <main className="flex flex-col items-center justify-between">
         <div className='relative w-full'>
           <div className='absolute -z-10 mt-[-25px] w-full h-full'>
