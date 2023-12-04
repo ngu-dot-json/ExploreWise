@@ -3,9 +3,7 @@ import { Inter } from 'next/font/google'
 import Navbar from '../../components/Navbar'
 import React from "react";
 const inter = Inter({ subsets: ['latin'] })
-// import Map from '../../components/Map';
 import Map from '../../components/leafletMap'
-import Schedule from '../../components/old/TLScheduler'
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
 import Gantt from '../../components/gantt-calendar'

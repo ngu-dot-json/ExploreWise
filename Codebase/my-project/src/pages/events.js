@@ -198,9 +198,9 @@ function FindEvents() {
       </div>`
         </div>
         <div className="">
-              <TwoButtons />
-              <Gantt />
-            </div>
+          <Gantt />
+          <TwoButtons />
+        </div>
       </main>
     </>
   );

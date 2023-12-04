@@ -132,12 +132,8 @@
   margin-left: 73px;
   margin-top: 65px;
   width: 90%;
-  height: 25rem;
+  height: 30rem;
   border: 3px solid white;
-}
-
-.leaflet {
-width: max-content;
-height: max-content;
+  border-radius: 10px;
 }
 

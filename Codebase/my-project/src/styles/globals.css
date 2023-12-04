@@ -185,11 +185,11 @@
 
   .gantt-center {
     position: absolute;
-    width: 160rem;
-    margin-top: 350px;
+    width: max-content;
+    /* height: max-content; */
+    margin-top: 355px;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow-y: hidden; /* Hide vertical scroll bar */
   }
 
   .container {
@@ -199,7 +199,16 @@
 .gantt-center-2 {
     position: absolute;
     width: max-content;
-    margin-top: 110px;
+    margin-top: 80px;
     left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+
+.gantt-center-3 {
+    position: absolute;
+    width: max-content;
+    margin-top: 580px;
+    left: 20%;
     transform: translate(-50%, -50%);
   }

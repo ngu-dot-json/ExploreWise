@@ -16,7 +16,7 @@ function itinerary(){
     </div>
 
     {/* background image container */}
-    <main className="flex flex-col items-center justify-between">
+    <main className="items-center justify-between">
       <div className='relative w-full'>
         <div className='absolute -z-10 mt-[-25px] w-full h-full'>
         <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
@@ -24,7 +24,7 @@ function itinerary(){
         <div className='gantt-center'>
           <Gantt />
         </div>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <TwoButtons />
       </div>
     </main>
