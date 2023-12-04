@@ -44,22 +44,22 @@ async function initializeGSTC(element) {
       height: 130,
       style: { background: getRandomColor() },
       time: {
-        start: GSTC.api.date("2023-01-01").startOf("day").valueOf(),
-        end: GSTC.api.date("2023-01-01").startOf("day").add(8, "hours").valueOf(),
+        start: GSTC.api.date("2023-11-04").startOf("day").valueOf(),
+        end: GSTC.api.date("2023-11-04").startOf("day").add(8, "hours").valueOf(),
       },
       description: "wow this is a cool boi",
     },
-    {
-      id: "3",
-      label: 'John Doe',
-      rowId: "1",
-      height: 130,
-      time: {
-        start: GSTC.api.date("2023-01-01").startOf("day").add(9, "hours").valueOf(),
-        end: GSTC.api.date("2023-01-01").endOf("day").valueOf(),
-      },
-      description: 'Lorem ipsum dolor sit amet',
-    },
+    // {
+    //   id: "3",
+    //   label: 'John Doe',
+    //   rowId: "1",
+    //   height: 130,
+    //   time: {
+    //     start: GSTC.api.date("2023-01-01").startOf("day").add(9, "hours").valueOf(),
+    //     end: GSTC.api.date("2023-01-01").endOf("day").valueOf(),
+    //   },
+    //   description: 'Lorem ipsum dolor sit amet',
+    // },
   ];
   
   const rowsFromDB = [

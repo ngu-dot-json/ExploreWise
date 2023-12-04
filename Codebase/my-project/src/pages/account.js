@@ -43,8 +43,11 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
             <div className={sstyles.row}>
 
               <div className={sstyles['left-column']}>
-                <div className={sstyles['profile-pic']}>
+                <div className={sstyles.user}>
                   <h2>John Smith</h2>
+                </div>
+                <div className={sstyles['profile-pic']}>
+                  
                   <Image src={profilePicSrc} alt="Profile Picture" width={300} height={300} id="pfp" />
                   <label htmlFor="input-file">Upload Profile Picture</label>
                   <input type="file" accept="image/jpg, image/jpeg, image/png" id="input-file" onChange={handleFileChange}/>

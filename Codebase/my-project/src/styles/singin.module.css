@@ -59,7 +59,7 @@
 .textbox input:valid ~ span,
 .textbox input:focus ~ span 
 {
-    color: black;
+    color: white;
     transform: translateX(0) translateY(-30px);
     font-size: 0.7em;
     padding: 0 5px;
@@ -155,7 +155,7 @@
 .RTB input:valid ~ span,
 .RTB input:focus ~ span 
 {
-    color:#44b6f8;
+    color:white;
     transform: translateX(0) translateY(-30px);
     font-size: 0.7em;
     padding: 0 5px;
