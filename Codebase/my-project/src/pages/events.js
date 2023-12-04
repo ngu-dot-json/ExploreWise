@@ -94,9 +94,7 @@ function FindEvents() {
     <>
       <div>
         <Navbar />
-        <br />
       </div>
-
 
       <main className="flex flex-col items-center justify-between">
         <div className='relative w-full'>

@@ -44,7 +44,7 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
 
               <div className={sstyles['left-column']}>
                 <div className={sstyles.user}>
-                  <h2>John Smith</h2>
+                  <h2>User: John Smith</h2>
                 </div>
                 <div className={sstyles['profile-pic']}>
                   
@@ -60,11 +60,11 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
 
               <div className={sstyles["right-column"]}>
                 <div className={sstyles["wlcm-msg"]}>
-                  <h1>Welcome to your profile page!</h1>
+                  <h1>Welcome John!</h1>
                 </div>
                 <div className={sstyles.row}>
                   <div className={sstyles['change-email']}>
-                    <h2><u>Change Email</u></h2>
+                    <h2>Change Email</h2>
                     <div className={sstyles.current}>
                       <input type="text" required="required" />
                       <span>Current email</span>
@@ -79,7 +79,7 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
                   </div>
 
                   <div className={sstyles['change-username']}>
-                    <h2><u>Change Username</u></h2>
+                    <h2>Change Username</h2>
                     <div className={sstyles.current}>
                       <input type="text" required="required" />
                       <span>Current username</span>
@@ -95,16 +95,11 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
                 </div>
 
                 <div className={sstyles['change-password']}>
-                    <h2><u>Change password</u></h2>
+                    <h2>Change Password</h2>
                     <div className={sstyles.row}>
                       <div className={sstyles.current}>
                       <input type="text" required="required" />
                       <span>Current password</span>
-                      </div>
-                      <div className={sstyles.rightBtn}>
-                        <div className={sstyles.button}>
-                      <p>Change password</p>
-                      </div>
                       </div>
                     </div>
                     
@@ -112,6 +107,12 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
                       <input type="text" required="required" />
                       <span>New password</span>
                     </div>
+
+                    <div className={sstyles.rightBtn}>
+                        <div className={sstyles.button}>
+                      <p>Change password</p>
+                      </div>
+                      </div>
                     
                   </div>
               </div>
