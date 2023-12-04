@@ -5,6 +5,7 @@ import { BiSolidDownArrow } from "react-icons/bi";
 import Gantt from "../../components/gantt-small";
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
+import TwoButtons from "../../components/TwoButtons"
 
 function FindEvents() {
   const [events, setEvents] = useState([]);
@@ -197,6 +198,7 @@ function FindEvents() {
       </div>`
         </div>
         <div className="">
+              <TwoButtons />
               <Gantt />
             </div>
       </main>
