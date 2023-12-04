@@ -95,7 +95,7 @@ function FindEvents() {
         <br />
       </div>
 
-      <div id="root" className="flex flex-col w-full pt-28 px-8 h-full gap-4">
+      <div id="root" className="flex flex-col w-full pt-14 px-8 h-full gap-4">
         <div className="flex gap-4 w-full h-full">
           {/* the left column */}
           <div className="flex flex-col w-2/3 gap-4 h-full ">
@@ -132,7 +132,7 @@ function FindEvents() {
                 User Recommended
               </button>
             </div>
-            <div className="flex flex-col border-2 p-4 border-black overflow-hidden overflow-y-scroll h-full gap-2">
+            <div className="flex flex-col border-2 p-4 border-black overflow-hidden overflow-y-auto max-h-screen gap-2" style={{ maxHeight: '55vh', overflowY: 'scroll' }}>
               {events.map((event, index) => (
                 <div
                   key={index}
@@ -180,7 +180,7 @@ function FindEvents() {
             </div>
           </div>
           {/* the right column */}
-          <div className="flex flex-col w-1/3 h-80">
+          <div className="flex flex-col w-1/3 h-96 pt-16">
             {events[activeEvent]?.imgURL && (
               <img
                 src={events[activeEvent]?.imgURL}
