@@ -54,6 +54,8 @@
     transition: 0.5s;
 }
 
+
+
 .textbox input:valid ~ span,
 .textbox input:focus ~ span 
 {
@@ -73,6 +75,10 @@
 
 .forgotP a{
     color: #44b6f8;
+}
+
+.left-column {
+    color: white;
 }
 
 .Btn{ 
