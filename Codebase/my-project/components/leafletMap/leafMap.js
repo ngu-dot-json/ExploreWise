@@ -49,14 +49,21 @@ function Map() {
       options: {}
     });
 
-  const blueIcon = new LeafIcon({
+  const bloo = new LeafIcon({
     iconUrl:
         "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|abcdef&chf=a,s,ee00FFFF"
     }),
-    greenIcon = new LeafIcon({
+    blueIcon = new LeafIcon({
       iconUrl:
         "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|0077C0&chf=a,s,ee00FFFF"
-    });
+    }),
+    redIcon = new LeafIcon({
+      iconUrl:
+        "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|E74C3C&chf=a,s,ee00FFFF"
+    })    
+    
+    
+    ;
 
     //  Use the state hook:
   const [icon, setIcon] = useState(blueIcon);
@@ -91,21 +98,28 @@ function Map() {
               </Popup>
             </Marker> */}
 
-            <Marker position={[51.0447, -114.0719]} icon={greenIcon}>
+            <Marker position={[51.0457, -114.0617]} icon={blueIcon}>
               <Popup>
-                <h3>WOW BIG WORDS</h3>
-                <button onClick={() => changeIconColor(icon)}>
-                  Change Marker Color
-                </button>
+                <h5><b>Wine Tasting Convention</b></h5>   
+                <h6>136 8 Ave SE</h6>
+                <h7>Dec 14 2023, 11:00 to 18:45</h7><br/>
+                <p>Its a wine tasting event, but really big and full of people who taste wine and all that jazz or whatever. I don't really even like wine, its bitter and not that good, but there do exist people who enjoy wine and I won't take that away from them as that is an essential part of some people's diets or something im not sure what else to write to fill this ins!</p>
+                <p><u>More Event Info</u></p>
+              </Popup>
+            </Marker>
+
+            <Marker position={[51.0784, -114.1347]} icon={redIcon}>
+              <Popup>
+                <h5><b>CPSC 481 Project Demo</b></h5>   
+                <h6>2500 University Dr NW</h6>
+                <h7>Dec 13 2023, 16:00 to 16:45</h7><br/>
+                <p>The place to demo ExploreWise!</p>
+                <p><u>More Event Info</u></p>
+
               </Popup>
             </Marker>
 
 
-            <Marker position={[51.1457, -114.0719]}>
-              <Popup>
-                Wow Words!
-              </Popup>
-            </Marker>
 
         </MapContainer>
       </div>

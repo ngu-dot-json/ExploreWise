@@ -2,7 +2,10 @@ import Navbar from "../../components/Navbar";
 import React, { useEffect, useState } from "react";
 import { EVENTS } from "../../constants/events";
 import { BiSolidDownArrow } from "react-icons/bi";
-import Gantt from "../../components/gantt-calendar";
+import Gantt from "../../components/gantt-small";
+import Image from 'next/image'
+import backgrounder from "/public/test.png"
+import TwoButtons from "../../components/TwoButtons"
 
 function FindEvents() {
   const [events, setEvents] = useState([]);
@@ -105,7 +108,6 @@ function FindEvents() {
     <>
       <div>
         <Navbar />
-        <br />
       </div>
 
       <div className="flex flex-col w-full pt-28 px-8 h-full gap-4">
@@ -200,9 +202,6 @@ function FindEvents() {
               ))}
               {events.length === 0 && <p>No events available.</p>}
             </div>
-            <div className="">
-              <Gantt />
-            </div>
           </div>
           {/* the right column */}
           <div className="flex flex-col w-1/3 h-80">
@@ -228,7 +227,13 @@ function FindEvents() {
             </div>
           </div>
         </div>
-      </div>
+      </div>`
+        </div>
+        <div className="">
+          <Gantt />
+          <TwoButtons />
+        </div>
+      </main>
     </>
   );
 }

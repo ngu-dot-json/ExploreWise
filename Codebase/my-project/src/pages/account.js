@@ -4,25 +4,10 @@ import Navbar from '../../components/Navbar'
 import backgrounder from "/public/test.png"
 import { useState } from 'react';
 
-import styles from '../styles/Home.module.css'
-import additionalStyles from '../../src/styles/account.module.css'
-// Codebase\my-project\src\styles\account.module.css
+import sstyles from '../../src/styles/account.module.css'
 
 export default function Home() {
-{/*
-useEffect(() => {
-  const image_input = document.querySelector("#input-file");
-  var uploaded_image = "";
-  const pfpElement = document.querySelector("#pfp");
-  image_input.addEventListener("change", function () {
-    const reader = new FileReader();
-    reader.addEventListener("load", () => {
-      uploaded_image = reader.result;
-      pfpElement.src = uploaded_image;
-    });
-    reader.readAsDataURL(this.files[0]);
-  });
-}, []);*/}
+
 
 const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
 
@@ -53,71 +38,82 @@ const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
         
         {/*---------------------HTML---------------------*/}
         
-        <div className={additionalStyles.body}>
-          <div className={additionalStyles.container}>
-            <div className={additionalStyles.row}>
+        <div className={sstyles.body}>
+          <div className={sstyles.container}>
+            <div className={sstyles.row}>
 
-              <div className={additionalStyles['left-column']}>
-                <div className={additionalStyles['profile-pic']}>
+              <div className={sstyles['left-column']}>
+                <div className={sstyles.user}>
+                  <h2>User: John Smith</h2>
+                </div>
+                <div className={sstyles['profile-pic']}>
+                  
                   <Image src={profilePicSrc} alt="Profile Picture" width={300} height={300} id="pfp" />
                   <label htmlFor="input-file">Upload Profile Picture</label>
                   <input type="file" accept="image/jpg, image/jpeg, image/png" id="input-file" onChange={handleFileChange}/>
 
-                  <div className={additionalStyles["sign-out-btn"]}>
-                    <h2>Sign Out</h2>
+                  <div className={sstyles["sign-out-btn"]}>
+                    <a href="/">Sign Out</a>
                   </div>
                 </div>
               </div>
 
-              <div className={additionalStyles["right-column"]}>
-                <div className={additionalStyles["wlcm-msg"]}>
-                  <h1><u>Welcome to your profile page!</u></h1>
+              <div className={sstyles["right-column"]}>
+                <div className={sstyles["wlcm-msg"]}>
+                  <h1>Welcome John!</h1>
                 </div>
-                <div className={additionalStyles.row}>
-                  <div className={additionalStyles['change-email']}>
-                    <h2><u>Change Email</u></h2>
-                    <div className={additionalStyles.current}>
+                <div className={sstyles.row}>
+                  <div className={sstyles['change-email']}>
+                    <h2>Change Email</h2>
+                    <div className={sstyles.current}>
                       <input type="text" required="required" />
                       <span>Current email</span>
                     </div>
-                    <div className={additionalStyles.new}>
+                    <div className={sstyles.new}>
                       <input type="text" required="required" />
                       <span>New email</span>
                     </div>
-                    <div className={additionalStyles.button}>
+                    <div className={sstyles.button}>
                       <p>Send Verification Email</p>
                     </div>
                   </div>
 
-                  <div className={additionalStyles['change-username']}>
-                    <h2><u>Change Username</u></h2>
-                    <div className={additionalStyles.current}>
+                  <div className={sstyles['change-username']}>
+                    <h2>Change Username</h2>
+                    <div className={sstyles.current}>
                       <input type="text" required="required" />
                       <span>Current username</span>
                     </div>
-                    <div className={additionalStyles.new}>
+                    <div className={sstyles.new}>
                       <input type="text" required="required" />
                       <span>New username</span>
                     </div>
-                    <div className={additionalStyles.button}>
+                    <div className={sstyles.button}>
                       <p>Change Username</p>
                     </div>
                   </div>
                 </div>
 
-                <div className={additionalStyles['change-password']}>
-                    <h2><u>Change password</u></h2>
-                    <div className={additionalStyles.current}>
+                <div className={sstyles['change-password']}>
+                    <h2>Change Password</h2>
+                    <div className={sstyles.row}>
+                      <div className={sstyles.current}>
                       <input type="text" required="required" />
                       <span>Current password</span>
+                      </div>
                     </div>
-                    <div className={additionalStyles.new}>
+                    
+                    <div className={sstyles.new}>
                       <input type="text" required="required" />
                       <span>New password</span>
                     </div>
-                    <div className={additionalStyles.button}>
+
+                    <div className={sstyles.rightBtn}>
+                        <div className={sstyles.button}>
                       <p>Change password</p>
-                    </div>
+                      </div>
+                      </div>
+                    
                   </div>
               </div>
             </div>

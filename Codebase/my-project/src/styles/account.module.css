@@ -18,23 +18,36 @@
 }
 
 .right-column{
-    flex-basis: 65%; /* Adjusted the flex-basis value */
+    flex-basis: 65%;
     margin-top: 50px;
 }
 
+.user{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.user h2{
+    color: white;
+    text-shadow: black 1px 0 15px;
+}
+
 .profile-pic{
-    padding:3vh 5vw;
+    padding:1vh 5vw;
 }
 
 .profile-pic img{
     height: 300px; 
     width: 300px;
     border-radius: 50%;
-    margin-top: 40px;
+    margin-top: 0px;
     margin-bottom: 30px;
     border: 3px solid rgba(255, 255, 255, 1);
     box-shadow: 0px 0px 18px black;
 }
+
 
 .profile-pic label{
     display:flex;
@@ -53,21 +66,26 @@
 
 .sign-out-btn h1 {
     color: white;
+    box-shadow: 0px 0px 18px black;
 }
 
-.sign-out-btn h2{
+.sign-out-btn{
     box-shadow: 0px 0px 18px black;
     display:flex;
     font-size: 20px;
-    color: white;
     justify-content: center;
     align-items: center;
     padding: 12px;
     background: #f87144;
     width: 200px;
     border-radius: 5px;
-    margin: 50px auto;
+    margin: 20px auto;
     cursor: pointer;
+}
+
+.sign-out-btn a{
+    color: white;
+    text-decoration: none;
 }
 
 .profile-pic input{
@@ -94,7 +112,7 @@
 }
 
 .current{
-    margin-top: 30px;
+    margin-top: 20px;
     position: relative;
     width: 250px;
 }
@@ -133,7 +151,7 @@
 }
 
 .new{
-    margin-top: 20px;
+    margin-top: 10px;
     position: relative;
     width: 250px;
 }
@@ -168,7 +186,6 @@
     padding: 0 5px;
     letter-spacing: 0.15em;
     font-weight: 400;
-    background: white;
 }
 
 
@@ -193,15 +210,22 @@
 }
 
 .button{
-    margin-top: 30px;
+    margin-top: 10px;
     padding: 0px;
     background: #4ba55b;
-    width: 200px;
-    height: 50px;
+    width: 250px;
     border-radius: 5px;
     cursor: pointer;
     color: white;
     justify-content: center;
     align-items: center;
     display: flex;
+}
+
+.button p{
+    margin-top: 10px;
+}
+
+.rightBtn{
+    flex-basis: 75%;
 }

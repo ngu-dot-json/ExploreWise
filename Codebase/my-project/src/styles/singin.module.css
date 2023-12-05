@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'sand sarif';
+    color:#fff;
 }
 
 .container{
@@ -15,11 +15,14 @@
 
 .box{
     width: 400px;
-    background-color: rgb(208, 169, 244);
+    /* background-color: rgb(208, 169, 244); */
+    /* text-shadow: black 1px 0 10px; */
+    border: 3px solid white;
+    box-shadow: 0px 0px 18px black;
+    color:white;
     padding: 40px;
-    border-radius: 15px;
+    border-radius: 10px;
     text-align: center;
-    color: black;
 }
 
 .textbox{
@@ -51,10 +54,12 @@
     transition: 0.5s;
 }
 
+
+
 .textbox input:valid ~ span,
 .textbox input:focus ~ span 
 {
-    color: black;
+    color: white;
     transform: translateX(0) translateY(-30px);
     font-size: 0.7em;
     padding: 0 5px;
@@ -69,30 +74,34 @@
 }
 
 .forgotP a{
-    color: black;
+    color: #44b6f8;
+}
+
+.left-column {
+    color: white;
 }
 
 .Btn{ 
     display: flex;
     justify-content: center;
     align-items: center;
-   
+    color:white;
     margin-top: 15px;
     margin-left: 70px;
     padding: 12px;
-    background: rgb(255, 254, 254);
+    background: #f87144;
+    box-shadow: 0px 0px 18px black;
+
     width: 55%;
     border-radius: 5px;
-    cursor: pointer;
-    color: #fff;
-    
+    cursor: pointer;    
     text-decoration: none;
     text-align: center;
 }
 
 .Btn a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .Register{
@@ -100,7 +109,8 @@
 }
 
 .Register a{
-    color: black;
+    color: #44b6f8;
+    text-shadow: black 0px 0 18px;
 }
 
 .rembLogin{
@@ -108,7 +118,7 @@
 }
 
 .rembLogin a{
-    color: black;
+    color: #44b6f8;
 }
 
 
@@ -145,7 +155,7 @@
 .RTB input:valid ~ span,
 .RTB input:focus ~ span 
 {
-    color: black;
+    color:white;
     transform: translateX(0) translateY(-30px);
     font-size: 0.7em;
     padding: 0 5px;

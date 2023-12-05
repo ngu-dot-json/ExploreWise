@@ -41,6 +41,7 @@ const ExpenseList = () => {
 	const { dispatch } = useContext(AppContext);
 
 	const [editingExpenseId, setEditingExpenseId] = useState(null);
+	const [showConfirmation, setShowConfirmation] = useState(false);
 
 	const [name, setName] = useState('');
 	const nameRef = useRef(null);
@@ -134,12 +135,12 @@ const ExpenseList = () => {
 		// setDate('');
 		// setDescription('');
 
-		// setShowConfirmation(true);
-		// const timeout = setTimeout(() => {
-		// 	setShowConfirmation(false);
-		// 	}, 3000);
+		setShowConfirmation(true);
+		const timeout = setTimeout(() => {
+			setShowConfirmation(false);
+			}, 3000);
 
-		// return () => clearTimeout(timeout);
+		return () => clearTimeout(timeout);
 	};
 
 	// useEffect(() => {
@@ -150,7 +151,16 @@ const ExpenseList = () => {
 
 
 	return (
+
+		
         <div className={styles.outerBox}>
+
+			{showConfirmation && (
+				<div className="fixed top-10 right-0 m-4 p-4 bg-green-500 text-white rounded shadow">
+					Edited expense saved succssfully!
+				</div>
+			)}
+
 			<div class='row'>
 				<div class='col-sm col-lg-4'>
 					<h3 className='mt-3'>Expenses List</h3>

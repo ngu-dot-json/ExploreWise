@@ -111,6 +111,20 @@
   height: 1080px;
 }
 
+.button {
+  color: white;
+  text-align: center;
+  width: 100px;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  text-shadow: black 0px 0 18px;
+  box-shadow: 0px 0px 18px black;
+}
+
+
+
 .buttonLeft {
   color: white;
   text-align: center;
@@ -170,14 +184,12 @@
   }
 
   .gantt-center {
-    /* border: 3px solid; */
     position: absolute;
-    width: 160rem;
-    /* height: 70rem; */
-    margin-top: 350px;
+    width: max-content;
+    /* height: max-content; */
+    margin-top: 355px;
     left: 50%;
     transform: translate(-50%, -50%);
-    overflow-y: hidden; /* Hide vertical scroll bar */
   }
 
   .container {
@@ -187,8 +199,16 @@
 .gantt-center-2 {
     position: absolute;
     width: max-content;
-    margin-top: 100px;
-    /* border: 3px solid white; */
+    margin-top: 80px;
     left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+  }
+
+.gantt-center-3 {
+    position: absolute;
+    width: max-content;
+    margin-top: 580px;
+    left: 20%;
     transform: translate(-50%, -50%);
   }
