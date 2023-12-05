@@ -38,6 +38,7 @@ export const EVENTS = [
     genre: "outdoorsy",
     price: 18.99,
     favorite: false,
+    recommended: "",
     imgURL:
       "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
   },
@@ -52,6 +53,7 @@ export const EVENTS = [
     price: 21.99,
     favorite: false,
     genre: "food",
+    recommended: "recommended",
     imgURL:
       "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
   },
@@ -79,6 +81,20 @@ export const EVENTS = [
     timeEnd: "18:00",
     price: 10.55,
     genre: "art & creativity",
+    favorite: false,
+    imgURL:
+      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
+  },
+  {
+    id: 6,
+    name: "Taylor Swift Dance Night",
+    description:
+      "Calling all the Swifties to this mesmerizing night of music and delights!",
+    date: "11/08/2023",
+    timeStart: "20:00",
+    timeEnd: "23:00",
+    price: 30.55,
+    genre: "music",
     favorite: false,
     imgURL:
       "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",

@@ -10,29 +10,16 @@ function FindEvents() {
   const [activeEvent, setActiveEvent] = useState(-1);
   const [sortingOption, setSortingOption] = useState("default"); // default sorting option
   const [genreOption, setGenreOption] = useState("default");
+  const [showRecommended, setShowRecommended] = useState(false);
 
   useEffect(() => {
     const savedEvents =
       JSON.parse(localStorage.getItem("data") ?? "{}").events ?? [];
     setSavedEvents(savedEvents);
 
-    let sortedEvents = EVENTS.filter(
-      (event) => !savedEvents.find((e) => e.id === event.id)
-    );
     let filteredEvents = EVENTS.filter(
       (event) => !savedEvents.find((e) => e.id === event.id)
     );
-
-    // Sorting logic based on the selected option
-    if (sortingOption === "date") {
-      sortedEvents = sortedEvents.sort(
-        (a, b) => new Date(a.date) - new Date(b.date)
-      );
-    } else if (sortingOption === "lowprice") {
-      sortedEvents = sortedEvents.sort((a, b) => a.price - b.price);
-    } else if (sortingOption === "highprice") {
-      sortedEvents = sortedEvents.sort((a, b) => b.price - a.price);
-    }
 
     // Genre filtering logic
     if (genreOption !== "default") {
@@ -53,7 +40,7 @@ function FindEvents() {
           (event) => event.genre.toLowerCase() === "outdoorsy"
         );
       } else if (genreOption === "art & creativity") {
-        // Only display events related to outdoorsy activities
+        // Only display events related to art & creativity
         filteredEvents = filteredEvents.filter(
           (event) => event.genre.toLowerCase() === "art & creativity"
         );
@@ -61,10 +48,26 @@ function FindEvents() {
       }
     }
 
-    setEvents(sortedEvents);
+    // Sorting logic based on the selected option
+    if (sortingOption === "date") {
+      filteredEvents = filteredEvents.sort(
+        (a, b) => new Date(a.date) - new Date(b.date)
+      );
+    } else if (sortingOption === "lowprice") {
+      filteredEvents = filteredEvents.sort((a, b) => a.price - b.price);
+    } else if (sortingOption === "highprice") {
+      filteredEvents = filteredEvents.sort((a, b) => b.price - a.price);
+    }
+
+    if (showRecommended) {
+      filteredEvents = filteredEvents.filter(
+        (event) => event.recommended === "recommended"
+      );
+    }
+
     setEvents(filteredEvents);
     setActiveEvent(0);
-  }, [sortingOption, genreOption]);
+  }, [sortingOption, genreOption, showRecommended]);
 
   const addEvent = (event) => {
     localStorage.setItem(
@@ -88,6 +91,16 @@ function FindEvents() {
     // You might need to update the EVENTS array or use a sorting function
   };
 
+  const toggleFavorite = (clickedEvent) => {
+    const updatedEvents = events.map((event) =>
+      event.id === clickedEvent.id
+        ? { ...event, favorite: !event.favorite }
+        : event
+    );
+
+    setEvents(updatedEvents);
+  };
+
   return (
     <>
       <div>
@@ -95,7 +108,7 @@ function FindEvents() {
         <br />
       </div>
 
-      <div id="root" className="flex flex-col w-full pt-28 px-8 h-full gap-4">
+      <div className="flex flex-col w-full pt-28 px-8 h-full gap-4">
         <div className="flex gap-4 w-full h-full">
           {/* the left column */}
           <div className="flex flex-col w-2/3 gap-4 h-full ">
@@ -125,22 +138,30 @@ function FindEvents() {
                 <option value="art & creativity">Art & Creativity</option>
               </select>
 
-              <button className="bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded">
+              <button
+                className="bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded"
+                OnClick
+              >
                 Favourites ♥
               </button>
-              <button className="bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded">
+              <button
+                className="bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded"
+                onClick={() => setShowRecommended(!showRecommended)}
+              >
                 User Recommended
               </button>
             </div>
-            <div className="flex flex-col border-2 p-4 border-black overflow-hidden overflow-y-scroll h-full gap-2">
+            <div className="flex flex-col border-2 p-4 h-full gap-2 rounded">
               {events.map((event, index) => (
                 <div
                   key={index}
-                  className="flex border-2 border-black p-2 gap-2 text-black"
+                  className="flex border-2 border-ewBlue p-2 gap-2 hover:bg-slate-200 hover:scale-105 text-black rounded"
                   onMouseEnter={() => setActiveEvent(index)}
                 >
                   <div className="flex flex-col w-1/2">
-                    <p className="font-bold text-xl">{event.name}</p>
+                    <p className="font-bold text-xl" title={"hiiiiii"}>
+                      {event.name}
+                    </p>
                     <p className="font-light text-sm">{event.description}</p>
                   </div>
                   <div className="flex flex-col w-1/4 gap-4">
@@ -154,7 +175,11 @@ function FindEvents() {
                     </p>
                   </div>
                   <div className="flex w-1/4 items-center content-between gap-2">
-                    <button className="">{event.favorite ? "♥" : "♡"}</button>
+                    <button className="" onClick={() => toggleFavorite(event)}>
+                      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
+                      {event.favorite ? "♥" : "♡"}
+                    </button>
+
                     <div>
                       <p className="font-bold text-md">Price: {event.price}</p>
                       {!savedEvents.find((e) => e.id === event.id) ? (
@@ -181,13 +206,26 @@ function FindEvents() {
           </div>
           {/* the right column */}
           <div className="flex flex-col w-1/3 h-80">
-            {events[activeEvent]?.imgURL && (
-              <img
-                src={events[activeEvent]?.imgURL}
-                className="h-full w-full bg-cover"
-              />
-            )}
-            {events.length === 0 && <p>No events available.</p>}
+            <div style={{ marginBottom: "2rem" }}>
+              {events[activeEvent]?.imgURL && (
+                <img
+                  src={events[activeEvent]?.imgURL}
+                  className="h-full w-full bg-cover"
+                />
+              )}
+              {events.length === 0 && <p>No events available.</p>}
+            </div>
+            <div className="flex flex-col gap-4">
+              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl text-ewOrange">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
+                  Attractions, activities, and experiences
+                </span>{" "}
+              </h1>
+              <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
+                Discover new attractions and experiences to match your interests
+                and travel style
+              </p>
+            </div>
           </div>
         </div>
       </div>
