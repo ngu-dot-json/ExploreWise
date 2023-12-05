@@ -11,7 +11,7 @@ export const EVENTS = [
     price: 19.99,
     favorite: false,
     imgURL:
-      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F474582009%2F983222614293%2F1%2Foriginal.20230321-215159?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C156%2C940%2C470&s=6be605cde0fe78844e11ac365af3c399",
+      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
   },
   {
     id: 1,
@@ -25,7 +25,7 @@ export const EVENTS = [
     price: 0.0,
     favorite: false,
     imgURL:
-      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F517288179%2F41567759656%2F1%2Foriginal.20230518-015016?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=6fd90ae61322bc474478feaf4bfd6e27",
+      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
   },
   {
     id: 2,
@@ -38,9 +38,9 @@ export const EVENTS = [
     genre: "outdoorsy",
     price: 18.99,
     favorite: false,
-    recommended: "",
+    recommended: true,
     imgURL:
-      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
+      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
   },
   {
     id: 3,
@@ -53,9 +53,9 @@ export const EVENTS = [
     price: 21.99,
     favorite: false,
     genre: "food",
-    recommended: "recommended",
+    recommended: true,
     imgURL:
-      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
+      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
   },
   {
     id: 4,
@@ -69,7 +69,7 @@ export const EVENTS = [
     genre: "food",
     favorite: false,
     imgURL:
-      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
+      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
   },
   {
     id: 5,
@@ -83,7 +83,7 @@ export const EVENTS = [
     genre: "art & creativity",
     favorite: false,
     imgURL:
-      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
+      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
   },
   {
     id: 6,
@@ -97,6 +97,6 @@ export const EVENTS = [
     genre: "music",
     favorite: false,
     imgURL:
-      "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F603903579%2F575906860752%2F1%2Foriginal.20230922-060814?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C9000%2C4500&s=866751c63e74cccbb0e2349cb56a6668",
+      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
   },
 ];

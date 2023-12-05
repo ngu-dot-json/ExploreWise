@@ -93,13 +93,6 @@
   transition: 0.8s;
 }
 
-.navElements {
-  color: white;
-  text-shadow: black 0px 0 18px;
-  font-size: 20px;
-  font-weight: 500;
-}
-
 .dHead {
   color: #20455b;
   font-weight: 600;
@@ -122,8 +115,6 @@
   text-shadow: black 0px 0 18px;
   box-shadow: 0px 0px 18px black;
 }
-
-
 
 .buttonLeft {
   color: white;
@@ -174,41 +165,41 @@
   background-color: theme("colors.ewOrange");
   background-color: theme("colors.ewBlue");
   /* border: 3px solid; */
-    position: absolute;
-    /* width: max-content; */
-    width: 10%;
-    height:max-content;
-    margin-top: 350px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+  position: absolute;
+  /* width: max-content; */
+  width: 10%;
+  height: max-content;
+  margin-top: 350px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .gantt-center {
-    position: absolute;
-    width: max-content;
-    /* height: max-content; */
-    margin-top: 355px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.gantt-center {
+  position: absolute;
+  width: max-content;
+  /* height: max-content; */
+  margin-top: 355px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .container {
-    width: 100px;
-  }
+.container {
+  width: 100px;
+}
 
 .gantt-center-2 {
-    position: absolute;
-    width: max-content;
-    margin-top: 80px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-  }
+  position: absolute;
+  width: max-content;
+  margin-top: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+}
 
 .gantt-center-3 {
-    position: absolute;
-    width: max-content;
-    margin-top: 580px;
-    left: 20%;
-    transform: translate(-50%, -50%);
-  }
+  position: absolute;
+  width: max-content;
+  margin-top: 580px;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}

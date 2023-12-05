@@ -1,16 +1,13 @@
+import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
-import React, { useEffect, useState } from "react";
-import { EVENTS } from "../../constants/events";
-import { BiSolidDownArrow } from "react-icons/bi";
+import TwoButtons from "../../components/TwoButtons";
 import Gantt from "../../components/gantt-small";
-import Image from 'next/image'
-import backgrounder from "/public/test.png"
-import TwoButtons from "../../components/TwoButtons"
+import { EVENTS } from "../../constants/events";
+import { IoChevronDown } from "react-icons/io5";
 
 function FindEvents() {
   const [events, setEvents] = useState([]);
   const [savedEvents, setSavedEvents] = useState([]);
-  const [activeEvent, setActiveEvent] = useState(-1);
   const [sortingOption, setSortingOption] = useState("default"); // default sorting option
   const [genreOption, setGenreOption] = useState("default");
   const [showRecommended, setShowRecommended] = useState(false);
@@ -21,55 +18,32 @@ function FindEvents() {
     setSavedEvents(savedEvents);
 
     let filteredEvents = EVENTS.filter(
-      (event) => !savedEvents.find((e) => e.id === event.id)
-    );
-
-    // Genre filtering logic
-    if (genreOption !== "default") {
-      // Hard-coded logic for specific events based on the selected genre
-      if (genreOption === "music") {
-        // Only display events related to music
-        filteredEvents = filteredEvents.filter(
-          (event) => event.genre.toLowerCase() === "music"
-        );
-      } else if (genreOption === "food") {
-        // Only display events related to food
-        filteredEvents = filteredEvents.filter(
-          (event) => event.genre.toLowerCase() === "food"
-        );
-      } else if (genreOption === "outdoorsy") {
-        // Only display events related to outdoorsy activities
-        filteredEvents = filteredEvents.filter(
-          (event) => event.genre.toLowerCase() === "outdoorsy"
-        );
-      } else if (genreOption === "art & creativity") {
-        // Only display events related to art & creativity
-        filteredEvents = filteredEvents.filter(
-          (event) => event.genre.toLowerCase() === "art & creativity"
-        );
-        // Add more conditions for other genres as needed
+      (event) =>
+        !savedEvents.find((e) => e.id === event.id) &&
+        (genreOption === "default" ||
+          event.genre.toLowerCase() === genreOption) &&
+        (!showRecommended || event.recommended)
+    ).sort((a, b) => {
+      switch (sortingOption) {
+        case "date-ASC":
+          return new Date(a.date) - new Date(b.date);
+        case "date-DESC":
+          return new Date(b.date) - new Date(a.date);
+        case "price-ASC":
+          return a.price - b.price;
+        case "price-DESC":
+          return b.price - a.price;
       }
-    }
+      return 0;
+    });
 
-    // Sorting logic based on the selected option
-    if (sortingOption === "date") {
-      filteredEvents = filteredEvents.sort(
-        (a, b) => new Date(a.date) - new Date(b.date)
-      );
-    } else if (sortingOption === "lowprice") {
-      filteredEvents = filteredEvents.sort((a, b) => a.price - b.price);
-    } else if (sortingOption === "highprice") {
-      filteredEvents = filteredEvents.sort((a, b) => b.price - a.price);
-    }
-
-    if (showRecommended) {
-      filteredEvents = filteredEvents.filter(
-        (event) => event.recommended === "recommended"
-      );
-    }
+    // if (showRecommended) {
+    //   filteredEvents = filteredEvents.filter(
+    //     (event) => event.recommended === "recommended"
+    //   );
+    // }
 
     setEvents(filteredEvents);
-    setActiveEvent(0);
   }, [sortingOption, genreOption, showRecommended]);
 
   const addEvent = (event) => {
@@ -79,7 +53,6 @@ function FindEvents() {
     );
     setSavedEvents([...savedEvents, event]);
     setEvents(events.filter((e) => e.id !== event.id));
-    setActiveEvent(0);
   };
 
   const handleSortingChange = (e) => {
@@ -109,25 +82,130 @@ function FindEvents() {
       <div>
         <Navbar />
       </div>
-
       <div className="flex flex-col w-full pt-28 px-8 h-full gap-4">
-        <div className="flex gap-4 w-full h-full">
-          {/* the left column */}
-          <div className="flex flex-col w-2/3 gap-4 h-full ">
-            <div className="flex gap-4">
-              {/* Make into DropDown menu */}
+        <Gantt />
+        <div className="flex gap-4 w-full h-full justify-center items-start">
+          <div className="flex flex-col gap-4 h-full ">
+            <div className="flex w-full h-full justify-between items-start gap-4">
+              <div className="flex flex-col gap-4 justify-start items-start w-1/5">
+                <p className="font-bold text-xl">Filters</p>
+                <div className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded">
+                  <select
+                    value={sortingOption}
+                    onChange={handleSortingChange}
+                    className="appearance-none bg-orange-500 outline-none group-hover:bg-orange-700 text-white font-bold w-full"
+                  >
+                    <option value="default">Sort By</option>
+                    <option value="price-ASC">Price Low to High</option>
+                    <option value="price-DESC">Price High to Low</option>
+                    <option value="date-DESC">Oldest to Newest</option>
+                    <option value="date-ASC">Newest to Oldest</option>
+                  </select>
+                  <IoChevronDown className="top-1/2 right-4 absolute -translate-y-1/2 text-white" />
+                </div>
+                <div className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 hover:bg-bg-orange-700 text-white font-bold w-full py-2 rounded">
+                  <select
+                    value={genreOption}
+                    onChange={handleGenreChange}
+                    className="appearance-none bg-orange-500 outline-none group-hover:bg-orange-700 text-white font-bold w-full"
+                  >
+                    <option value="default">Genre</option>
+                    <option value="music">Music</option>
+                    <option value="food">Food</option>
+                    <option value="outdoorsy">Outdoorsy</option>
+                    <option value="art & creativity">Art & Creativity</option>
+                  </select>
+                  <IoChevronDown className="top-1/2 right-4 absolute -translate-y-1/2 text-white" />
+                </div>
+                <button className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded">
+                  Favourites
+                  <p className="top-1/2 right-4 absolute -translate-y-1/2 text-white">
+                    ♥
+                  </p>
+                </button>
+                <button
+                  className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
+                  onClick={() => setShowRecommended(!showRecommended)}
+                >
+                  User Recommended
+                </button>
+              </div>
+              <div className="w-4/5 flex flex-col gap-4 items-start justify-start h-full">
+                <p className="font-bold text-xl">Events</p>
+                <div className="grid grid-cols-3 grid-flow-rows gap-4 h-full">
+                  {events.map((event) => {
+                    return (
+                      <div
+                        key={event.id}
+                        className="flex flex-col bg-black items-start justify-start rounded-md w-full h-full relative"
+                      >
+                        <img
+                          src={event.imgURL}
+                          alt={event.name}
+                          className=" rounded-md rounded-b-none brightness-90 w-full"
+                        />
+                        <button
+                          className="absolute top-4 text-white text-4xl right-4"
+                          onClick={() => toggleFavorite(event)}
+                        >
+                          {event.favorite ? "♥" : "♡"}
+                        </button>
+                        <div className="flex flex-col text-white w-full h-full p-2 rounded-md">
+                          <div className="flex justify-between items-start gap-2">
+                            <p className="font-bold text-xl">{event.name}</p>
+                            <p className="bg-orange-500 w-24 text-center rounded-md">
+                              ${event.price}
+                            </p>
+                          </div>
+                          <p className="font-light text-sm">
+                            {event.description}
+                          </p>
+                          <p className="">
+                            <strong>Date:</strong>{" "}
+                            {new Date(event.date).toLocaleDateString("en", {
+                              dateStyle: "medium",
+                            })}
+                          </p>
+                          <p>
+                            <strong>Time:</strong> {event.timeStart} -{" "}
+                            {event.timeEnd}
+                          </p>
+                          <button
+                            className="text-md py-1 bg-orange-500 rounded-sm w-1/2 ml-auto mt-auto text-white hover:bg-orange-700"
+                            onClick={() => addEvent(event)}
+                          >
+                            Add event
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                  {events.length === 0 && <p>No events available.</p>}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="">{/* <TwoButtons /> */}</div>
+    </>
+  );
+}
+/**
+ * 
+ *  <div className="flex gap-4">
               <select
                 value={sortingOption}
                 onChange={handleSortingChange}
                 className="flex items-center bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded"
               >
                 <option value="default">Sort By</option>
-                <option value="lowprice">Price Low to High</option>
-                <option value="highprice">Price High to Low</option>
-                <option value="date">Date</option>
+                <option value="price-ASC">Price Low to High</option>
+                <option value="price-DESC">Price High to Low</option>
+                <option value="date-DESC">Oldest to Newest</option>
+                <option value="date-ASC">Newest to Oldest</option>
               </select>
 
-              {/* Make into DropDown menu */}
               <select
                 value={genreOption}
                 onChange={handleGenreChange}
@@ -140,10 +218,7 @@ function FindEvents() {
                 <option value="art & creativity">Art & Creativity</option>
               </select>
 
-              <button
-                className="bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded"
-                OnClick
-              >
+              <button className="bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded">
                 Favourites ♥
               </button>
               <button
@@ -153,68 +228,7 @@ function FindEvents() {
                 User Recommended
               </button>
             </div>
-            <div className="flex flex-col border-2 p-4 h-full gap-2 rounded">
-              {events.map((event, index) => (
-                <div
-                  key={index}
-                  className="flex border-2 border-ewBlue p-2 gap-2 hover:bg-slate-200 hover:scale-105 text-black rounded"
-                  onMouseEnter={() => setActiveEvent(index)}
-                >
-                  <div className="flex flex-col w-1/2">
-                    <p className="font-bold text-xl" title={"hiiiiii"}>
-                      {event.name}
-                    </p>
-                    <p className="font-light text-sm">{event.description}</p>
-                  </div>
-                  <div className="flex flex-col w-1/4 gap-4">
-                    <p>
-                      {new Date(event.date).toLocaleDateString("en", {
-                        dateStyle: "medium",
-                      })}
-                    </p>
-                    <p>
-                      {event.timeStart} - {event.timeEnd}
-                    </p>
-                  </div>
-                  <div className="flex w-1/4 items-center content-between gap-2">
-                    <button className="" onClick={() => toggleFavorite(event)}>
-                      {/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */}
-                      {event.favorite ? "♥" : "♡"}
-                    </button>
-
-                    <div>
-                      <p className="font-bold text-md">Price: {event.price}</p>
-                      {!savedEvents.find((e) => e.id === event.id) ? (
-                        <button
-                          className="text-md px-2 py-1 border-2 border-black hover:bg-black hover:text-white"
-                          onClick={() => addEvent(event)}
-                        >
-                          Add event
-                        </button>
-                      ) : (
-                        <button className="text-md px-2 py-1 border-2 border-black bg-black text-white cursor-not-allowed">
-                          Event added
-                        </button>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-              {events.length === 0 && <p>No events available.</p>}
-            </div>
-          </div>
-          {/* the right column */}
-          <div className="flex flex-col w-1/3 h-80">
-            <div style={{ marginBottom: "2rem" }}>
-              {events[activeEvent]?.imgURL && (
-                <img
-                  src={events[activeEvent]?.imgURL}
-                  className="h-full w-full bg-cover"
-                />
-              )}
-              {events.length === 0 && <p>No events available.</p>}
-            </div>
-            <div className="flex flex-col gap-4">
+ * <div className="flex flex-col gap-4">
               <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl text-ewOrange">
                 <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
                   Attractions, activities, and experiences
@@ -225,17 +239,5 @@ function FindEvents() {
                 and travel style
               </p>
             </div>
-          </div>
-        </div>
-      </div>`
-        </div>
-        <div className="">
-          <Gantt />
-          <TwoButtons />
-        </div>
-      </main>
-    </>
-  );
-}
-
+ */
 export default FindEvents;
