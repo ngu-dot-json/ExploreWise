@@ -86,25 +86,39 @@ async function initializeGSTC(element, items, handleClick) {
   });
 }
 
-const Gantt = (s) => {
+const Gantt = ({ setPopup, popup }) => {
   const ref = useRef(null);
   const [events, setEvents] = useState([]);
 
   // const selectedItems
   const handleClick = (e, d) => {
-    if (d.itemData.selected) {
-      const data = JSON.parse(localStorage.getItem("data") ?? "{}");
-      localStorage.setItem(
-        "data",
-        JSON.stringify({
-          ...data,
-          events: [
-            ...data.events?.filter(
-              (e) => e.id !== +d.itemData.id.split("-")[1]
-            ),
-          ],
-        })
-      );
+    if (
+      d.itemData.selected &&
+      JSON.parse(localStorage.getItem("data") ?? "{}").events?.find(
+        (e) => e.id === +d.itemData.id.split("-")[1]
+      )
+    ) {
+      setPopup({
+        title: "Delete Event",
+        message: "Are you sure you want to delete this event?",
+        confirmText: "Delete",
+        cancel: () => setPopup(null),
+        confirm: () => {
+          const data = JSON.parse(localStorage.getItem("data") ?? "{}");
+          localStorage.setItem(
+            "data",
+            JSON.stringify({
+              ...data,
+              events: [
+                ...data.events?.filter(
+                  (e) => e.id !== +d.itemData.id.split("-")[1]
+                ),
+              ],
+            })
+          );
+          setPopup(null);
+        },
+      });
     }
   };
   useEffect(() => {
@@ -167,7 +181,7 @@ const Gantt = (s) => {
   }, [ref.current]);
 
   return (
-    <div className="container w-full h-full flex justify-center items-center">
+    <div className="container">
       {events.length === 0 && (
         <p className="font-bold text-black">No events in itinerary...</p>
       )}

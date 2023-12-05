@@ -21,6 +21,7 @@ function FindEvents() {
   const [showRecommended, setShowRecommended] = useState(false);
   const [showFavorites, setShowFavorites] = useState(false);
   const [timer, setTimer] = useState(0);
+  const [popup, setPopup] = useState(null);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -109,7 +110,28 @@ function FindEvents() {
         <Navbar />
       </div>
       <div className="flex flex-col w-full pt-28 px-8 h-full gap-4">
-        <Gantt s="sm" />
+        {popup !== null && (
+          <div className="bg-white shadow-md p-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[999] text-black ">
+            <p className="font-bold">{popup.title}</p>
+            <p>{popup.message}</p>
+            <div className="flex gap-4 w-full">
+              <button
+                className="flex relative justify-between px-4 appearance-none items-center group bg-white border-2 border-orange-500  hover:border-orange-700 text-black font-bold w-full py-2 rounded"
+                onClick={() => popup.cancel?.()}
+              >
+                {popup.cancelText ?? "Cancel"}
+              </button>
+              <button
+                className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
+                onClick={() => popup.confirm?.()}
+              >
+                {popup.confirmText ?? "Confirm"}
+              </button>
+            </div>
+          </div>
+        )}{" "}
+        <div className="px-10">test test</div>
+        <Gantt setPopup={(p) => setPopup(p)} />
         <div className="flex gap-4 w-full h-full justify-center items-start">
           <div className="flex flex-col gap-4 h-full ">
             <div className="flex w-screen px-4 h-full justify-between items-start gap-4">
