@@ -24,8 +24,7 @@ export const EVENTS = [
     genre: "outdoorsy",
     price: 0.0,
     favorite: false,
-    imgURL:
-      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
+    imgURL: "https://otafest.com/wp-content/uploads/otafest-2024.png",
   },
   {
     id: 2,
@@ -40,7 +39,7 @@ export const EVENTS = [
     favorite: false,
     recommended: true,
     imgURL:
-      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
+      "https://d10j3mvrs1suex.cloudfront.net/s:bzglfiles/u/410797/902c61c224c77bd2601b134db287c1839eefb7e1/original/https-cdn-evbuc-com-images-603903579-575906860752-1-original.jpg/!!/meta%3AeyJzcmNCdWNrZXQiOiJiemdsZmlsZXMifQ%3D%3D.jpg",
   },
   {
     id: 3,
@@ -69,7 +68,7 @@ export const EVENTS = [
     genre: "food",
     favorite: false,
     imgURL:
-      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
+      "https://calendar.durham.ca/tourismevents/Detail/2023-09-08-1700-Downtown-Whitby-Beer-Fest-2023/16791539-753a-422f-aac0-b05400febfbc",
   },
   {
     id: 5,
@@ -83,7 +82,7 @@ export const EVENTS = [
     genre: "art & creativity",
     favorite: false,
     imgURL:
-      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
+      "https://wyattdowling.ca/get/files/image/galleries/Snowman_Blog_Image_1200x630.jpg",
   },
   {
     id: 6,
@@ -97,6 +96,6 @@ export const EVENTS = [
     genre: "music",
     favorite: false,
     imgURL:
-      "https://r-xx.bstatic.com/xdata/images/xphoto/max1200/273294158.jpg?k=5149fd31abcbfb3a547ac3e6a3c52d10c19f83c329fcd4e8ffc4fef28ca54163&o=",
+      "https://static.tixr.com/static/images/external/img/834ca9ef-76ed-4bae-a81a-48b2865aa451.jpg",
   },
 ];

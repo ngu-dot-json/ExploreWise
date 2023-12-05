@@ -1,9 +1,30 @@
-import React, { useCallback, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "gantt-schedule-timeline-calendar/dist/style.css";
-
+import moment from "moment";
 let GSTC, gstc, state;
 
-async function initializeGSTC(element, items) {
+const objectsEqual = (o1, o2) =>
+  typeof o1 === "object" && Object.keys(o1).length > 0
+    ? Object.keys(o1).length === Object.keys(o2).length &&
+      Object.keys(o1).every((p) => objectsEqual(o1[p], o2[p]))
+    : o1 === o2;
+const arraysEqual = (a1, a2) =>
+  a1.length === a2.length && a1.every((o, idx) => objectsEqual(o, a2[idx]));
+
+const colors = [
+  "#E74C3C",
+  "#DA3C78",
+  "#7E349D",
+  "#0077C0",
+  "#07ABA0",
+  "#0EAC51",
+  "#F1892D",
+];
+function getRandomColor() {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+async function initializeGSTC(element, items, handleClick) {
   GSTC = (await import("gantt-schedule-timeline-calendar")).default;
   const TimelinePointer = (
     await import(
@@ -26,47 +47,26 @@ async function initializeGSTC(element, items) {
     )
   ).Plugin;
 
-  // helper functions
-
-  const date = GSTC.api.date;
-  /**
-   * @type { import("gantt-schedule-timeline-calendar").Config }
-   */
-
-  const colors = [
-    "#E74C3C",
-    "#DA3C78",
-    "#7E349D",
-    "#0077C0",
-    "#07ABA0",
-    "#0EAC51",
-    "#F1892D",
-  ];
-
-  function getRandomColor() {
-    return colors[Math.floor(Math.random() * colors.length)];
-  }
-
-  const rowsFromDB = [
+  const rows = [
     {
       id: "1",
       label: "Row 1",
-      height: 400,
+      height: 100,
     },
   ];
 
   const config = {
-    // bruh
     licenseKey:
-      "====BEGIN LICENSE KEY====\nLu0QIexdRxqrRDxH8OvaAOQVGMblYKmaHhQG3uVSy6fzNO53M5eOM8DJRWLBoITGEzYR6Es/gTWtsTqAt81YQib8GBH3Sl+0suMwXGGfzoZFBLJgaOssiFKtjDk9NyI8WvPK/yvfmlj/vbmQ0/w3/jjPsfGAaUPviHmx1gc/hwnrTRAilwYQIW6l2h4vnmASjCdoA+XlI5kFbpbCUPLn8KISP1EsgX/k9DHG8+lRp2Q+8tnJScRatyPrfJxtfWO2Dc7sY851TPSLu+v7UQytNwbZ/j00F0yOzqSgEEClWtBg2wWo4AXDrT7e4Z2OgfgGNzpYNnazgAeLTcGL/uWlNg==||U2FsdGVkX1+91qiAaPx9v46wtBNz4mq+A7M6ttO/gWnY9aPoNPQdD+mzJ8Sia91Z6K1tc8ms2uv5IWFDv00bU2y9P/w2Tt21FYgekZnCUhQ=\nUWNYcEpBsSzusnL1CtYRX1hLP1gnCJQEjGtHumezJFz10uktm5KKYMR4L49/y4uRCR3Umjrah1xmCSi5+JWIZ1Umd+X1bIwJdxM+X5XODhXzf10Ykd3QJcmLdw+UZ8eaTXOY+nGCjCaOpg3Z93+jMe0uptC9fwsiAVGhL8QX7cyZEJM3SxuLzwyKj8qDuWxSwi4Ie+lZNBND98tmBz/WxMk5a8Y5FEQn+C6ipVBn+vczdREXjiocsRtgni6MzICeOubtQi7907y+EAJhaCv/vP/xERwA1ZTIiBmiYN/m3j1j+Z9TjKR949YkKiBF12H+bE1chUjBKArOC32U3IbfIQ==\n====END LICENSE KEY====",
-    innerHeight: 560,
-    width: 500,
-    headerHeight: 50,
+      "====BEGIN LICENSE KEY====\nXOfH/lnVASM6et4Co473t9jPIvhmQ/l0X3Ewog30VudX6GVkOB0n3oDx42NtADJ8HjYrhfXKSNu5EMRb5KzCLvMt/pu7xugjbvpyI1glE7Ha6E5VZwRpb4AC8T1KBF67FKAgaI7YFeOtPFROSCKrW5la38jbE5fo+q2N6wAfEti8la2ie6/7U2V+SdJPqkm/mLY/JBHdvDHoUduwe4zgqBUYLTNUgX6aKdlhpZPuHfj2SMeB/tcTJfH48rN1mgGkNkAT9ovROwI7ReLrdlHrHmJ1UwZZnAfxAC3ftIjgTEHsd/f+JrjW6t+kL6Ef1tT1eQ2DPFLJlhluTD91AsZMUg==||U2FsdGVkX1/SWWqU9YmxtM0T6Nm5mClKwqTaoF9wgZd9rNw2xs4hnY8Ilv8DZtFyNt92xym3eB6WA605N5llLm0D68EQtU9ci1rTEDopZ1ODzcqtTVSoFEloNPFSfW6LTIC9+2LSVBeeHXoLEQiLYHWihHu10Xll3KsH9iBObDACDm1PT7IV4uWvNpNeuKJc\npY3C5SG+3sHRX1aeMnHlKLhaIsOdw2IexjvMqocVpfRpX4wnsabNA0VJ3k95zUPS3vTtSegeDhwbl6j+/FZcGk9i+gAy6LuetlKuARjPYn2LH5Be3Ah+ggSBPlxf3JW9rtWNdUoFByHTcFlhzlU9HnpnBUrgcVMhCQ7SAjN9h2NMGmCr10Rn4OE0WtelNqYVig7KmENaPvFT+k2I0cYZ4KWwxxsQNKbjEAxJxrzK4HkaczCvyQbzj4Ppxx/0q+Cns44OeyWcwYD/vSaJm4Kptwpr+L4y5BoSO/WeqhSUQQ85nvOhtE0pSH/ZXYo3pqjPdQRfNm6NFeBl2lwTmZUEuw==\n====END LICENSE KEY====",
     plugins: [TimelinePointer(), Selection(), ItemResizing(), ItemMovement()],
     list: {
       columns: {},
-      rows: GSTC.api.fromArray(rowsFromDB), // rows: generateRows(),
+      rows: GSTC.api.fromArray(rows),
     },
+    actions: {
+      "chart-timeline-items-row-item": [handleClick],
+    },
+    innerHeight: 300,
     chart: {
       time: {
         zoom: 16.05,
@@ -86,74 +86,80 @@ async function initializeGSTC(element, items) {
   });
 }
 
-const Gantt = () => {
+const Gantt = (s) => {
   const ref = useRef(null);
+  const [events, setEvents] = useState([]);
+
+  // const selectedItems
+  const handleClick = (e, d) => {
+    if (d.itemData.selected) {
+      const data = JSON.parse(localStorage.getItem("data") ?? "{}");
+      localStorage.setItem(
+        "data",
+        JSON.stringify({
+          ...data,
+          events: [
+            ...data.events?.filter(
+              (e) => e.id !== +d.itemData.id.split("-")[1]
+            ),
+          ],
+        })
+      );
+    }
+  };
   useEffect(() => {
     let savedEvents =
       JSON.parse(localStorage.getItem("data") ?? "{}").events ?? [];
-    const colors = [
-      "#E74C3C",
-      "#DA3C78",
-      "#7E349D",
-      "#0077C0",
-      "#07ABA0",
-      "#0EAC51",
-      "#F1892D",
-    ];
-    function getRandomColor() {
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
-    initializeGSTC(
-      ref.current,
-      savedEvents.map((event) => ({
-        id: event.id,
-        label: event.name,
-        description: event.description,
-        style: { background: getRandomColor() },
-        rowId: "1",
-        height: 130,
-        time: {
-          start: moment(event.date)
-            .startOf("day")
-            .add(event.timeStart.split(":")[0], "hours")
-            .add(event.timeStart.split(":")[1], "minutes")
-            .valueOf(),
-          end: moment(event.date)
-            .startOf("day")
-            .add(event.timeEnd.split(":")[0], "hours")
-            .add(event.timeEnd.split(":")[1], "minutes")
-            .valueOf(),
-        },
-      }))
-    );
+    const items = savedEvents.map((event) => ({
+      id: event.id,
+      label: event.name,
+      description: event.description,
+      style: { background: getRandomColor() },
+      rowId: "1",
+      height: 100,
+      time: {
+        start: moment(event.date)
+          .startOf("day")
+          .add(event.timeStart.split(":")[0], "hours")
+          .add(event.timeStart.split(":")[1], "minutes")
+          .valueOf(),
+        end: moment(event.date)
+          .startOf("day")
+          .add(event.timeEnd.split(":")[0], "hours")
+          .add(event.timeEnd.split(":")[1], "minutes")
+          .valueOf(),
+      },
+    }));
+
+    initializeGSTC(ref.current, items, handleClick);
+    setEvents(items);
     const interval = setInterval(() => {
       const savedEventsNew =
         JSON.parse(localStorage.getItem("data") ?? "{}").events ?? [];
       if (!arraysEqual(savedEvents, savedEventsNew)) {
         savedEvents = savedEventsNew;
-        initializeGSTC(
-          ref.current,
-          savedEvents.map((event) => ({
-            id: event.id,
-            label: event.name,
-            description: event.description,
-            style: { background: getRandomColor() },
-            rowId: "1",
-            height: 300,
-            time: {
-              start: moment(event.date)
-                .startOf("day")
-                .add(event.timeStart.split(":")[0], "hours")
-                .add(event.timeStart.split(":")[1], "minutes")
-                .valueOf(),
-              end: moment(event.date)
-                .startOf("day")
-                .add(event.timeEnd.split(":")[0], "hours")
-                .add(event.timeEnd.split(":")[1], "minutes")
-                .valueOf(),
-            },
-          }))
-        );
+        const itemsNew = savedEventsNew.map((event) => ({
+          id: event.id,
+          label: event.name,
+          description: event.description,
+          style: { background: getRandomColor() },
+          rowId: "1",
+          height: 100,
+          time: {
+            start: moment(event.date)
+              .startOf("day")
+              .add(event.timeStart.split(":")[0], "hours")
+              .add(event.timeStart.split(":")[1], "minutes")
+              .valueOf(),
+            end: moment(event.date)
+              .startOf("day")
+              .add(event.timeEnd.split(":")[0], "hours")
+              .add(event.timeEnd.split(":")[1], "minutes")
+              .valueOf(),
+          },
+        }));
+        initializeGSTC(ref.current, itemsNew, handleClick);
+        setEvents(itemsNew);
       }
     }, 1000);
 
@@ -161,8 +167,10 @@ const Gantt = () => {
   }, [ref.current]);
 
   return (
-    <div className="container">
-      <hr />
+    <div className="container w-full h-full flex justify-center items-center">
+      {events.length === 0 && (
+        <p className="font-bold text-black">No events in itinerary...</p>
+      )}
       <div id="gstc" ref={ref}></div>
     </div>
   );

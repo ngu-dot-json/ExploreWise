@@ -1,9 +1,17 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import TwoButtons from "../../components/TwoButtons";
-import Gantt from "../../components/gantt-small";
+import Gantt from "../../components/gantt-calendar";
 import { EVENTS } from "../../constants/events";
 import { IoChevronDown } from "react-icons/io5";
+
+const objectsEqual = (o1, o2) =>
+  typeof o1 === "object" && Object.keys(o1).length > 0
+    ? Object.keys(o1).length === Object.keys(o2).length &&
+      Object.keys(o1).every((p) => objectsEqual(o1[p], o2[p]))
+    : o1 === o2;
+const arraysEqual = (a1, a2) =>
+  a1.length === a2.length && a1.every((o, idx) => objectsEqual(o, a2[idx]));
 
 function FindEvents() {
   const [events, setEvents] = useState([]);
@@ -11,45 +19,57 @@ function FindEvents() {
   const [sortingOption, setSortingOption] = useState("default"); // default sorting option
   const [genreOption, setGenreOption] = useState("default");
   const [showRecommended, setShowRecommended] = useState(false);
+  const [showFavorites, setShowFavorites] = useState(false);
+  const [timer, setTimer] = useState(0);
 
   useEffect(() => {
-    const savedEvents =
-      JSON.parse(localStorage.getItem("data") ?? "{}").events ?? [];
+    const interval = setInterval(() => {
+      setTimer((t) => t + 1);
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const data = JSON.parse(localStorage.getItem("data") ?? "{}");
+    const savedEvents = data.events ?? [];
     setSavedEvents(savedEvents);
-
-    let filteredEvents = EVENTS.filter(
-      (event) =>
-        !savedEvents.find((e) => e.id === event.id) &&
-        (genreOption === "default" ||
-          event.genre.toLowerCase() === genreOption) &&
-        (!showRecommended || event.recommended)
-    ).sort((a, b) => {
-      switch (sortingOption) {
-        case "date-ASC":
-          return new Date(a.date) - new Date(b.date);
-        case "date-DESC":
-          return new Date(b.date) - new Date(a.date);
-        case "price-ASC":
-          return a.price - b.price;
-        case "price-DESC":
-          return b.price - a.price;
-      }
-      return 0;
-    });
-
-    // if (showRecommended) {
-    //   filteredEvents = filteredEvents.filter(
-    //     (event) => event.recommended === "recommended"
-    //   );
-    // }
-
-    setEvents(filteredEvents);
-  }, [sortingOption, genreOption, showRecommended]);
+    setEvents(
+      EVENTS.map((e) =>
+        data.favorites?.find((ev) => ev.id === e.id)
+          ? { ...e, favorite: true }
+          : e
+      )
+        .filter(
+          (event) =>
+            !savedEvents.find((e) => e.id === event.id) &&
+            (genreOption === "default" ||
+              event.genre.toLowerCase() === genreOption) &&
+            (!showRecommended || event.recommended) &&
+            (!showFavorites || event.favorite)
+        )
+        .sort((a, b) => {
+          switch (sortingOption) {
+            case "date-ASC":
+              return new Date(a.date) - new Date(b.date);
+            case "date-DESC":
+              return new Date(b.date) - new Date(a.date);
+            case "price-ASC":
+              return a.price - b.price;
+            case "price-DESC":
+              return b.price - a.price;
+          }
+          return 0;
+        })
+    );
+  }, [sortingOption, genreOption, showRecommended, showFavorites, timer]);
 
   const addEvent = (event) => {
     localStorage.setItem(
       "data",
-      JSON.stringify({ events: [...savedEvents, event] })
+      JSON.stringify({
+        ...JSON.parse(localStorage.getItem("data") ?? "{}"),
+        events: [...savedEvents, event],
+      })
     );
     setSavedEvents([...savedEvents, event]);
     setEvents(events.filter((e) => e.id !== event.id));
@@ -73,7 +93,13 @@ function FindEvents() {
         ? { ...event, favorite: !event.favorite }
         : event
     );
-
+    localStorage.setItem(
+      "data",
+      JSON.stringify({
+        ...JSON.parse(localStorage.getItem("data") ?? "{}"),
+        favorites: [...updatedEvents.filter((e) => e.favorite)],
+      })
+    );
     setEvents(updatedEvents);
   };
 
@@ -83,10 +109,10 @@ function FindEvents() {
         <Navbar />
       </div>
       <div className="flex flex-col w-full pt-28 px-8 h-full gap-4">
-        <Gantt />
+        <Gantt s="sm" />
         <div className="flex gap-4 w-full h-full justify-center items-start">
           <div className="flex flex-col gap-4 h-full ">
-            <div className="flex w-full h-full justify-between items-start gap-4">
+            <div className="flex w-screen px-4 h-full justify-between items-start gap-4">
               <div className="flex flex-col gap-4 justify-start items-start w-1/5">
                 <p className="font-bold text-xl">Filters</p>
                 <div className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded">
@@ -117,7 +143,10 @@ function FindEvents() {
                   </select>
                   <IoChevronDown className="top-1/2 right-4 absolute -translate-y-1/2 text-white" />
                 </div>
-                <button className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded">
+                <button
+                  onClick={() => setShowFavorites(!showFavorites)}
+                  className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
+                >
                   Favourites
                   <p className="top-1/2 right-4 absolute -translate-y-1/2 text-white">
                     ♥
@@ -130,52 +159,54 @@ function FindEvents() {
                   User Recommended
                 </button>
               </div>
-              <div className="w-4/5 flex flex-col gap-4 items-start justify-start h-full">
+              <div className="w-4/5 flex flex-col gap-4 items-start justify-start">
                 <p className="font-bold text-xl">Events</p>
-                <div className="grid grid-cols-3 grid-flow-rows gap-4 h-full">
+                <div className="grid grid-cols-4 grid-flow-rows gap-2">
                   {events.map((event) => {
                     return (
                       <div
                         key={event.id}
                         className="flex flex-col bg-black items-start justify-start rounded-md w-full h-full relative"
                       >
-                        <img
-                          src={event.imgURL}
-                          alt={event.name}
-                          className=" rounded-md rounded-b-none brightness-90 w-full"
-                        />
-                        <button
-                          className="absolute top-4 text-white text-4xl right-4"
-                          onClick={() => toggleFavorite(event)}
-                        >
-                          {event.favorite ? "♥" : "♡"}
-                        </button>
-                        <div className="flex flex-col text-white w-full h-full p-2 rounded-md">
-                          <div className="flex justify-between items-start gap-2">
-                            <p className="font-bold text-xl">{event.name}</p>
-                            <p className="bg-orange-500 w-24 text-center rounded-md">
-                              ${event.price}
-                            </p>
+                        <div className="w-full min-h-[45%] relative">
+                          <div className="w-full h-full">
+                            <img
+                              src={event.imgURL}
+                              alt={event.name}
+                              className="rounded-md rounded-b-none brightness-90 object-fit aspect-[4/3] w-full h-full"
+                            />
                           </div>
-                          <p className="font-light text-sm">
-                            {event.description}
-                          </p>
-                          <p className="">
-                            <strong>Date:</strong>{" "}
-                            {new Date(event.date).toLocaleDateString("en", {
-                              dateStyle: "medium",
-                            })}
-                          </p>
-                          <p>
-                            <strong>Time:</strong> {event.timeStart} -{" "}
-                            {event.timeEnd}
-                          </p>
                           <button
-                            className="text-md py-1 bg-orange-500 rounded-sm w-1/2 ml-auto mt-auto text-white hover:bg-orange-700"
+                            className="absolute top-4 text-white text-4xl right-4"
+                            onClick={() => toggleFavorite(event)}
+                          >
+                            {event.favorite ? "♥" : "♡"}
+                          </button>
+                          <button
+                            className="absolute bottom-4 right-4 text-md py-2 bg-orange-500 rounded-md w-1/3 text-white hover:bg-orange-700"
                             onClick={() => addEvent(event)}
                           >
                             Add event
                           </button>
+
+                          <p className="absolute top-4 left-4 bg-orange-300 w-20 py-2 text-center text-black font-bold rounded-md">
+                            ${event.price}
+                          </p>
+                        </div>
+
+                        <div className="flex flex-col text-white w-full h-full p-2 rounded-md">
+                          <div className="flex justify-between items-start gap-2">
+                            <p className="font-bold text-xl">{event.name}</p>
+                          </div>
+                          <p className="font-bold">
+                            {new Date(event.date).toLocaleDateString("en", {
+                              dateStyle: "medium",
+                            })}{" "}
+                            at {event.timeStart} until {event.timeEnd}
+                          </p>
+                          <p className="font-light text-sm">
+                            {event.description}
+                          </p>
                         </div>
                       </div>
                     );
