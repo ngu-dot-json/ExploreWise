@@ -128,7 +128,7 @@ const Gantt = ({ setPopup }) => {
       description: event.description,
       style: { background: colors[event.id] },
       rowId: "1",
-      height: 60,
+      height: 50,
       time: {
         start: moment(event.date)
           .startOf("day")
@@ -156,7 +156,7 @@ const Gantt = ({ setPopup }) => {
           description: event.description,
           style: { background: colors[event.id] },
           rowId: "1",
-          height: 30,
+          height: 50,
           time: {
             start: moment(event.date)
               .startOf("day")

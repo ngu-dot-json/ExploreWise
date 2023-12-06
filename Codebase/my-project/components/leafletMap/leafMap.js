@@ -17,31 +17,6 @@ import { useSelector } from "react-redux";
 import { useCallback } from "react";
 import { useMemo } from "react";
 
-// function LocationMarker({ lat, lng }) {
-//   const [position, setPosition] = useState(null);
-//   const [bbox, setBbox] = useState([]);
-//   const map = useMap();
-
-//   useEffect(() => {
-//     map.flyTo([lat, lng], map.getZoom());
-//   }, [lat]);
-
-//   return position === null ? null : (
-//     <Marker position={position}>
-//       <Popup>You are here</Popup>
-//     </Marker>
-//   );
-// }
-
-// BLUE: 0077C0
-// RED: E74C3C
-// PINK: DA3C78
-// PURPLE: 7E349D
-// TEAL: 07ABA0
-// GREEN: 0EAC51
-// ORANGE: F1892D
-
-
 function Map() {
 
     //  Create the Icon
@@ -128,7 +103,7 @@ function Map() {
               <Popup>
                 <h5><b>Otafest(Late) 2023</b></h5>   
                 <h6>Telus Convention Centre, Calgary, AB</h6>
-                <h7>Nov 04 2023, 16:00 to 20:00</h7><br/>
+                <h7>Nov 04 2023, 09:00 to 13:00</h7><br/>
                 <p>Calgary’s Japanese pop culture festival. Shop. Cosplay. Games. Anime. Join a community and meet your favorite stars!</p>
                 <p><u>More Event Info</u></p>
               </Popup>
@@ -148,7 +123,7 @@ function Map() {
               <Popup>
                 <h5><b>Wine Tasting Fest</b></h5>   
                 <h6>SAIT Way NW, Calgary, AB</h6>
-                <h7>Nov 04 2023, 15:00 to 18:00</h7><br/>
+                <h7>Nov 04 2023, 12:00 to 13:00</h7><br/>
                 <p>Savor a refined experience at our wine tasting event, exploring exquisite flavors and aromas in an elegant setting guided by expert sommeliers.",</p>
                 <p><u>More Event Info</u></p>
               </Popup>
@@ -158,7 +133,7 @@ function Map() {
               <Popup>
                 <h5><b>Beer Fest!</b></h5>   
                 <h6>TD Core Shopping Centre, Calgary, AB</h6>
-                <h7>Nov 03 2023, 15:00 to 18:00</h7><br/>
+                <h7>Nov 03 2023, 05:40 to 07:20</h7><br/>
                 <p>Savor a refined experience at our beer tasting event, exploring exquisite flavors and aromas in an elegant setting guided by expert sommeliers.",</p>
                 <p><u>More Event Info</u></p>
               </Popup>

@@ -17,13 +17,8 @@ export default function Home() {
           <div className='absolute -z-10 mt-[-25px] w-full h-full'>
         <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
         </div>
-        {/*--------------------NavBar--------------------*/}
-        <div>
-          <Navbar/>  
-          <br/>
-        </div>
 
-        
+      
         {/*---------------------HTML---------------------*/}
         <div className={sstyle.body}>
           <div className={sstyle.container}>
@@ -43,6 +38,7 @@ export default function Home() {
               </div>
               <div className={sstyle.rembLogin}>
                 <p>Remember your password? <a href="signin">Login</a></p>
+                <h1 className={sstyle.ree}><a href="/">Return to Main Menu</a></h1>
               </div>
             </div>
           </div>

@@ -5,6 +5,18 @@
     color:#fff;
 }
 
+.ree {
+    color:white;
+    text-align: center;
+    font-size: 12px;
+    text-shadow: black 1px 0 10px;
+    transition: 0.8s;
+}
+.ree:hover {
+    color:#6207d0;
+    text-shadow: transparent 1px 0 10px;
+}
+
 .container{
     display: flex;
     justify-content: center;

@@ -53,10 +53,12 @@ export default function Home() {
               </div>
               <div className={sstyle.Register}>
               <p>Don't have an account? <a href="register">Register</a></p>
+              <h1 className={sstyle.ree}><a href="/">Return to Main Menu</a></h1>
               </div>
             </div>
           </div>
         </div>
+
     </>
   )
 }
