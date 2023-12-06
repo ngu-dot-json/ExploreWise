@@ -174,8 +174,7 @@ const ExpenseList = () => {
 					{deleteSelected ? (
 						<button
 							type='button'
-							class='appearance-none items-center text-white font-bold w-full py-2 rounded text-xs'
-							style ={{backgroundColor: 'grey'}}
+							class='appearance-none items-center text-white bg-gray-500 hover:bg-gray-600 font-bold w-full py-2 rounded text-xs'
 							onClick={() => {setDeleteSelected(false)}} //For cancel, the operations are the same as save, except the original budget value is passed in as new budget value.
 						>
 							Exit deleting mode
@@ -183,7 +182,7 @@ const ExpenseList = () => {
 					) : (
 						<button
 							type='button'
-							class='appearance-none items-center bg-red-600 text-white font-bold w-full py-2 rounded text-xs'
+							class='appearance-none items-center bg-red-600 hover:bg-red-700 text-white font-bold w-full py-2 rounded text-xs'
 							onClick={() => {setDeleteSelected(true)}} //For cancel, the operations are the same as save, except the original budget value is passed in as new budget value.
 						>
 							Enter deleting mode

@@ -30,7 +30,7 @@ const EditBudget = (props) => {
                     <div class='col-sm-6'>
                         <button
                             type='button'
-                            class='appearance-none items-center bg-green-600 text-white font-bold w-full py-2 rounded text-xs'
+                            class='appearance-none items-center bg-green-600 hover:bg-green-700 text-white font-bold w-full py-2 rounded text-xs'
                             onClick={() => props.handleSaveClick(value, oldValue.current)}
                         >
                             Save
@@ -39,7 +39,7 @@ const EditBudget = (props) => {
                     <div class='col-sm-6'>
                         <button
                             type='button'
-                            class='appearance-none items-center bg-red-600 text-white font-bold w-full py-2 rounded text-xs'
+                            class='appearance-none items-center bg-red-600 hover:bg-red-700 text-white font-bold w-full py-2 rounded text-xs'
                             oldOldValue={oldValue.current}
                             onClick={() => props.handleSaveClick(oldValue.current, oldValue.current)} //For cancel, the operations are the same as save, except the original budget value is passed in as new budget value.
                         >
