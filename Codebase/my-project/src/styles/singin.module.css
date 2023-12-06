@@ -122,7 +122,55 @@
 }
 
 
+.password{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
+.password input{
+    width: 75%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+    color:black;
+    font-size: 1em;    
+    background: rgb(224, 222, 222);
+}
+
+.password span{
+    position: absolute;
+    left: 13%;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgb(123, 121, 121);
+    transition: 0.5s;
+}
+
+
+
+.password input:valid ~ span,
+.password input:focus ~ span 
+{
+    color: white;
+    transform: translateX(0) translateY(-30px);
+    font-size: 0.7em;
+    padding: 0 5px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+
+
+.pwImg{
+    width: 7%;
+    position: absolute;
+    cursor: pointer;
+    right: 50px;
+}
 .RTB{
     margin-top: 15px;
     display: flex;
@@ -156,6 +204,48 @@
 .RTB input:focus ~ span 
 {
     color:white;
+    transform: translateX(0) translateY(-30px);
+    font-size: 0.7em;
+    padding: 0 5px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+
+.RTBpassword{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.RTBpassword input{
+    width: 75%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+    color:black;
+    font-size: 1em;    
+    background: rgb(224, 222, 222);
+}
+
+.RTBpassword span{
+    position: absolute;
+    left: 13%;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgb(123, 121, 121);
+    transition: 0.5s;
+}
+
+
+
+.RTBpassword input:valid ~ span,
+.RTBpassword input:focus ~ span 
+{
+    color: white;
     transform: translateX(0) translateY(-30px);
     font-size: 0.7em;
     padding: 0 5px;
