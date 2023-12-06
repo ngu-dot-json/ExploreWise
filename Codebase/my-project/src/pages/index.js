@@ -60,13 +60,14 @@ export default function Home() {
 
             <br/><br/><br/><br/><br/><br/><br/>
 
-            <h2 className='ewInfo'>Libraries and Tools Used for the Project Are:</h2><br/>
+            <h2 className='ewInfo'>Libraries and Tools Used for the Project are:</h2><br/>
             <h2 className='ewInfo3'>NextJS 14.0.0</h2>
             <h2 className='ewInfo3'>ReactJS 18</h2>
             <h2 className='ewInfo3'>Leaflet 1.9.4</h2>
             <h2 className='ewInfo3'>Tailwind CSS v3.3</h2>
             <h2 className='ewInfo3'>gantt-schedule-timeline-calendar by NEURONET</h2>
-            <br/>
+            <br/><br/><br/>
+            <h2 className='ewInfo4'>ExploreWise (c) 2023</h2>
           </heading> 
         </div>
       </div>

@@ -109,6 +109,16 @@
   transition: 0.8s;
 }
 
+.ewInfo4 {
+  text-align: center;
+  text-shadow: black 1px 0 10px;
+  color: gray;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 450;
+  transition: 0.8s;
+}
+
 .dHead {
   color: #20455b;
   font-weight: 600;
