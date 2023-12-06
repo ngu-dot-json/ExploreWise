@@ -41,7 +41,7 @@ export default function Home() {
         <title>Create Next App</title>
       </Head>
 
-      <div className="absolute -z-10 mt-[-25px] w-full h-full">
+      {/* <div className="absolute -z-10 mt-[-25px] w-full h-full">
         <Image
           className="bImg"
           src={backgrounder}
@@ -49,7 +49,7 @@ export default function Home() {
           width={1000}
           height={1000}
         />
-      </div>
+      </div> */}
       {/*--------------------NavBar--------------------*/}
       <div>
         <Navbar />
@@ -73,7 +73,7 @@ export default function Home() {
                   height={300}
                   id="pfp"
                 />
-                <label htmlFor="input-file">Upload Profile Picture</label>
+                <label htmlFor="input-file">Upload Picture</label>
                 <input
                   type="file"
                   accept="image/jpg, image/jpeg, image/png"

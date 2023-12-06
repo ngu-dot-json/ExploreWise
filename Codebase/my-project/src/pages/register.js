@@ -30,12 +30,7 @@ export default function Home() {
         <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
         </div>
         {/*--------------------NavBar--------------------*/}
-        <div>
-          <Navbar/>  
-          <br/>
-        </div>
 
-        
         {/*---------------------HTML---------------------*/}
         <div className={sstyle.body}>
           <div className={sstyle.container}>

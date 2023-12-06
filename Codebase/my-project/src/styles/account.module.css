@@ -30,8 +30,10 @@
 }
 
 .user h2{
-    color: white;
-    text-shadow: black 1px 0 15px;
+    margin-top: 110px;
+    color: orangered;
+    font-weight: 600;
+    font-size: 24px;
 }
 
 .profile-pic{
@@ -39,13 +41,12 @@
 }
 
 .profile-pic img{
-    height: 300px; 
-    width: 300px;
+    height: 280px; 
+    width: 280px;
     border-radius: 50%;
     margin-top: 0px;
     margin-bottom: 30px;
-    border: 3px solid rgba(255, 255, 255, 1);
-    box-shadow: 0px 0px 18px black;
+    border: 3px solid black;
 }
 
 
@@ -54,10 +55,10 @@
     justify-content: center;
     align-items: center;
     width: 200px;
-    font-size: 16px;
+    font-size: 20px;
     background: #44b6f8;
     color:#fff;
-    box-shadow: 0px 0px 18px black;
+    font-weight: 600;
     padding: 12px;
     margin: 5px auto;
     border-radius: 5px;
@@ -66,11 +67,10 @@
 
 .sign-out-btn h1 {
     color: white;
-    box-shadow: 0px 0px 18px black;
+    font-weight: 700;
 }
 
 .sign-out-btn{
-    box-shadow: 0px 0px 18px black;
     display:flex;
     font-size: 20px;
     justify-content: center;
@@ -78,6 +78,7 @@
     padding: 12px;
     background: #f87144;
     width: 200px;
+    font-weight: 700;
     border-radius: 5px;
     margin: 20px auto;
     cursor: pointer;
@@ -92,11 +93,12 @@
     display: none;
 }
 
-.wlcm-msg{
+.wlcm-msg h1{
     margin-left: 20px;
-    font-size: 25px;
-    color:white;
-    text-shadow: black 1px 0 15px;
+    margin-top: 20px;
+    font-size: 40px;
+    color:#f87144;
+    font-weight: 800;
 }
 
 
@@ -107,8 +109,9 @@
 }
 
 .change-email h2{
-    color: white;
-    text-shadow: black 1px 0 15px;
+    color: #44b6f8;
+    font-weight: 600;
+    font-size: 28px;
 }
 
 .current{
@@ -141,13 +144,12 @@
 .current input:valid ~ span,
 .current input:focus ~ span 
 {
-    color: white;
+    color: orange;
     transform: translateX(0) translateY(-17px);
     font-size: 0.7em;
     padding: 0 5px;
     letter-spacing: 0.15em;
     font-weight: 400;
-    text-shadow: 0px 0px 18px black;
 }
 
 .new{
@@ -180,7 +182,7 @@
 .new input:valid ~ span,
 .new input:focus ~ span 
 {
-    color: white;
+    color: orange;
     transform: translateX(0) translateY(-17px);
     font-size: 0.7em;
     padding: 0 5px;
@@ -195,8 +197,9 @@
 }
 
 .change-username h2{
-    color: white;
-    text-shadow: black 1px 0 15px;
+    color: #44b6f8;
+    font-weight: 600;
+    font-size: 28px;
 }
 
 .change-password{
@@ -205,14 +208,16 @@
 }
 
 .change-password h2{
-    color: white;
-    text-shadow: black 1px 0 15px;
+    color: #44b6f8;
+    font-weight: 600;
+    font-size: 28px;
 }
 
 .button{
     margin-top: 10px;
     padding: 0px;
     background: #4ba55b;
+    font-weight: 700;
     width: 250px;
     border-radius: 5px;
     cursor: pointer;
@@ -268,7 +273,7 @@
 .newPW input:valid ~ span,
 .newPW input:focus ~ span 
 {
-    color: white;
+    color: orange;
     transform: translateX(0) translateY(-17px);
     font-size: 0.7em;
     padding: 0 5px;
@@ -306,7 +311,7 @@
 .currPW input:valid ~ span,
 .currPW input:focus ~ span 
 {
-    color: white;
+    color: orange;
     transform: translateX(0) translateY(-17px);
     font-size: 0.7em;
     padding: 0 5px;

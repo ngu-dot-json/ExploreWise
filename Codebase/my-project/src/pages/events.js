@@ -130,7 +130,6 @@ function FindEvents() {
             </div>
           </div>
         )}{" "}
-        <div className="px-10">test test</div>
         <Gantt setPopup={(p) => setPopup(p)} />
         <div className="flex gap-4 w-full h-full justify-center items-start">
           <div className="flex flex-col gap-4 h-full ">

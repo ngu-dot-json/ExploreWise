@@ -11,10 +11,6 @@ const inter = Inter({ subsets: ['latin'] })
 export default function Home() {
   return (
     <>
-    <div>
-      <Navbar />  
-      <br/>
-    </div>
 
     {/* background image container */}
     <main className="flex flex-col items-center justify-between">
@@ -27,10 +23,16 @@ export default function Home() {
             <h2 className="ewHeading">Welcome To:</h2>
             <h1 className="ewEW">ExploreWise</h1>
             <h3 className='ewText'>Your Modern Travel Planning Platform.</h3>
+            <br/>
+            <h3 className='ewText2'>Please Sign In or Register to get started.</h3>
 
             {/* Add button here to take us to sign in page*/}
             <button className="daButton">
               <a className="buttonRight" href="signin">  Sign in  </a>
+            </button>
+
+            <button className="daButton">
+              <a className="buttonRight" href="register">  Register  </a>
             </button>
 
             <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
