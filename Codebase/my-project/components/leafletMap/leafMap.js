@@ -89,7 +89,7 @@ function Map() {
                 url="http://127.0.0.1:8000/tiles/{z}/{x}/{y}.png"
             />
 
-            <Marker position={[51.04558, -114.06127]} icon={icbm}>
+            <Marker position={[51.0491277981509, -113.82159291613183]} icon={icbm}>
               <Popup>
                 <h5><b>Night of Flamenco</b></h5>   
                 <h6>Anniversary Park, Chestermere, AB</h6>
@@ -99,7 +99,7 @@ function Map() {
               </Popup>
             </Marker>
 
-            <Marker position={[51.0491277981509, -113.82159291613183]} icon={ic1}>
+            <Marker position={[51.04558, -114.06127]} icon={ic1}>
               <Popup>
                 <h5><b>Otafest(Late) 2023</b></h5>   
                 <h6>Telus Convention Centre, Calgary, AB</h6>
