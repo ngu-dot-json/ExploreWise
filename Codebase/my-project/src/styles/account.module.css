@@ -374,7 +374,7 @@
 
 .leftC p{
     cursor: pointer;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 0px;
     margin-bottom: 0px;
     text-align: center;
@@ -385,7 +385,7 @@
 .rightC p{
     cursor: pointer;
     text-align: center;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 0px;
     margin-bottom: 0px;
     padding-bottom: 0px;

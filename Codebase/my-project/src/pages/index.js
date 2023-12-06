@@ -67,6 +67,8 @@ export default function Home() {
             <h2 className='ewInfo3'>Tailwind CSS v3.3</h2>
             <h2 className='ewInfo3'>gantt-schedule-timeline-calendar by NEURONET</h2>
             <br/>
+            <br/>
+            <h3 className='ewLM'>ExploreWise (c) 2023</h3>
           </heading> 
         </div>
       </div>

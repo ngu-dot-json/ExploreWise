@@ -132,22 +132,28 @@ function budget (){
       </main>    
 		</AppProvider>
 
-
+    <br/>
     <div class={styless.container}>
             <div class={styless.rowE}>
                 <div class={styless.leftC}>
                     <h1 class={styless.subT}>Support</h1>
-                      <p>Contact us</p>
+                    <p>About Us</p>
+                      <p>Contact Us</p>
                       <p>FAQ</p>
+
 
                 </div>
                 <div class={styless.rightC}>
                   <h1 class="sub-title">Terms and settings</h1>
-                      <p>Privacy Settings</p>
+                  <p>Privacy Settings</p>
+                      <p>Mailing List</p>
                       <p>Terms and Conditions</p>
                 </div>
             </div>
-        </div>
+      </div>
+
+      <br/>
+      <p className="text-center text-gray-500 font-xs">ExploreWise (c) 2023</p>
     </>
 	);
 }

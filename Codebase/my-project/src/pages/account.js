@@ -70,8 +70,8 @@ export default function Home() {
                 <Image
                   src={profilePicSrc}
                   alt="Profile Picture"
-                  width={300}
-                  height={300}
+                  width={280}
+                  height={280}
                   id="pfp"
                 />
                 <label htmlFor="input-file">Upload Picture</label>
@@ -148,21 +148,27 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <br/><br/><br/>
       <div class={styles.container}>
             <div class={styles.rowE}>
                 <div class={styles.leftC}>
                     <h1 class={styles.subT}>Support</h1>
-                      <p>Contact us</p>
+                      <p>About Us</p>
+                      <p>Contact Us</p>
                       <p>FAQ</p>
 
                 </div>
+                <br/><br/><br/><br/> 
                 <div class={styles.rightC}>
                   <h1 class="sub-title">Terms and settings</h1>
                       <p>Privacy Settings</p>
+                      <p>Mailing List</p>
                       <p>Terms and Conditions</p>
                 </div>
             </div>
-        </div>
+      </div>
+      <br/>
+      <p className="text-center text-gray-500 font-xs">ExploreWise (c) 2023</p>
     </>
   );
 }
