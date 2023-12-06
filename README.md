@@ -70,7 +70,28 @@ Under my-project, there are four main folders, 'components', 'constants', 'publi
     styles folder
     -   contains the css styling of every page
 
+## Walk-Through
 
+At the very beginning of running our website, the user will see our landing page, where they can Sign in or Register. 
+If this is their first time using our website, the user will Register by creating a new username and password. 
+
+Next, they'll be prompted to the Events page of our website, which uses their location to display all the available events to choose from. 
+
+Afterwards, the user can:
+- Sort the events based on 4 different filter options
+- Select genre depending on their mood
+- Mark interesting events as Favorites by clicking on the 'Heart' icon on each of the events, which can be accessed via the Favourites button on the left
+- Check out most popular events by clicking on the 'User Recommended' button
+
+The user can then select the events by clicking 'Add Event' to add it to their itinerary. If they want to delete any event, they will simply click on the event, and the system will ask to verify their action, and then the event will be removed. 
+Next, the user can create their own budgets for their trip on our 'Budget' tab. They can add their own events, edit them and delete them as well. 
+They can also set their total budget and easily see their remaining budget. 
+
+On the Map tab, the user can see how far the events are from their location as well as the details of all the events. The colored pins are the ones in their itinerary. 
+
+On the Itinerary tab, the user can have a max view of their schedule and move around to see how busy or free their timings are. 
+
+Lastly, on the Account tab, the user can make changes or update their username, email and password. 
 
 ## Acknowledgments (TODO)
 Give credit to any resources, libraries, or contributors that have inspired or helped your project.
