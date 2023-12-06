@@ -2,12 +2,25 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Navbar from '../../components/Navbar'
 import backgrounder from "/public/test.png"
+import closeEye from "/public/eyeClose.png"
+import openEye from "/public/eyeOpen.png"
 
 import sstyle from '../../src/styles/singin.module.css'
 
+
+function togglePasswordVisibility() {
+  let password = document.querySelector(`.${sstyle.password} input`);
+
+  if (password.type === "password") {
+    password.type = "text";
+  } else {
+    password.type = "password";
+  }
+}
+
 export default function Home() {
+
   return (
-          
     <>
           <Head>
             <title>Create Next App</title>
@@ -35,9 +48,10 @@ export default function Home() {
                 <input type="text" required="required" />
                 <span>Username</span>
               </div>
-              <div className={sstyle.textbox}>
-                <input type="text" required="required" />
+              <div className={sstyle.password}>
+                <input type="password" required="required" />
                 <span>Password</span>
+                <Image className={sstyle.pwImg} src="/eyeClose.png" width={1000} height={1000} onClick={togglePasswordVisibility}/>
               </div>
               <div className={sstyle.forgotP}>
                 <a href="forgotPW">Forgot Password?</a>
