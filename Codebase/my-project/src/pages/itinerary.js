@@ -1,8 +1,6 @@
-import { Inter } from "next/font/google";
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Gantt from "../../components/gantt-maxsize";
-const inter = Inter({ subsets: ["latin"] });
 import Head from "next/head";
 
 function itinerary() {

@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Navbar from '../../components/Navbar'
 import backgrounder from "/public/test.png"
 
 
@@ -10,16 +9,14 @@ export default function Home() {
   return (
           
     <>
-          <Head>
-            <title>ExploreWise: Forgot Password</title>
-          </Head>
+      <Head>
+        <title>ExploreWise: Forgot Password</title>
+      </Head>
           
-          <div className='absolute -z-10 mt-[-25px] w-full h-full'>
+      <div className='absolute -z-10 mt-[-25px] w-full h-full'>
         <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
-        </div>
+      </div>
 
-      
-        {/*---------------------HTML---------------------*/}
         <div className={sstyle.body}>
           <div className={sstyle.container}>
             <div className={sstyle.box}>

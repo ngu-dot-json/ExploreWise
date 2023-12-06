@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
-import backgrounder from "/public/test.png";
 import { useState } from "react";
 
 import sstyles from "../../src/styles/account.module.css";
@@ -41,22 +40,10 @@ export default function Home() {
         <title>ExploreWise: My Account</title>
       </Head>
 
-      {/* <div className="absolute -z-10 mt-[-25px] w-full h-full">
-        <Image
-          className="bImg"
-          src={backgrounder}
-          alt="background image"
-          width={1000}
-          height={1000}
-        />
-      </div> */}
-      {/*--------------------NavBar--------------------*/}
       <div>
         <Navbar />
         <br />
       </div>
-
-      {/*---------------------HTML---------------------*/}
 
       <div className={sstyles.body}>
         <div className={sstyles.container}>

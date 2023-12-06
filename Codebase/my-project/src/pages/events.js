@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
-import TwoButtons from "../../components/TwoButtons";
 import Gantt from "../../components/gantt-events";
 import { EVENTS } from "../../constants/events";
 import { IoChevronDown } from "react-icons/io5";
@@ -128,7 +127,7 @@ function FindEvents() {
                 {popup.cancelText ?? "Cancel"}
               </button>
               <button
-                className="flex relative justify-between px-4 appearance-none items-center group bg-orange-600 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
+                className="flex relative text-center justify-between px-4 appearance-none items-center group bg-orange-600 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
                 onClick={() => popup.confirm?.()}
               >
                 {popup.confirmText ?? "Confirm"}
@@ -248,53 +247,5 @@ function FindEvents() {
     </>
   );
 }
-/**
- * 
- *  <div className="flex gap-4">
-              <select
-                value={sortingOption}
-                onChange={handleSortingChange}
-                className="flex items-center bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded"
-              >
-                <option value="default">Sort By</option>
-                <option value="price-ASC">Price Low to High</option>
-                <option value="price-DESC">Price High to Low</option>
-                <option value="date-DESC">Oldest to Newest</option>
-                <option value="date-ASC">Newest to Oldest</option>
-              </select>
 
-              <select
-                value={genreOption}
-                onChange={handleGenreChange}
-                className="flex items-center bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded"
-              >
-                <option value="default">Genre</option>
-                <option value="music">Music</option>
-                <option value="food">Food</option>
-                <option value="outdoorsy">Outdoorsy</option>
-                <option value="art & creativity">Art & Creativity</option>
-              </select>
-
-              <button className="bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded">
-                Favourites ♥
-              </button>
-              <button
-                className="bg-ewBlue hover:bg-ewDarkBlue text-white font-bold py-2 px-4 rounded"
-                onClick={() => setShowRecommended(!showRecommended)}
-              >
-                User Recommended
-              </button>
-            </div>
- * <div className="flex flex-col gap-4">
-              <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl text-ewOrange">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">
-                  Attractions, activities, and experiences
-                </span>{" "}
-              </h1>
-              <p className="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400">
-                Discover new attractions and experiences to match your interests
-                and travel style
-              </p>
-            </div>
- */
 export default FindEvents;

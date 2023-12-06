@@ -18,7 +18,6 @@ import RemainingBudget from '../../components/BudgetTrackerComponents/Remaining'
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import "/src/styles/budget.module.css";
 
 const styles = {
   heading:{
@@ -44,7 +43,6 @@ function budget (){
 
       
       <AppProvider>
-      {/* background image container */}
 
       <main className="flex flex-col items-center justify-between">
         <div className='relative w-full'>
@@ -86,12 +84,7 @@ function budget (){
                     <ExpenseList />
                   </div>
                 </div>
-
               </div>
-
-
-
-
             </div>
           </div>
 

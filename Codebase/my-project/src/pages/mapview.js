@@ -4,10 +4,7 @@ import Navbar from "../../components/Navbar";
 import React, { useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 import Map from "../../components/leafletMap";
-import Image from "next/image";
-import backgrounder from "/public/test.png";
 import Gantt from "../../components/gantt-calendar";
-import TwoButtons from "../../components/TwoButtons";
 
 function Mapview() {
   const [popup, setPopup] = useState(null);
