@@ -50,7 +50,7 @@ export default function Home() {
                 <a href="forgotPW">Forgot Password?</a>
               </div>
               <div className={sstyle.Btn}>
-                <a href="account">Login</a>
+                <a href="events">Login</a>
               </div>
               <div className={sstyle.Register}>
               <p>Don't have an account? <a href="register">Register</a></p>
