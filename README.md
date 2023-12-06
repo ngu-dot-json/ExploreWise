@@ -58,18 +58,18 @@ Our main project can be found inside /Codebase/my-project
 
 Under my-project, there are four main folders, 'components', 'constants', 'public' and 'src'
 
-components folder (TODO)
-constants folder (TODO)
+- components folder (TODO)  
+- constants folder (TODO)
 
-public folder 
-Contains the pictures we use on our website
+- public folder 
+  - Contains the pictures we use on our website
 
-src folder 
-Contains subfolders 'context', 'pages', and 'styles'
-  pages folder
-  -  contains every single page used in our website which is linked by next.js
-  styles folder
-  -   contains the css styling of every page
+- src folder 
+  Contains subfolders 'context', 'pages', and 'styles'
+    pages folder
+    -  contains every single page used in our website which is linked by next.js
+    styles folder
+    -   contains the css styling of every page
 
 
 
