@@ -185,8 +185,8 @@ const Gantt = ({ setPopup }) => {
         <p className="mt-[-5px] text-sm text-center text-red-500 ">Simply click on an event to access the delete function.</p>
       )}
       {events.length === 0 && (
-        <p className="font-bold text-black">No events in itinerary...</p>
-      )}
+        <p className="font-bold text-center text-sm text-orange-500">No events in itinerary. Add some events in the events page!</p>
+        )}
     </div>
   );
 };

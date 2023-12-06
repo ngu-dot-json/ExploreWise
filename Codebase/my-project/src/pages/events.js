@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
 import TwoButtons from "../../components/TwoButtons";
-import Gantt from "../../components/gantt-calendar";
+import Gantt from "../../components/gantt-events";
 import { EVENTS } from "../../constants/events";
 import { IoChevronDown } from "react-icons/io5";
 import Head from "next/head";

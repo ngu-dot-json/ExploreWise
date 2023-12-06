@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import "gantt-schedule-timeline-calendar/dist/style.css";
 import moment from "moment";
 let GSTC, gstc, state;
@@ -11,7 +11,18 @@ const objectsEqual = (o1, o2) =>
 const arraysEqual = (a1, a2) =>
   a1.length === a2.length && a1.every((o, idx) => objectsEqual(o, a2[idx]));
 
-async function initializeGSTC(element, items) {
+const colors = [
+  "#E74C3C",
+  "#DA3C78",
+  "#7E349D",
+  "#0077C0",
+  "#07ABA0",
+  "#0EAC51",
+  "#F1892D",
+  "#9b7874",
+];
+
+async function initializeGSTC(element, items, handleClick) {
   GSTC = (await import("gantt-schedule-timeline-calendar")).default;
   const TimelinePointer = (
     await import(
@@ -34,14 +45,7 @@ async function initializeGSTC(element, items) {
     )
   ).Plugin;
 
-  // helper functions
-
-  const date = GSTC.api.date;
-  /**
-   * @type { import("gantt-schedule-timeline-calendar").Config }
-   */
-
-  const rowsFromDB = [
+  const rows = [
     {
       id: "1",
       label: "Row 1",
@@ -55,9 +59,12 @@ async function initializeGSTC(element, items) {
     plugins: [TimelinePointer(), Selection(), ItemResizing(), ItemMovement()],
     list: {
       columns: {},
-      rows: GSTC.api.fromArray(rowsFromDB),
+      rows: GSTC.api.fromArray(rows),
     },
-    height: 200,
+    actions: {
+      "chart-timeline-items-row-item": [handleClick],
+    },
+    innerHeight: 90,
     chart: {
       time: {
         zoom: 16.05,
@@ -77,72 +84,94 @@ async function initializeGSTC(element, items) {
   });
 }
 
-const Gantt = () => {
+const Gantt = ({ setPopup }) => {
   const ref = useRef(null);
+  const [events, setEvents] = useState([]);
+
+  // const selectedItems
+  const handleClick = (e, d) => {
+    if (
+      d.itemData.selected &&
+      JSON.parse(localStorage.getItem("data") ?? "{}").events?.find(
+        (e) => e.id === +d.itemData.id.split("-")[1]
+      )
+    ) {
+      setPopup({
+        title: "Delete Event",
+        message: "Are you sure you want to delete this event?",
+        confirmText: "Delete",
+        cancel: () => setPopup(null),
+        confirm: () => {
+          const data = JSON.parse(localStorage.getItem("data") ?? "{}");
+          localStorage.setItem(
+            "data",
+            JSON.stringify({
+              ...data,
+              events: [
+                ...data.events?.filter(
+                  (e) => e.id !== +d.itemData.id.split("-")[1]
+                ),
+              ],
+            })
+          );
+          setPopup(null);
+        },
+      });
+    }
+  };
   useEffect(() => {
     let savedEvents =
       JSON.parse(localStorage.getItem("data") ?? "{}").events ?? [];
-    const colors = [
-      "#E74C3C",
-      "#DA3C78",
-      "#7E349D",
-      "#0077C0",
-      "#07ABA0",
-      "#0EAC51",
-      "#F1892D",
-    ];
+    const items = savedEvents.map((event) => ({
+      id: event.id,
+      label: event.name,
+      description: event.description,
+      style: { background: colors[event.id] },
+      rowId: "1",
+      height: 50,
+      time: {
+        start: moment(event.date)
+          .startOf("day")
+          .add(event.timeStart.split(":")[0], "hours")
+          .add(event.timeStart.split(":")[1], "minutes")
+          .valueOf(),
+        end: moment(event.date)
+          .startOf("day")
+          .add(event.timeEnd.split(":")[0], "hours")
+          .add(event.timeEnd.split(":")[1], "minutes")
+          .valueOf(),
+      },
+    }));
 
-    initializeGSTC(
-      ref.current,
-      savedEvents.map((event) => ({
-        id: event.id,
-        label: event.name,
-        description: event.description,
-        style: { background: colors[event.id] },
-        rowId: "1",
-        height: 50,
-        time: {
-          start: moment(event.date)
-            .startOf("day")
-            .add(event.timeStart.split(":")[0], "hours")
-            .add(event.timeStart.split(":")[1], "minutes")
-            .valueOf(),
-          end: moment(event.date)
-            .startOf("day")
-            .add(event.timeEnd.split(":")[0], "hours")
-            .add(event.timeEnd.split(":")[1], "minutes")
-            .valueOf(),
-        },
-      }))
-    );
+    initializeGSTC(ref.current, items, handleClick);
+    setEvents(items);
     const interval = setInterval(() => {
       const savedEventsNew =
         JSON.parse(localStorage.getItem("data") ?? "{}").events ?? [];
       if (!arraysEqual(savedEvents, savedEventsNew)) {
         savedEvents = savedEventsNew;
-        initializeGSTC(
-          ref.current,
-          savedEvents.map((event) => ({
-            id: event.id,
-            label: event.name,
-            description: event.description,
-            style: { background: colors[event.id] },
-            rowId: "1",
-            height: 50,
-            time: {
-              start: moment(event.date)
-                .startOf("day")
-                .add(event.timeStart.split(":")[0], "hours")
-                .add(event.timeStart.split(":")[1], "minutes")
-                .valueOf(),
-              end: moment(event.date)
-                .startOf("day")
-                .add(event.timeEnd.split(":")[0], "hours")
-                .add(event.timeEnd.split(":")[1], "minutes")
-                .valueOf(),
-            },
-          }))
-        );
+        const itemsNew = savedEventsNew.map((event) => ({
+          id: event.id,
+          label: event.name,
+          description: event.description,
+          style: { background: colors[event.id] },
+          rowId: "1",
+          height: 50,
+          time: {
+            start: moment(event.date)
+              .startOf("day")
+              .add(event.timeStart.split(":")[0], "hours")
+              .add(event.timeStart.split(":")[1], "minutes")
+              .valueOf(),
+            end: moment(event.date)
+              .startOf("day")
+              .add(event.timeEnd.split(":")[0], "hours")
+              .add(event.timeEnd.split(":")[1], "minutes")
+              .valueOf(),
+          },
+        }));
+        initializeGSTC(ref.current, itemsNew, handleClick);
+        setEvents(itemsNew);
       }
     }, 1000);
 
@@ -156,8 +185,8 @@ const Gantt = () => {
         <p className="mt-[-5px] text-sm text-center text-red-500 ">Simply click on an event to access the delete function.</p>
       )}
       {events.length === 0 && (
-        <p className="font-bold text-black">No events in itinerary...</p>
-      )}
+        <p className="font-bold text-center text-sm text-orange-500">No events in itinerary. Let's add some events!</p>
+        )}
     </div>
   );
 };
