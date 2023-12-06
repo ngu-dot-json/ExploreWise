@@ -5,7 +5,7 @@
  */
 
 import Navbar from '../../components/Navbar'
-import React, { useState } from 'react';
+import React from 'react';
 import Head from "next/head";
 
 
@@ -18,6 +18,8 @@ import RemainingBudget from '../../components/BudgetTrackerComponents/Remaining'
 import Image from 'next/image'
 import backgrounder from "/public/test.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import styless from "../styles/account.module.css"
+//import "/src/styles/budget.module.css";
 
 const styles = {
   heading:{
@@ -28,18 +30,6 @@ const styles = {
 }
 
 function budget (){
-
-
-  const [showUnderDevMes, setShowUnderDevMes] = useState(false);
-
-  const onClick = () => {
-    setShowUnderDevMes(true);
-		const timeout = setTimeout(() => {
-			setShowUnderDevMes(false);
-		  }, 3000);
-
-	  	return () => clearTimeout(timeout);
-  }
   
 	return (
   
@@ -55,45 +45,20 @@ function budget (){
 
       
       <AppProvider>
+      {/* background image container */}
 
       <main className="flex flex-col items-center justify-between">
         <div className='relative w-full'>
 
           <div className='container'>
             <h1 style={styles.heading}>My Budget Planner</h1>
-
-            {showUnderDevMes && (
-              <div className="fixed top-10 right-0 m-4 p-4 bg-yellow-500 text-white rounded shadow">
-                Feature under development
-              </div>
-      	    )}
-
             
             <div class='container'>
               <div className='row mt-3'>
-                <div className='col-lg-6'>
+                <div className='col-lg-12'>
                   <div class="alert alert-info" role="alert">
                     Set your total budget for the trip, then start adding expenses!
                   </div> 
-                </div>
-                <div className='col-lg-2'>
-
-                </div>
-                <div className='col-lg-2'>
-                  <button 
-                    type='button' 
-                    class='appearance-none items-center group bg-green-600 hover:bg-green-700 text-white font-bold w-full py-3 rounded text-sm'
-                    onClick={onClick}>
-                    Create New Budget
-                  </button>
-                </div>
-                <div className='col-lg-2'>
-                  <button 
-                      type='button' 
-                      class='appearance-none items-center group bg-orange-600 hover:bg-orange-700 text-white font-bold w-full py-3 rounded text-sm'
-                      onClick={onClick}>
-                      Switch to Another Budget
-                    </button>
                 </div>
               </div>
 
@@ -122,7 +87,12 @@ function budget (){
                     <ExpenseList />
                   </div>
                 </div>
+
               </div>
+
+
+
+
             </div>
           </div>
 
@@ -130,6 +100,21 @@ function budget (){
         </div>
       </main>    
 		</AppProvider>
+    <div class={styless.container}>
+            <div class={styless.rowE}>
+                <div class={styless.leftC}>
+                    <h1 class={styless.subT}>Support</h1>
+                      <p>Contact us</p>
+                      <p>FAQ</p>
+
+                </div>
+                <div class={styless.rightC}>
+                  <h1 class="sub-title">Terms and settings</h1>
+                      <p>Privacy Settings</p>
+                      <p>Terms and Conditions</p>
+                </div>
+            </div>
+        </div>
     </>
 	);
 }
