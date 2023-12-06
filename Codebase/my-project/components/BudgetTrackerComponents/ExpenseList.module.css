@@ -25,6 +25,10 @@
   font-size: 12px;
 }
 
+.costBox{
+  font-weight: bold;
+}
+
 #saveButton{
   margin-top: 3px;
 }
