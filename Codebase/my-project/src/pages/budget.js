@@ -22,8 +22,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 const styles = {
   heading:{
     marginTop: "60px", //Shifting the heading down so it is not covered by the navigation bar
-    color: "white",
-    textShadow: "black 0px 0 18px",
+    color: "#f87144",
+    fontWeight: "700",
   }
 }
 
@@ -45,10 +45,6 @@ function budget (){
 
       <main className="flex flex-col items-center justify-between">
         <div className='relative w-full'>
-          <div className='absolute -z-10 mt-[-25px] w-full h-full'>
-            <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
-          </div>
-
 
           <div className='container'>
             <h1 style={styles.heading}>My Budget Planner</h1>

@@ -91,16 +91,14 @@ const Gantt = () => {
       "#0EAC51",
       "#F1892D",
     ];
-    function getRandomColor() {
-      return colors[Math.floor(Math.random() * colors.length)];
-    }
+
     initializeGSTC(
       ref.current,
       savedEvents.map((event) => ({
         id: event.id,
         label: event.name,
         description: event.description,
-        style: { background: getRandomColor() },
+        style: { background: colors[event.id] },
         rowId: "1",
         height: 50,
         time: {
@@ -128,7 +126,7 @@ const Gantt = () => {
             id: event.id,
             label: event.name,
             description: event.description,
-            style: { background: getRandomColor() },
+            style: { background: colors[event.id] },
             rowId: "1",
             height: 50,
             time: {

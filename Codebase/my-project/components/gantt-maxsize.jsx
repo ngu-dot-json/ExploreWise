@@ -20,9 +20,6 @@ const colors = [
   "#0EAC51",
   "#F1892D",
 ];
-function getRandomColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
-}
 
 async function initializeGSTC(element, items, handleClick) {
   GSTC = (await import("gantt-schedule-timeline-calendar")).default;
@@ -128,9 +125,9 @@ const Gantt = ({ setPopup, popup }) => {
       id: event.id,
       label: event.name,
       description: event.description,
-      style: { background: getRandomColor() },
+      style: { background: colors[event.id] },
       rowId: "1",
-      height: 280,
+      height: 200,
       time: {
         start: moment(event.date)
           .startOf("day")
@@ -156,7 +153,7 @@ const Gantt = ({ setPopup, popup }) => {
           id: event.id,
           label: event.name,
           description: event.description,
-          style: { background: getRandomColor() },
+          style: { background: colors[event.id] },
           rowId: "1",
           height: 100,
           time: {

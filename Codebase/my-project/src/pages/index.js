@@ -28,7 +28,6 @@ export default function Home() {
 
             <br/><br/><br/><br/><br/><br/><br/><br/>
 
-
             {/* Add button here to take us to sign in page*/}
             <button className="daButton">
               <a className="buttonRight" href="signin">  Sign in  </a>
@@ -40,7 +39,7 @@ export default function Home() {
               <a className="buttonRight" href="register">  Register  </a>
             </button>
 
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/>
             
             <h3 className='ewLM'>scroll down to learn more</h3>
 
