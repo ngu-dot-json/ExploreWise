@@ -19,7 +19,6 @@ First, ensure you are in the /Codebase/my-project directory. Then, install any m
 npm install
 ```
 Then, run the development server
-install 
 ```bash
 npm run dev
 # or
