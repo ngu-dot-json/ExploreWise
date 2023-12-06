@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Navbar from "../../components/Navbar";
-import TwoButtons from "../../components/TwoButtons";
 import Gantt from "../../components/gantt-calendar";
 import { EVENTS } from "../../constants/events";
 import { IoChevronDown } from "react-icons/io5";
@@ -245,22 +244,25 @@ function FindEvents() {
           </div>
         </div>
       </div>
-      <div className="">{/* <TwoButtons /> */}</div>
+      <br/><br/><br/>
       <div class={styles.container}>
             <div class={styles.rowE}>
                 <div class={styles.leftC}>
                     <h1 class={styles.subT}>Support</h1>
-                      <p>Contact us</p>
+                      <p>About Us</p>
+                      <p>Contact Us</p>
                       <p>FAQ</p>
 
                 </div>
+                <br/><br/><br/><br/> 
                 <div class={styles.rightC}>
                   <h1 class="sub-title">Terms and settings</h1>
                       <p>Privacy Settings</p>
+                      <p>Mailing List</p>
                       <p>Terms and Conditions</p>
                 </div>
             </div>
-        </div>
+      </div>
     </>
   );
 }

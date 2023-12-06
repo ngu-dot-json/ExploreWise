@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
+import Navbar from '../../components/Navbar'
+import Schedule from '../../components/old/TLScheduler'
 import Image from 'next/image'
 import background from "/public/test2.png"
-import styles from "../styles/account.module.css"
-
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -29,20 +29,19 @@ export default function Home() {
             <br/>
             <h3 className='ewText2'>Please Sign In or Register to get started.</h3>
 
-            <br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-            {/* Add button here to take us to sign in page*/}
-            <button className="daButton">
-              <a className="buttonRight" href="signin">  Sign in  </a>
-            </button>
+            <div className="daButton">
+              <button className="daButton2">
+                <a className="buttonRight" href="signin">Sign in</a>
+              </button>
 
-            <br/>
+              <button>
+                <a className="buttonRight" href="register">Register</a>
+              </button>
+            </div>
 
-            <button className="daButton">
-              <a className="buttonRight" href="register">  Register  </a>
-            </button>
-
-            <br/><br/>
+            <br/><br/><br/>
             
             <h3 className='ewLM'>scroll down to learn more</h3>
 
@@ -69,25 +68,7 @@ export default function Home() {
             <h2 className='ewInfo3'>gantt-schedule-timeline-calendar by NEURONET</h2>
             <br/>
           </heading> 
-
-          <div class={styles.container}>
-            <div class={styles.rowE}>
-                <div class={styles.leftC}>
-                    <h1 class={styles.subT}>Support</h1>
-                      <p>Contact us</p>
-                      <p>FAQ</p>
-
-                </div>
-                <div class={styles.rightC}>
-                  <h1 class="sub-title">Terms and settings</h1>
-                      <p>Privacy Settings</p>
-                      <p>Terms and Conditions</p>
-                </div>
-            </div>
         </div>
-        
-        </div>
-        
       </div>
     </main>
     </>
