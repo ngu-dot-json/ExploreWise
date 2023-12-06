@@ -75,6 +75,9 @@ Under my-project, there are four main folders, 'components', 'constants', 'publi
 ## Acknowledgments (TODO)
 Give credit to any resources, libraries, or contributors that have inspired or helped your project.
 
+  Blakely, C. [Chris @ CodeCoyotes]. (2021, March 11). React Budget App Tutorial | Learn how to use the Context API [Video].
+YouTube. https://www.youtube.com/watch?v=aeYxBd1it7I
+
 
 
 ## Authors
