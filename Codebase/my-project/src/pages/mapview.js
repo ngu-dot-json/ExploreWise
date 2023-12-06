@@ -4,7 +4,11 @@ import Navbar from "../../components/Navbar";
 import React, { useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
 import Map from "../../components/leafletMap";
+import Image from "next/image";
+import backgrounder from "/public/test.png";
 import Gantt from "../../components/gantt-calendar";
+import TwoButtons from "../../components/TwoButtons";
+import styles from "../styles/account.module.css"
 
 function Mapview() {
   const [popup, setPopup] = useState(null);
@@ -42,15 +46,27 @@ function Mapview() {
               </div>
             </div>
           )}
-          <h1 className="mt-[60px] ml-20 text-bold text-center text-sm">Simply click and drag the map to interact! To view event info, simply click on the marker for more information!</h1>
           <Map />
-          <h1 className="ml-20 text-sm text-center text-gray-400 ">Colored markers are events already in the itinerary, color matched for ease of use!</h1>
         </div>
         <Gantt setPopup={(p) => setPopup(p)} />
       </main>
+      <div class={styles.container}>
+            <div class={styles.rowE}>
+                <div class={styles.leftC}>
+                    <h1 class={styles.subT}>Support</h1>
+                      <p>Contact us</p>
+                      <p>FAQ</p>
+
+                </div>
+                <div class={styles.rightC}>
+                  <h1 class="sub-title">Terms and settings</h1>
+                      <p>Privacy Settings</p>
+                      <p>Terms and Conditions</p>
+                </div>
+            </div>
+        </div>
     </>
   );
-  
 }
 
 export default Mapview;
