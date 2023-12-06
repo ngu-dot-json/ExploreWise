@@ -6,6 +6,25 @@ import { useState } from "react";
 
 import sstyles from "../../src/styles/account.module.css";
 
+function togglePasswordVisibilityCurr() {
+  let password = document.querySelector(`.${sstyles.currPW} input`);
+
+  if (password.type === "password") {
+    password.type = "text";
+  } else {
+    password.type = "password";
+  }
+}
+function togglePasswordVisibilityNew() {
+  let password = document.querySelector(`.${sstyles.newPW} input`);
+
+  if (password.type === "password") {
+    password.type = "text";
+  } else {
+    password.type = "password";
+  }
+}
+
 export default function Home() {
   const [profilePicSrc, setProfilePicSrc] = useState("/test.png");
 
@@ -106,18 +125,17 @@ export default function Home() {
 
               <div className={sstyles["change-password"]}>
                 <h2>Change Password</h2>
-                <div className={sstyles.row}>
-                  <div className={sstyles.current}>
-                    <input type="text" required="required" />
-                    <span>Current password</span>
-                  </div>
+                  <div className={sstyles.currPW}>
+                  <input type="password" required="required" />
+                  <span>Current Password</span>
+                  <Image className={sstyles.pwImg} src="/eyeClose.png" width={1000} height={1000} onClick={togglePasswordVisibilityCurr}/>
                 </div>
 
-                <div className={sstyles.new}>
-                  <input type="text" required="required" />
-                  <span>New password</span>
-                </div>
-
+                <div className={sstyles.newPW}>
+                <input type="password" required="required" />
+                <span>New Password</span>
+                <Image className={sstyles.pwImg} src="/eyeClose.png" width={1000} height={1000} onClick={togglePasswordVisibilityNew}/>
+              </div>
                 <div className={sstyles.rightBtn}>
                   <div className={sstyles.button}>
                     <p>Change password</p>
