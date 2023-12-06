@@ -1,7 +1,9 @@
 import Head from "next/head";
 import Image from "next/image";
 import Navbar from "../../components/Navbar";
+import backgrounder from "/public/test.png";
 import { useState } from "react";
+import styles from "../styles/account.module.css"
 
 import sstyles from "../../src/styles/account.module.css";
 
@@ -40,10 +42,22 @@ export default function Home() {
         <title>ExploreWise: My Account</title>
       </Head>
 
+      {/* <div className="absolute -z-10 mt-[-25px] w-full h-full">
+        <Image
+          className="bImg"
+          src={backgrounder}
+          alt="background image"
+          width={1000}
+          height={1000}
+        />
+      </div> */}
+      {/*--------------------NavBar--------------------*/}
       <div>
         <Navbar />
         <br />
       </div>
+
+      {/*---------------------HTML---------------------*/}
 
       <div className={sstyles.body}>
         <div className={sstyles.container}>
@@ -79,6 +93,7 @@ export default function Home() {
                 <h1>Welcome John!</h1>
               </div>
               <div className={sstyles.row}>
+
                 <div className={sstyles["change-email"]}>
                   <h2>Change Email</h2>
                   <div className={sstyles.current}>
@@ -133,6 +148,21 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div class={styles.container}>
+            <div class={styles.rowE}>
+                <div class={styles.leftC}>
+                    <h1 class={styles.subT}>Support</h1>
+                      <p>Contact us</p>
+                      <p>FAQ</p>
+
+                </div>
+                <div class={styles.rightC}>
+                  <h1 class="sub-title">Terms and settings</h1>
+                      <p>Privacy Settings</p>
+                      <p>Terms and Conditions</p>
+                </div>
+            </div>
+        </div>
     </>
   );
 }
