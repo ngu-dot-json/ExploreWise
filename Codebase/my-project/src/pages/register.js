@@ -51,7 +51,7 @@ export default function Home() {
                 <Image className={sstyle.pwImg} src="/eyeClose.png" width={1000} height={1000} onClick={togglePasswordVisibility}/>
               </div>
               <div className={sstyle.Btn}>
-                <a href="account">Sign Up</a>
+                <a href="events">Sign Up</a>
               </div>
               <div className={sstyle.Register}>
                 <p>Already have an account? <a href="signin">Login</a></p>
