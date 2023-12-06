@@ -29,20 +29,19 @@ export default function Home() {
             <br/>
             <h3 className='ewText2'>Please Sign In or Register to get started.</h3>
 
-            <br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-            {/* Add button here to take us to sign in page*/}
-            <button className="daButton">
-              <a className="buttonRight" href="signin">  Sign in  </a>
-            </button>
+            <div className="daButton">
+              <button className="daButton2">
+                <a className="buttonRight" href="signin">Sign in</a>
+              </button>
 
-            <br/>
+              <button>
+                <a className="buttonRight" href="register">Register</a>
+              </button>
+            </div>
 
-            <button className="daButton">
-              <a className="buttonRight" href="register">  Register  </a>
-            </button>
-
-            <br/><br/>
+            <br/><br/><br/>
             
             <h3 className='ewLM'>scroll down to learn more</h3>
 
