@@ -17,8 +17,8 @@ const ViewBudget = (props) => {
                 </div>
                 <div class='row'>
                     <div class='col-lg-12 ny-0'>
-                        <button type='button' class='btn btn-primary btn-sm' onClick={props.handleEditClick}>
-				        EDIT
+                        <button type='button' class=' appearance-none items-center group bg-orange-600 hover:bg-orange-700 text-white font-bold w-full py-1 rounded' onClick={props.handleEditClick}>
+				        Edit
 			            </button>
                     </div>
                 </div>
