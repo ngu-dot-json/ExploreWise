@@ -69,6 +69,33 @@ Under my-project, there are four main folders, 'components', 'constants', 'publi
     -  contains every single page used in our website which is linked by next.js
     styles folder
     -   contains the css styling of every page
+ 
+## Functionalies implemented
+- Register
+- Login
+- Account recovery
+- Scroll through itinerary in full view
+- View map with drop pins
+- View drop pins containing event information
+- Scroll through small sized itinerary
+- Sort events by price (low-high, high-low) and date (oldest-newest, newest-oldest)
+- Sort events by genre
+- Favourite event
+- View favourited events
+- View user recommended events
+- Add events to itinerary
+- Delete events from itinerary
+- Add new expenses
+- View all expenses
+- Edit expenses
+- Delete expenses
+- Search for expenses
+- Set total budget
+- Upload account picture
+- Sign out
+- Change account username
+- Change account password
+- Change account email
 
 ## Walk-Through
 
@@ -84,8 +111,14 @@ Afterwards, the user can:
 - Check out most popular events by clicking on the 'User Recommended' button
 
 The user can then select the events by clicking 'Add Event' to add it to their itinerary. If they want to delete any event, they will simply click on the event, and the system will ask to verify their action, and then the event will be removed. 
-Next, the user can create their own budgets for their trip on our 'Budget' tab. They can add their own events, edit them and delete them as well. 
-They can also set their total budget and easily see their remaining budget. 
+
+Next, the user can go to the 'My Budget' tab. User can:
+- Clicking 'Create New Budget' and 'Switch to Another Budget' buttons. An alert will pop on the the top right corner that the those functionalies are under development.
+- Click 'Edit' button under total budget. Set a new budget to $350. When 'Save' is clicked, alert will pop up that new total budget is saved successfully. Also, 'Remaining' box will turn YELLOW becuase you are less than $100 away from reaching the budget.
+- Under 'Add Expense', try leaving 'Title', 'Date', or 'Cost' blank and click 'Add' to get error feedback. Try entering more than 2 decimal places for 'Cost' and press'Add' to get error feedback.
+- Search 'bell' in the search bar and see the 'Calgary Creative Experience at Studio Bell' expense pop up. Delete what you typed in the search bar to get all the expenses back.
+- Click 'Enter deleting mode' button and see an x icon appear next to each expense. Delete the 'Pizza Cooking Class' expense. An alert saying expense deleted successfully will pop up. Also,'Remaining' box will turn back green because you now have more than $100 of your budget remaining.
+- Click the pencil icon next to an expense in order to edit an expense. 
 
 On the Map tab, the user can see how far the events are from their location as well as the details of all the events. The colored pins are the ones in their itinerary. 
 
