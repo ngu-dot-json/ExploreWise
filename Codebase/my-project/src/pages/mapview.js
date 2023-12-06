@@ -14,6 +14,9 @@ function Mapview() {
 
   return (
     <>
+      <Head>
+        <title>ExploreWise: Map View</title>
+      </Head>
       <div>
         <Navbar />
         <br />

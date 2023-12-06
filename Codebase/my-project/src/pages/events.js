@@ -4,6 +4,8 @@ import TwoButtons from "../../components/TwoButtons";
 import Gantt from "../../components/gantt-calendar";
 import { EVENTS } from "../../constants/events";
 import { IoChevronDown } from "react-icons/io5";
+import Head from "next/head";
+
 
 const objectsEqual = (o1, o2) =>
   typeof o1 === "object" && Object.keys(o1).length > 0
@@ -106,6 +108,10 @@ function FindEvents() {
 
   return (
     <>
+      <Head>
+        <title>ExploreWise: Events</title>
+      </Head>
+
       <div>
         <Navbar />
       </div>

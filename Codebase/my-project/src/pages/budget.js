@@ -6,6 +6,7 @@
 
 import Navbar from '../../components/Navbar'
 import React from 'react';
+import Head from "next/head";
 
 
 import { AppProvider } from '../context/AppContext';
@@ -32,7 +33,9 @@ function budget (){
 	return (
   
     <>
-    {/* <title>Explorewise | Budget Tracker</title> */}
+    <Head>
+      <title>ExploreWise: My Budget</title>
+    </Head>
 
       <div>
         <Navbar />  

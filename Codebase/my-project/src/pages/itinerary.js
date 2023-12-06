@@ -3,11 +3,15 @@ import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Gantt from "../../components/gantt-maxsize";
 const inter = Inter({ subsets: ["latin"] });
+import Head from "next/head";
 
 function itinerary() {
   const [popup, setPopup] = useState(null);
   return (
     <>
+      <Head>
+        <title>ExploreWise: Itinerary</title>
+      </Head>
       <div>
         <Navbar />
         <br />

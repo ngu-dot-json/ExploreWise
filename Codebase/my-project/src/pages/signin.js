@@ -21,8 +21,7 @@ export default function Home() {
   return (
     <>
           <Head>
-            <title>Create Next App</title>
-
+            <title>ExploreWise: Sign In</title>
           </Head>
           
           <div className='absolute -z-10 mt-[-25px] w-full h-full'>

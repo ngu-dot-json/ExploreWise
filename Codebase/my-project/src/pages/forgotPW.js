@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Navbar from '../../components/Navbar'
 import backgrounder from "/public/test.png"
 
+
 import sstyle from '../../src/styles/singin.module.css'
 
 export default function Home() {
@@ -10,8 +11,7 @@ export default function Home() {
           
     <>
           <Head>
-            <title>Create Next App</title>
-
+            <title>ExploreWise: Forgot Password</title>
           </Head>
           
           <div className='absolute -z-10 mt-[-25px] w-full h-full'>

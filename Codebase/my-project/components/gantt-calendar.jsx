@@ -19,6 +19,7 @@ const colors = [
   "#07ABA0",
   "#0EAC51",
   "#F1892D",
+  "#9b7874",
 ];
 
 async function initializeGSTC(element, items, handleClick) {

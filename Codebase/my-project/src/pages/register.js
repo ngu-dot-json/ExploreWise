@@ -22,8 +22,7 @@ export default function Home() {
           
     <>
           <Head>
-            <title>Create Next App</title>
-
+            <title>ExploreWise: Register</title>
           </Head>
           
           <div className='absolute -z-10 mt-[-25px] w-full h-full'>

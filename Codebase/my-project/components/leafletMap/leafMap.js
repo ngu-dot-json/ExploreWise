@@ -88,6 +88,10 @@ function Map() {
     ic8 = new LeafIcon({
       iconUrl:
         "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|9b7874&chf=a,s,ee00FFFF"
+    }),
+    icbm = new LeafIcon({
+      iconUrl:
+        "https://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|808080&chf=a,s,ee00FFFF"
     })
     ;
 
@@ -110,7 +114,7 @@ function Map() {
                 url="http://127.0.0.1:8000/tiles/{z}/{x}/{y}.png"
             />
 
-            <Marker position={[51.04558, -114.06127]} icon={ic0}>
+            <Marker position={[51.04558, -114.06127]} icon={icbm}>
               <Popup>
                 <h5><b>Night of Flamenco</b></h5>   
                 <h6>Anniversary Park, Chestermere, AB</h6>
