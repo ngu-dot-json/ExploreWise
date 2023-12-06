@@ -17,7 +17,7 @@ optimizations for React applications.
 First, install any missing dependencies:
 ```bash
 npm install
-
+```
 Then, run the development server, ensuring you are in the /Codebase/my-project directory
 
 ```bash
