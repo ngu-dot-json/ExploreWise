@@ -4,7 +4,8 @@ import Gantt from "../../components/gantt-calendar";
 import { EVENTS } from "../../constants/events";
 import { IoChevronDown } from "react-icons/io5";
 import Head from "next/head";
-import styles from "../styles/account.module.css";
+import styles from "../styles/account.module.css"
+
 
 const objectsEqual = (o1, o2) =>
   typeof o1 === "object" && Object.keys(o1).length > 0
@@ -135,15 +136,6 @@ function FindEvents() {
             </div>
           </div>
         )}{" "}
-        <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl">
-          <span class="text-transparent bg-clip-text bg-gradient-to-r to-orange-400 from-sky-600 text-align: center">
-            Attractions, activities, and experiences
-          </span>{" "}
-          <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400 text-align: center">
-            Discover new attractions and experiences to match your interests and
-            travel style.
-          </p>
-        </h1>
         <Gantt setPopup={(p) => setPopup(p)} />
         <div className="flex gap-4 w-full h-full justify-center items-start">
           <div className="flex flex-col gap-4 h-full ">
@@ -225,15 +217,12 @@ function FindEvents() {
                           </button>
 
                           <p className="absolute border-2 border-gray-900 top-4 left-4 bg-green-100 w-20 py-2 text-center text-black font-bold rounded-md">
-                            {event.price === 0 ? "FREE" : `$${event.price}`}{" "}
-                          </p>
+                          {event.price === 0 ? "FREE" : `$${event.price}`}                          </p>
                         </div>
 
                         <div className="flex flex-col text-white w-full h-full p-2 rounded-md">
                           <div className="flex justify-between items-start gap-2">
-                            <p className="font-bold text-orange-600 text-xl">
-                              {event.name}
-                            </p>
+                            <p className="font-bold text-orange-600 text-xl">{event.name}</p>
                           </div>
                           <p className="font-bold text-black">
                             {new Date(event.date).toLocaleDateString("en", {
@@ -255,31 +244,27 @@ function FindEvents() {
           </div>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
+      <br/><br/><br/><br/>
       <hr class="h-px my-8 bg-black border-0 dark:bg-gray-700" />
       <div class={styles.container}>
-        <div class={styles.rowE}>
-          <div class={styles.leftC}>
-            <h1 class={styles.subT}>Support</h1>
-            <p>About Us</p>
-            <p>Contact Us</p>
-            <p>FAQ</p>
-          </div>
-          <br />
-          <br />
-          <br />
-          <br />
-          <div class={styles.rightC}>
-            <h1 class="sub-title">Terms and settings</h1>
-            <p>Privacy Settings</p>
-            <p>Mailing List</p>
-            <p>Terms and Conditions</p>
-          </div>
-        </div>
+            <div class={styles.rowE}>
+                <div class={styles.leftC}>
+                    <h1 class={styles.subT}>Support</h1>
+                      <p>About Us</p>
+                      <p>Contact Us</p>
+                      <p>FAQ</p>
+
+                </div>
+                <br/><br/><br/><br/> 
+                <div class={styles.rightC}>
+                  <h1 class="sub-title">Terms and settings</h1>
+                      <p>Privacy Settings</p>
+                      <p>Mailing List</p>
+                      <p>Terms and Conditions</p>
+                </div>
+            </div>
       </div>
-      <br />
+      <br/>
       <p className="text-center text-gray-500 font-xs">ExploreWise (c) 2023</p>
     </>
   );
