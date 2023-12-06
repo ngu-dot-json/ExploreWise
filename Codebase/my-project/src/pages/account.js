@@ -3,7 +3,7 @@ import Image from "next/image";
 import Navbar from "../../components/Navbar";
 import backgrounder from "/public/test.png";
 import { useState } from "react";
-import styles from "../styles/account.module.css"
+import styles from "../styles/account.module.css";
 
 import sstyles from "../../src/styles/account.module.css";
 
@@ -93,7 +93,6 @@ export default function Home() {
                 <h1>Welcome John!</h1>
               </div>
               <div className={sstyles.row}>
-
                 <div className={sstyles["change-email"]}>
                   <h2>Change Email</h2>
                   <div className={sstyles.current}>
@@ -127,17 +126,29 @@ export default function Home() {
 
               <div className={sstyles["change-password"]}>
                 <h2>Change Password</h2>
-                  <div className={sstyles.currPW}>
+                <div className={sstyles.currPW}>
                   <input type="password" required="required" />
                   <span>Current Password</span>
-                  <Image className={sstyles.pwImg} src="/eyeClose.png" width={1000} height={1000} onClick={togglePasswordVisibilityCurr}/>
+                  <Image
+                    className={sstyles.pwImg}
+                    src="/eyeClose.png"
+                    width={1000}
+                    height={1000}
+                    onClick={togglePasswordVisibilityCurr}
+                  />
                 </div>
 
                 <div className={sstyles.newPW}>
-                <input type="password" required="required" />
-                <span>New Password</span>
-                <Image className={sstyles.pwImg} src="/eyeClose.png" width={1000} height={1000} onClick={togglePasswordVisibilityNew}/>
-              </div>
+                  <input type="password" required="required" />
+                  <span>New Password</span>
+                  <Image
+                    className={sstyles.pwImg}
+                    src="/eyeClose.png"
+                    width={1000}
+                    height={1000}
+                    onClick={togglePasswordVisibilityNew}
+                  />
+                </div>
                 <div className={sstyles.rightBtn}>
                   <div className={sstyles.button}>
                     <p>Change password</p>
@@ -148,26 +159,30 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <br/><br/><br/>
+      <br />
+      <br />
+      <br />
       <div class={styles.container}>
-            <div class={styles.rowE}>
-                <div class={styles.leftC}>
-                    <h1 class={styles.subT}>Support</h1>
-                      <p>About Us</p>
-                      <p>Contact Us</p>
-                      <p>FAQ</p>
-
-                </div>
-                <br/><br/><br/><br/> 
-                <div class={styles.rightC}>
-                  <h1 class="sub-title">Terms and settings</h1>
-                      <p>Privacy Settings</p>
-                      <p>Mailing List</p>
-                      <p>Terms and Conditions</p>
-                </div>
-            </div>
+        <div class={styles.rowE}>
+          <div class={styles.leftC}>
+            <h1 class={styles.subT}>Support</h1>
+            <p>About Us</p>
+            <p>Contact Us</p>
+            <p>FAQ</p>
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <div class={styles.rightC}>
+            <h1 class="sub-title">Terms and settings</h1>
+            <p>Privacy Settings</p>
+            <p>Mailing List</p>
+            <p>Terms and Conditions</p>
+          </div>
+        </div>
       </div>
-      <br/>
+      <br />
       <p className="text-center text-gray-500 font-xs">ExploreWise (c) 2023</p>
     </>
   );
