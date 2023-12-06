@@ -59,21 +59,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div class={styles.container}>
-            <div class={styles.rowE}>
-                <div class={styles.leftC}>
-                    <h1 class={styles.subT}>Support</h1>
-                      <p>Contact us</p>
-                      <p>FAQ</p>
-
-                </div>
-                <div class={styles.rightC}>
-                  <h1 class="sub-title">Terms and settings</h1>
-                      <p>Privacy Settings</p>
-                      <p>Terms and Conditions</p>
-                </div>
-            </div>
-        </div>
     </>
   )
 }
