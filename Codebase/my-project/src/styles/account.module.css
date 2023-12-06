@@ -103,9 +103,11 @@
 
 
 .change-email{
-    margin-top: 50px;
-    margin-left: 20px;
     flex-basis: 30%;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    width: 400px;
+
 }
 
 .change-email h2{
@@ -192,8 +194,11 @@
 
 
 .change-username{
-    margin-top: 50px;
     flex-basis: 50%;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    max-width: 304px;
+    margin-right: 200px;
 }
 
 .change-username h2{
@@ -203,8 +208,10 @@
 }
 
 .change-password{
-    margin-top: 50px;
-    margin-left: 20px;
+    margin-top: 10px;
+    border: 2px solid rgba(0, 0, 0, 0.25);
+    padding: 25px;
+    width: 304px;
 }
 
 .change-password h2{
