@@ -325,3 +325,41 @@
     letter-spacing: 0.15em;
     font-weight: 400;
 }
+
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+}
+.rowE{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    background-color: rgb(162, 87, 87);
+    border: 5px solid rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    max-width: 1500px;
+    padding-left: 50px;
+    padding-right: 50px;
+    bottom: 0;
+}
+
+.rightC{
+    margin-left: 100px;
+    color: white;
+}
+
+.leftC{
+    color: white;
+}
+
+.leftC p{
+    cursor: pointer;
+}
+
+.rightC p{
+    cursor: pointer;
+}
+
