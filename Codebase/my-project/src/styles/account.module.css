@@ -123,7 +123,7 @@
     border: 1px solid rgba(0, 0, 0, 0.25);
     border-radius: 5px;
     outline: none;
-    color: #44b6f8;
+    color: black;
     font-size: 1em;    
     background: rgb(224, 222, 222);
 }
@@ -228,4 +228,88 @@
 
 .rightBtn{
     flex-basis: 75%;
+}
+
+.pwImg{
+    width: 8%;
+    position: absolute;
+    cursor: pointer;
+    right: 15px;
+    top:15px;
+}
+
+.newPW{
+    margin-top: 15px;
+    position: relative;
+    width: 250px;
+}
+
+.newPW input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+    color:black;
+    font-size: 1em;    
+    background: rgb(224, 222, 222);
+}
+
+.newPW span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgb(123, 121, 121);
+    transition: 0.5s;
+}
+
+.newPW input:valid ~ span,
+.newPW input:focus ~ span 
+{
+    color: white;
+    transform: translateX(0) translateY(-17px);
+    font-size: 0.7em;
+    padding: 0 5px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
+}
+
+.currPW{
+    margin-top: 15px;
+    position: relative;
+    width: 250px;
+}
+
+.currPW input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    outline: none;
+    color:black;
+    font-size: 1em;    
+    background: rgb(224, 222, 222);
+}
+
+.currPW span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgb(123, 121, 121);
+    transition: 0.5s;
+}
+
+.currPW input:valid ~ span,
+.currPW input:focus ~ span 
+{
+    color: white;
+    transform: translateX(0) translateY(-17px);
+    font-size: 0.7em;
+    padding: 0 5px;
+    letter-spacing: 0.15em;
+    font-weight: 400;
 }
