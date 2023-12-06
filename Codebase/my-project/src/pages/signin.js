@@ -1,7 +1,10 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Navbar from '../../components/Navbar'
 import backgrounder from "/public/test.png"
+
 import sstyle from '../../src/styles/singin.module.css'
+import styles from "../styles/account.module.css"
 
 
 function togglePasswordVisibility() {
@@ -47,7 +50,7 @@ export default function Home() {
                 <a href="forgotPW">Forgot Password?</a>
               </div>
               <div className={sstyle.Btn}>
-                <a href="events">Login</a>
+                <a href="account">Login</a>
               </div>
               <div className={sstyle.Register}>
               <p>Don't have an account? <a href="register">Register</a></p>
@@ -56,7 +59,21 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <div class={styles.container}>
+            <div class={styles.rowE}>
+                <div class={styles.leftC}>
+                    <h1 class={styles.subT}>Support</h1>
+                      <p>Contact us</p>
+                      <p>FAQ</p>
 
+                </div>
+                <div class={styles.rightC}>
+                  <h1 class="sub-title">Terms and settings</h1>
+                      <p>Privacy Settings</p>
+                      <p>Terms and Conditions</p>
+                </div>
+            </div>
+        </div>
     </>
   )
 }
