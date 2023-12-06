@@ -79,9 +79,9 @@ Give credit to any resources, libraries, or contributors that have inspired or h
 
 
 ## Authors
-Jeongah Lee | jeongah.lee@ucalgary.ca
-Jason Ngu | jason.ngu1@ucalgary.ca
-Anmol Rana | anmol.rana@ucalgary.ca
+Jeongah Lee | jeongah.lee@ucalgary.ca  
+Jason Ngu | jason.ngu1@ucalgary.ca  
+Anmol Rana | anmol.rana@ucalgary.ca  
 Mahira Zabin | mahira.zabin1@ucalgary.ca
 
 
