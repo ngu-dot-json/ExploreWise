@@ -118,8 +118,8 @@ const AddExpenseForm = (props) => {
 
 			<div class='row mt-3'>
 				<div class='col-sm text-center'>
-					<button type='submit' class='btn btn-primary mx-auto'>
-						ADD
+					<button type='submit' class='justify-between px-4 appearance-none items-center group bg-orange-600 hover:bg-orange-700 text-white font-bold w-full py-2 rounded'>
+						Add
 					</button>
 				</div>
 			</div>
