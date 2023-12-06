@@ -5,6 +5,18 @@ import backgrounder from "/public/test.png"
 
 import sstyle from '../../src/styles/singin.module.css'
 
+
+function togglePasswordVisibility() {
+  let password = document.querySelector(`.${sstyle.RTBpassword} input`);
+
+  if (password.type === "password") {
+    password.type = "text";
+  } else {
+    password.type = "password";
+  }
+}
+
+
 export default function Home() {
   return (
           
@@ -39,11 +51,11 @@ export default function Home() {
                 <input type="text" required="required" />
                 <span>Email</span>
               </div>
-              <div className={sstyle.RTB}>
-                <input type="text" required="required" />
+              <div className={sstyle.RTBpassword}>
+                <input type="password" required="required" />
                 <span>Password</span>
+                <Image className={sstyle.pwImg} src="/eyeClose.png" width={1000} height={1000} onClick={togglePasswordVisibility}/>
               </div>
-
               <div className={sstyle.Btn}>
                 <a href="account">Sign Up</a>
               </div>
