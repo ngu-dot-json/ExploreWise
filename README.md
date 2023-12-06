@@ -70,7 +70,7 @@ Under my-project, there are four main folders, 'components', 'constants', 'publi
     styles folder
     -   contains the css styling of every page
  
-## Functionalies implemented
+## Functionalities implemented
 - Register
 - Login
 - Account recovery
