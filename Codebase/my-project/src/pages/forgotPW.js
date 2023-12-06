@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Navbar from '../../components/Navbar'
 import backgrounder from "/public/test.png"
+import styles from "../styles/account.module.css"
 
 
 import sstyle from '../../src/styles/singin.module.css'
@@ -9,14 +11,16 @@ export default function Home() {
   return (
           
     <>
-      <Head>
-        <title>ExploreWise: Forgot Password</title>
-      </Head>
+          <Head>
+            <title>ExploreWise: Forgot Password</title>
+          </Head>
           
-      <div className='absolute -z-10 mt-[-25px] w-full h-full'>
+          <div className='absolute -z-10 mt-[-25px] w-full h-full'>
         <Image className="bImg" src={backgrounder} alt="background image" width={1000} height={1000}/>
-      </div>
+        </div>
 
+      
+        {/*---------------------HTML---------------------*/}
         <div className={sstyle.body}>
           <div className={sstyle.container}>
             <div className={sstyle.box}>
@@ -39,6 +43,21 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </div>
+        <div class={styles.container}>
+            <div class={styles.rowE}>
+                <div class={styles.leftC}>
+                    <h1 class={styles.subT}>Support</h1>
+                      <p>Contact us</p>
+                      <p>FAQ</p>
+
+                </div>
+                <div class={styles.rightC}>
+                  <h1 class="sub-title">Terms and settings</h1>
+                      <p>Privacy Settings</p>
+                      <p>Terms and Conditions</p>
+                </div>
+            </div>
         </div>
     </>
   )
