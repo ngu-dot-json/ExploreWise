@@ -51,7 +51,7 @@ async function initializeGSTC(element, items, handleClick) {
     {
       id: "1",
       label: "Row 1",
-      height: 100,
+      height: 300,
     },
   ];
 
@@ -130,7 +130,7 @@ const Gantt = ({ setPopup, popup }) => {
       description: event.description,
       style: { background: getRandomColor() },
       rowId: "1",
-      height: 100,
+      height: 280,
       time: {
         start: moment(event.date)
           .startOf("day")
@@ -182,6 +182,9 @@ const Gantt = ({ setPopup, popup }) => {
 
   return (
     <div className="container">
+      {events.length >= 1 && (
+        <p className="font-bold text-black align-center">Click on an event to delete it.</p>
+      )}
       {events.length === 0 && (
         <p className="font-bold text-black">No events in itinerary...</p>
       )}
