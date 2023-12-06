@@ -89,7 +89,7 @@ function Map() {
                 url="http://127.0.0.1:8000/tiles/{z}/{x}/{y}.png"
             />
 
-            <Marker position={[51.0491277981509, -113.82159291613183]} icon={icbm}>
+            <Marker position={[51.0491277981509, -113.82159291613183]} icon={ic0}>
               <Popup>
                 <h5><b>Night of Flamenco</b></h5>   
                 <h6>Anniversary Park, Chestermere, AB</h6>
@@ -119,7 +119,7 @@ function Map() {
               </Popup>
             </Marker>
 
-            <Marker position={[51.064462, -114.088638]} icon={ic3}>
+            <Marker position={[51.064462, -114.088638]} icon={icbm}>
               <Popup>
                 <h5><b>Wine Tasting Fest</b></h5>   
                 <h6>SAIT Way NW, Calgary, AB</h6>
@@ -129,7 +129,7 @@ function Map() {
               </Popup>
             </Marker>
 
-            <Marker position={[51.0447, -114.0719]} icon={ic4}>
+            <Marker position={[51.0447, -114.0719]} icon={icbm}>
               <Popup>
                 <h5><b>Beer Fest!</b></h5>   
                 <h6>TD Core Shopping Centre, Calgary, AB</h6>
@@ -139,7 +139,7 @@ function Map() {
               </Popup>
             </Marker>
 
-            <Marker position={[51.087053, -114.173482]} icon={ic5}>
+            <Marker position={[51.087053, -114.173482]} icon={icbm}>
               <Popup>
                 <h5><b>Build Your Snowman!</b></h5>   
                 <h6>Bowmont Park, Calgary, AB</h6>
@@ -149,7 +149,7 @@ function Map() {
               </Popup>
             </Marker>
 
-            <Marker position={[50.953037, -114.065156]} icon={ic6}>
+            <Marker position={[50.953037, -114.065156]} icon={icbm}>
               <Popup>
                 <h5><b>Taylor Swift Dance Night</b></h5>   
                 <h6>100 Anderson Rd SE</h6>
