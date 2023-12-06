@@ -15,14 +15,14 @@ export const EVENTS = [
   },
   {
     id: 1,
-    name: "Otafest 2024",
+    name: "Otafest(Late) 2023",
     description:
       "Calgary’s Japanese pop culture festival. Shop. Cosplay. Games. Anime. Join a community and meet your favorite stars!",
     date: "11/04/2023",
     timeStart: "16:00",
     timeEnd: "20:00",
     genre: "outdoorsy",
-    price: 0.0,
+    price: 10.55,
     favorite: false,
     imgURL: "https://otafest.com/wp-content/uploads/otafest-2024.png",
   },
@@ -78,7 +78,7 @@ export const EVENTS = [
     date: "11/08/2023",
     timeStart: "15:00",
     timeEnd: "18:00",
-    price: 10.55,
+    price: 0.0,
     genre: "art & creativity",
     favorite: false,
     imgURL:

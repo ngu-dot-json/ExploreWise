@@ -122,7 +122,7 @@ function FindEvents() {
                 {popup.cancelText ?? "Cancel"}
               </button>
               <button
-                className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
+                className="flex relative justify-between px-4 appearance-none items-center group bg-orange-600 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
                 onClick={() => popup.confirm?.()}
               >
                 {popup.confirmText ?? "Confirm"}
@@ -136,11 +136,11 @@ function FindEvents() {
             <div className="flex w-screen px-4 h-full justify-between items-start gap-4">
               <div className="flex flex-col gap-4 justify-start items-start w-1/5">
                 <p className="font-bold text-xl">Filters</p>
-                <div className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded">
+                <div className="flex relative justify-between px-4 appearance-none items-center group bg-orange-600 hover:bg-orange-700 text-white font-bold w-full py-2 rounded">
                   <select
                     value={sortingOption}
                     onChange={handleSortingChange}
-                    className="appearance-none bg-orange-500 outline-none group-hover:bg-orange-700 text-white font-bold w-full"
+                    className="appearance-none bg-orange-600 outline-none group-hover:bg-orange-700 text-white font-bold w-full"
                   >
                     <option value="default">Sort By</option>
                     <option value="price-ASC">Price Low to High</option>
@@ -150,11 +150,11 @@ function FindEvents() {
                   </select>
                   <IoChevronDown className="top-1/2 right-4 absolute -translate-y-1/2 text-white" />
                 </div>
-                <div className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 hover:bg-bg-orange-700 text-white font-bold w-full py-2 rounded">
+                <div className="flex relative justify-between px-4 appearance-none items-center group bg-orange-600 hover:bg-orange-700 hover:bg-bg-orange-700 text-white font-bold w-full py-2 rounded">
                   <select
                     value={genreOption}
                     onChange={handleGenreChange}
-                    className="appearance-none bg-orange-500 outline-none group-hover:bg-orange-700 text-white font-bold w-full"
+                    className="appearance-none bg-orange-600 outline-none group-hover:bg-orange-700 text-white font-bold w-full"
                   >
                     <option value="default">Genre</option>
                     <option value="music">Music</option>
@@ -166,7 +166,7 @@ function FindEvents() {
                 </div>
                 <button
                   onClick={() => setShowFavorites(!showFavorites)}
-                  className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
+                  className="flex relative justify-between px-4 appearance-none items-center group bg-orange-600 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
                 >
                   Favourites
                   <p className="top-1/2 right-4 absolute -translate-y-1/2 text-white">
@@ -174,7 +174,7 @@ function FindEvents() {
                   </p>
                 </button>
                 <button
-                  className="flex relative justify-between px-4 appearance-none items-center group bg-orange-500 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
+                  className="flex relative justify-between px-4 appearance-none items-center group bg-orange-600 hover:bg-orange-700 text-white font-bold w-full py-2 rounded"
                   onClick={() => setShowRecommended(!showRecommended)}
                 >
                   User Recommended
@@ -187,7 +187,7 @@ function FindEvents() {
                     return (
                       <div
                         key={event.id}
-                        className="flex flex-col bg-black items-start justify-start rounded-md w-full h-full relative"
+                        className="flex flex-col bg-blue-100 border-3 border-gray-900 items-start justify-start rounded-md w-full h-full relative"
                       >
                         <div className="w-full min-h-[45%] relative">
                           <div className="w-full h-full">
@@ -198,34 +198,33 @@ function FindEvents() {
                             />
                           </div>
                           <button
-                            className="absolute top-4 text-white text-4xl right-4"
+                            className="absolute top-4 text-red-500 text-4xl right-4"
                             onClick={() => toggleFavorite(event)}
                           >
                             {event.favorite ? "♥" : "♡"}
                           </button>
                           <button
-                            className="absolute bottom-4 right-4 text-md py-2 bg-orange-500 rounded-md w-1/3 text-white hover:bg-orange-700"
+                            className="absolute border-2 border-gray-900 bottom-4 right-4 text-sm font-bold py-2 bg-green-600 rounded-md w-1/3 text-white hover:bg-orange-700"
                             onClick={() => addEvent(event)}
                           >
-                            Add event
+                            Add Event
                           </button>
 
-                          <p className="absolute top-4 left-4 bg-orange-300 w-20 py-2 text-center text-black font-bold rounded-md">
-                            ${event.price}
-                          </p>
+                          <p className="absolute border-2 border-gray-900 top-4 left-4 bg-green-100 w-20 py-2 text-center text-black font-bold rounded-md">
+                          {event.price === 0 ? "FREE" : `$${event.price}`}                          </p>
                         </div>
 
                         <div className="flex flex-col text-white w-full h-full p-2 rounded-md">
                           <div className="flex justify-between items-start gap-2">
-                            <p className="font-bold text-xl">{event.name}</p>
+                            <p className="font-bold text-orange-600 text-xl">{event.name}</p>
                           </div>
-                          <p className="font-bold">
+                          <p className="font-bold text-black">
                             {new Date(event.date).toLocaleDateString("en", {
                               dateStyle: "medium",
                             })}{" "}
                             at {event.timeStart} until {event.timeEnd}
                           </p>
-                          <p className="font-light text-sm">
+                          <p className="font-light text-black text-sm">
                             {event.description}
                           </p>
                         </div>

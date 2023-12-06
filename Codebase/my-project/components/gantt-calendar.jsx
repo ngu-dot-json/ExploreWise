@@ -153,7 +153,7 @@ const Gantt = ({ setPopup }) => {
           id: event.id,
           label: event.name,
           description: event.description,
-          style: { background: colors[id] },
+          style: { background: colors[event.id] },
           rowId: "1",
           height: 30,
           time: {

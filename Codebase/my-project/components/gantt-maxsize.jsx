@@ -48,7 +48,7 @@ async function initializeGSTC(element, items, handleClick) {
     {
       id: "1",
       label: "Row 1",
-      height: 300,
+      height: 480,
     },
   ];
 
@@ -63,7 +63,7 @@ async function initializeGSTC(element, items, handleClick) {
     actions: {
       "chart-timeline-items-row-item": [handleClick],
     },
-    innerHeight: 300,
+    innerHeight: 500,
     chart: {
       time: {
         zoom: 16.05,
@@ -127,7 +127,7 @@ const Gantt = ({ setPopup, popup }) => {
       description: event.description,
       style: { background: colors[event.id] },
       rowId: "1",
-      height: 200,
+      height: 450,
       time: {
         start: moment(event.date)
           .startOf("day")
