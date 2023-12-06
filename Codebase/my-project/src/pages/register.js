@@ -33,7 +33,7 @@ export default function Home() {
         <div className={sstyle.body}>
           <div className={sstyle.container}>
             <div className={sstyle.box}>
-              <div className={sstyle.login}>
+              <div className={sstyle.title}>
                 <h1>Register</h1>
               </div>
               <div className={sstyle.RTB}>
