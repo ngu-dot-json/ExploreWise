@@ -14,12 +14,13 @@ Therefore, ExploreWise wants to expand its services provided to clients by creat
 This is a [Next.js](https://nextjs.org/) project, written in JavaScript and using the React framework. Next.js is a React framework that enables server-side rendering and other 
 optimizations for React applications.
 
-First, install any missing dependencies:
+First, ensure you are in the /Codebase/my-project directory
+Then, install any missing dependencies
 ```bash
 npm install
 ```
-Then, run the development server, ensuring you are in the /Codebase/my-project directory
-
+Then, run the development server
+install 
 ```bash
 npm run dev
 # or
