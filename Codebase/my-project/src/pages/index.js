@@ -2,6 +2,8 @@ import Head from 'next/head'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import background from "/public/test2.png"
+import styles from "../styles/account.module.css"
+
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -27,19 +29,20 @@ export default function Home() {
             <br/>
             <h3 className='ewText2'>Please Sign In or Register to get started.</h3>
 
-            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+            <br/><br/><br/><br/><br/><br/><br/><br/>
 
-            <div className="daButton">
-              <button className="daButton2">
-                <a className="buttonRight" href="signin">Sign in</a>
-              </button>
+            {/* Add button here to take us to sign in page*/}
+            <button className="daButton">
+              <a className="buttonRight" href="signin">  Sign in  </a>
+            </button>
 
-              <button>
-                <a className="buttonRight" href="register">Register</a>
-              </button>
-            </div>
+            <br/>
 
-            <br/><br/><br/>
+            <button className="daButton">
+              <a className="buttonRight" href="register">  Register  </a>
+            </button>
+
+            <br/><br/>
             
             <h3 className='ewLM'>scroll down to learn more</h3>
 
@@ -58,16 +61,33 @@ export default function Home() {
 
             <br/><br/><br/><br/><br/><br/><br/>
 
-            <h2 className='ewInfo'>Libraries and Tools Used for the Project are:</h2><br/>
+            <h2 className='ewInfo'>Libraries and Tools Used for the Project Are:</h2><br/>
             <h2 className='ewInfo3'>NextJS 14.0.0</h2>
             <h2 className='ewInfo3'>ReactJS 18</h2>
             <h2 className='ewInfo3'>Leaflet 1.9.4</h2>
             <h2 className='ewInfo3'>Tailwind CSS v3.3</h2>
             <h2 className='ewInfo3'>gantt-schedule-timeline-calendar by NEURONET</h2>
-            <br/><br/><br/>
-            <h2 className='ewInfo4'>ExploreWise (c) 2023</h2>
+            <br/>
           </heading> 
+
+          <div class={styles.container}>
+            <div class={styles.rowE}>
+                <div class={styles.leftC}>
+                    <h1 class={styles.subT}>Support</h1>
+                      <p>Contact us</p>
+                      <p>FAQ</p>
+
+                </div>
+                <div class={styles.rightC}>
+                  <h1 class="sub-title">Terms and settings</h1>
+                      <p>Privacy Settings</p>
+                      <p>Terms and Conditions</p>
+                </div>
+            </div>
         </div>
+        
+        </div>
+        
       </div>
     </main>
     </>
