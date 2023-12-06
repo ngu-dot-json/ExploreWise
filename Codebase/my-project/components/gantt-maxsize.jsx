@@ -179,13 +179,17 @@ const Gantt = ({ setPopup, popup }) => {
 
   return (
     <div className="container">
-      {events.length >= 1 && (
-        <p className="font-bold text-black align-center">Click on an event to delete it.</p>
-      )}
+
       {events.length === 0 && (
-        <p className="font-bold text-black">No events in itinerary...</p>
+        <p className="font-bold text-black">No events in itinerary. Let's add some events!</p>
       )}
+
       <div id="gstc" ref={ref}></div>
+
+      {events.length >= 1 && (
+        <p className="mt-[-5px] text-sm text-center text-red-500 ">Simply click on an event to access the delete function.</p>
+      )}
+
     </div>
   );
 };

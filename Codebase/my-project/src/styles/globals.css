@@ -6,6 +6,11 @@
     background-color: green;
 } */
 
+.mapHeader {
+  color: red;
+  font-size: 200;
+}
+
 .ewHeading {
   text-align: center;
   text-shadow: #485157 1px 0 15px;

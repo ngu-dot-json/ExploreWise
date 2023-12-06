@@ -95,7 +95,7 @@ function Map() {
                 <h6>Anniversary Park, Chestermere, AB</h6>
                 <h7>Nov 04 2023, 21:00 to 23:00</h7><br/>
                 <p>Experience the explosive mix of sound, movement and emotion that is flamenco.</p>
-                <p><u>More Event Info</u></p>
+                <p className="text-blue-600"><u>More Event Info</u></p>
               </Popup>
             </Marker>
 
@@ -105,7 +105,7 @@ function Map() {
                 <h6>Telus Convention Centre, Calgary, AB</h6>
                 <h7>Nov 04 2023, 09:00 to 13:00</h7><br/>
                 <p>Calgary’s Japanese pop culture festival. Shop. Cosplay. Games. Anime. Join a community and meet your favorite stars!</p>
-                <p><u>More Event Info</u></p>
+                <p className="text-blue-600"><u>More Event Info</u></p>
               </Popup>
             </Marker>
 
@@ -115,7 +115,7 @@ function Map() {
                 <h6>StoryBook Theatre, Calgary, AB</h6>
                 <h7>Nov 04 2023, 15:00 to 18:00</h7><br/>
                 <p>THAT PARTY LAST NIGHT VOL. 6 That Party Last Night is an ongoing music showcase series that aims to highlight exciting talent in Canada.</p>
-                <p><u>More Event Info</u></p>
+                <p className="text-blue-600"><u>More Event Info</u></p>
               </Popup>
             </Marker>
 
@@ -125,7 +125,7 @@ function Map() {
                 <h6>SAIT Way NW, Calgary, AB</h6>
                 <h7>Nov 04 2023, 12:00 to 13:00</h7><br/>
                 <p>Savor a refined experience at our wine tasting event, exploring exquisite flavors and aromas in an elegant setting guided by expert sommeliers.",</p>
-                <p><u>More Event Info</u></p>
+                <p className="text-blue-600"><u>More Event Info</u></p>
               </Popup>
             </Marker>
 
@@ -135,7 +135,7 @@ function Map() {
                 <h6>TD Core Shopping Centre, Calgary, AB</h6>
                 <h7>Nov 03 2023, 05:40 to 07:20</h7><br/>
                 <p>Savor a refined experience at our beer tasting event, exploring exquisite flavors and aromas in an elegant setting guided by expert sommeliers.",</p>
-                <p><u>More Event Info</u></p>
+                <p className="text-blue-600"><u>More Event Info</u></p>
               </Popup>
             </Marker>
 
@@ -145,7 +145,7 @@ function Map() {
                 <h6>Bowmont Park, Calgary, AB</h6>
                 <h7>Nov 08 2023, 15:00 to 18:00</h7><br/>
                 <p>Craft your coolest snow buddy at our winter special event – come create and play in a snowy escape</p>
-                <p><u>More Event Info</u></p>
+                <p className="text-blue-600"><u>More Event Info</u></p>
               </Popup>
             </Marker>
 
@@ -155,7 +155,7 @@ function Map() {
                 <h6>100 Anderson Rd SE</h6>
                 <h7>Nov 08 2023, 20:00 to 23:00</h7><br/>
                 <p>Calling all the Swifties to this mesmerizing night of music and delights!</p>
-                <p><u>More Event Info</u></p>
+                <p className="text-blue-600"><u>More Event Info</u></p>
               </Popup>
             </Marker>
 
