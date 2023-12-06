@@ -54,7 +54,7 @@ const AddExpenseForm = (props) => {
 
 		{showConfirmation && (
 			<div className="fixed top-10 right-0 m-4 p-4 bg-green-500 text-white rounded shadow">
-				Expense added succssfully!
+				Expense added successfully!
 			</div>
       	)}
 

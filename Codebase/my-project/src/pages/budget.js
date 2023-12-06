@@ -151,7 +151,6 @@ function budget (){
                 </div>
             </div>
       </div>
-
       <br/>
       <p className="text-center text-gray-500 font-xs">ExploreWise (c) 2023</p>
     </>
