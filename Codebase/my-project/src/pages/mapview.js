@@ -51,6 +51,7 @@ function Mapview() {
         <Gantt setPopup={(p) => setPopup(p)} />
       </main>
       <br/><br/>
+      <hr class="h-px my-8 bg-black border-0 dark:bg-gray-700" />
       <div class={styles.container}>
             <div class={styles.rowE}>
                 <div class={styles.leftC}>
@@ -68,7 +69,10 @@ function Mapview() {
                       <p>Terms and Conditions</p>
                 </div>
             </div>
+            
       </div>
+      <br/>
+      <p className="text-center text-gray-500 font-xs">ExploreWise (c) 2023</p>
     </>
   );
 }

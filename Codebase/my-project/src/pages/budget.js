@@ -133,6 +133,7 @@ function budget (){
 		</AppProvider>
 
     <br/>
+    <hr class="h-px my-8 bg-black border-0 dark:bg-gray-700" />
     <div class={styless.container}>
             <div class={styless.rowE}>
                 <div class={styless.leftC}>

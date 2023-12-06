@@ -245,6 +245,7 @@ function FindEvents() {
         </div>
       </div>
       <br/><br/><br/>
+      <hr class="h-px my-8 bg-black border-0 dark:bg-gray-700" />
       <div class={styles.container}>
             <div class={styles.rowE}>
                 <div class={styles.leftC}>
