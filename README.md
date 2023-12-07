@@ -62,7 +62,7 @@ Under my-project, there are four main folders, 'components', 'constants', 'publi
   - All files in compoents contribute to a sub component on the pages
      
 - constants folder
-  Contains the data for events dispalyed on our website
+  - Contains the data for events dispalyed on our website
 
 - public folder 
   - Contains the pictures we use on our website
