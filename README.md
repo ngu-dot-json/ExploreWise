@@ -51,14 +51,18 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
-## Folder Structure (TODO)
+## Folder Structure
 
 Our main project can be found inside /Codebase/my-project
 
 Under my-project, there are four main folders, 'components', 'constants', 'public' and 'src'
 
-- components folder (TODO)  
-- constants folder (TODO)
+- components folder
+  Contains sub folders 'BudgetTrackerComponents', 'leafletMap', and 'old'
+  - All files in compoents contribute to a sub component on the pages
+     
+- constants folder
+  Contains the data for events dispalyed on our website
 
 - public folder 
   - Contains the pictures we use on our website
